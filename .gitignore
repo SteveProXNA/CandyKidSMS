@@ -1,3 +1,18 @@
+*.sms
+*asm/*
+*dev/.vs/*
+*dev/*db
+*bin
+*obj
+*.vcxproj.user
+*.asm
+*.lst
+*.sym
+*.ihx
+*.lk
+*.noi
+main.rel
+
 # Prerequisites
 *.d
 

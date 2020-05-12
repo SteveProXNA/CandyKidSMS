@@ -19,10 +19,13 @@ typedef enum tag_enum_screen_type
 	screen_type_dead = 11,
 	screen_type_cont = 12,
 	screen_type_over = 13,
-	screen_type_beat = 14,
-	screen_type_option = 15,
-	screen_type_credit = 16,
-	screen_type_test = 17,
+	screen_type_prep = 14,
+	screen_type_fight = 15,
+	screen_type_boss = 16,
+	screen_type_beat = 17,
+	screen_type_option = 18,
+	screen_type_credit = 19,
+	screen_type_test = 20,
 
 } enum_screen_type;
 
@@ -38,7 +41,6 @@ typedef enum tag_enum_pace_type
 	pace_type_slow = 0,
 	pace_type_fast = 1,
 	pace_type_none = 2,
-	//pace_type_cont = 2,
 
 } enum_pace_type;
 
@@ -100,7 +102,8 @@ typedef enum tag_enum_tile_type
 	tile_type_bonusC = 5,
 	tile_type_bonusD = 6,
 	tile_type_oneup = 7,
-	tile_type_cross = 8,
+	tile_type_cross1 = 8,
+	tile_type_cross2 = 9,
 
 } enum_tile_type;
 
@@ -110,6 +113,7 @@ typedef enum tag_enum_coll_type
 	coll_type_block = 1,
 	coll_type_candy = 2,
 	coll_type_oneup = 3,
+	coll_type_cross = 4,
 
 } enum_coll_type;
 
@@ -135,6 +139,8 @@ typedef enum tag_enum_actor_type
 	actor_type_suz = 2,
 	actor_type_kid = 3,
 	actor_type_tree = 4,
+	actor_type_boss1 = 5,
+	actor_type_boss2 = 6,
 
 } enum_actor_type;
 
@@ -243,5 +249,20 @@ typedef enum tag_enum_cursor_type
 	cursor_type_spaces = 1,
 
 } enum_cursor_type;
+
+typedef enum tag_enum_fight_type
+{
+	fight_type_enemy = 0,
+	fight_type_boss1 = 1,
+	fight_type_boss2 = 2,
+
+} enum_fight_type;
+
+typedef enum tag_enum_boss_type
+{
+	boss_type_large = 0,
+	boss_type_small = 1,
+
+} enum_boss_type;
 
 #endif//_ENUM_MANAGER_H_

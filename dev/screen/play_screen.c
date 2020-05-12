@@ -11,11 +11,11 @@
 #include "..\engine\input_manager.h"
 #include "..\engine\level_manager.h"
 #include "..\engine\memo_manager.h"
-#include "..\engine\move_manager.h"
+//#include "..\engine\move_manager.h"
 #include "..\engine\score_manager.h"
-#include "..\engine\sprite_manager.h"
+//#include "..\engine\sprite_manager.h"
 #include "..\engine\state_manager.h"
-#include "..\engine\tile_manager.h"
+//#include "..\engine\tile_manager.h"
 #include "..\engine\timer_manager.h"
 #include "..\devkit\_sms_manager.h"
 
@@ -25,11 +25,11 @@
 #pragma disable_warning 110
 #endif
 
-#define QUIT_SCREEN_DELAY		75
+//#define QUIT_SCREEN_DELAY		75
 
 // PLAY screen - is the main command add + execute driver
 static unsigned char first_time;
-static unsigned char frame_spot;
+//static unsigned char frame_spot;
 static unsigned char nextr_direction;
 
 void screen_play_screen_load()
@@ -47,7 +47,7 @@ void screen_play_screen_load()
 	//engine_delay_manager_draw();
 
 	//engine_font_manager_draw_text( "SCATTR", 26, 21 );
-	if( st->state_object_mydebugger )
+	if( ho->hack_object_mydebugger )
 	{
 		eo = &global_enemy_objects[ actor_type_pro ];	engine_memo_manager_debugging( actor_type_pro, eo->action );
 		eo = &global_enemy_objects[ actor_type_adi ];	engine_memo_manager_debugging( actor_type_adi, eo->action );
@@ -55,7 +55,7 @@ void screen_play_screen_load()
 	}
 
 	first_time = 1;
-	frame_spot = 0;
+	//frame_spot = 0;
 
 	//power1 = state_object_invincibie;
 	//power2 = state_object_localcheat;

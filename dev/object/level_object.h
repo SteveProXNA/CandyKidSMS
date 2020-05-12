@@ -5,6 +5,7 @@ typedef struct tag_struct_level_object
 {
 	unsigned char level_object_bonus_count;
 	unsigned char level_object_candy_count;
+	unsigned char level_object_oneup_count;
 	unsigned char level_object_multiplier;
 
 } struct_level_object;

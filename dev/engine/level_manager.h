@@ -6,7 +6,11 @@
 // Global variable.
 extern struct_level_object global_level_object;
 
+void engine_level_manager_clear();
 void engine_level_manager_load_level( const unsigned char world, const unsigned char round );
+void engine_level_manager_temp_level( unsigned char tileX, unsigned char tileY, unsigned char tile_type );
+void engine_level_manager_load_oneup( unsigned char quantity );
+void engine_level_manager_directions();
 
 // TODO delete
 //void engine_level_manager_update_level( const unsigned char round, unsigned char *actor_mover, unsigned char *actor_tileZ );

@@ -4,21 +4,23 @@
 #include "..\engine\content_manager.h"
 #include "..\engine\enum_manager.h"
 #include "..\engine\font_manager.h"
+#include "..\engine\main_manager.h"
 #include "..\engine\memo_manager.h"
 #include "..\engine\score_manager.h"
 #include "..\devkit\_sms_manager.h"
 
 void screen_init_screen_load()
 {
+	// TODO delete used for debugging!!
+	engine_main_manager_load();
+
+
 	devkit_SMS_displayOff();
 
 	engine_asm_manager_clear_VRAM();
 	engine_content_manager_load_tiles_font();
 	engine_content_manager_load_tiles_game();
 	engine_content_manager_load_sprites_game();
-
-	// Manually clear any text artifacts.
-	//engine_memo_manager_clear();
 
 	// Draw tree border with exits.
 	engine_board_manager_border( border_type_game );
@@ -35,5 +37,6 @@ void screen_init_screen_load()
 void screen_init_screen_update( unsigned char *screen_type )
 {
 	//*screen_type = screen_type_init;
+	//*screen_type = screen_type_prep;
 	*screen_type = screen_type_load;
 }

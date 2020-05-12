@@ -6,6 +6,7 @@
 #include "mask_manager.h"
 #include "state_manager.h"
 #include "tile_manager.h"
+#include "..\object\board_object.h"
 #include "..\devkit\_sms_manager.h"
 #include <stdlib.h>
 
@@ -21,6 +22,21 @@ static void load_level( const unsigned char *data, const unsigned char size, con
 //static void draw_level( unsigned char beg_row, unsigned char end_row, unsigned char beg_col, unsigned char end_col );
 static void draw_tiles( unsigned char x, unsigned char y );
 static unsigned char test_direction( unsigned char x, unsigned char y, unsigned char input_direction );
+
+void engine_level_manager_clear()
+{
+	unsigned char row, col;
+	unsigned char index;
+
+	for( row = 0; row < MAX_ROWS; row++ )
+	{
+		for( col = 0; col < MAX_COLS; col++ )
+		{
+			index = ( row + 2 ) * MAZE_COLS + ( col + 2 );
+			level_object_tiles_array[ index ] = tile_type_blank;
+		}
+	}
+}
 
 void engine_level_manager_load_level( const unsigned char world, const unsigned char round )
 {
@@ -56,6 +72,100 @@ void engine_level_manager_load_level( const unsigned char world, const unsigned 
 		const unsigned char size = level_object_BBsize[ index ];
 		const unsigned char bank = level_object_BBbank[ index ];
 		load_level( data, size, bank, mult );
+	}
+}
+
+void engine_level_manager_temp_level( unsigned char tileX, unsigned char tileY, unsigned char tile_type )
+{
+	// Surround home tile with "dummy" tile so not to get chosen during oneup randomize for boss battle.
+	struct_level_object *lo = &global_level_object;
+	unsigned char row, col;
+	unsigned char index;
+
+	for( row = 0; row < 2; row++ )
+	{
+		for( col = 0; col < 3; col++ )
+		{
+			index = ( tileY + row ) * MAZE_COLS + ( tileX + col );
+			level_object_tiles_array[ index ] = tile_type;
+		}
+	}
+}
+
+void engine_level_manager_load_oneup( unsigned char quantity )
+{
+	struct_level_object *lo = &global_level_object;
+	unsigned char row, col;
+	unsigned char index;
+	unsigned char tiles;
+	unsigned char loops;
+
+	lo->level_object_oneup_count = 0;
+	for( loops = 0; loops < quantity; loops++ )
+	{
+		while( 1 )
+		{
+			
+			row = rand() % MAX_ROWS;
+			col = rand() % MAX_COLS;
+
+			// TODO delete testing...
+			//if( 0 == loops )
+			//{
+			//	row = 4;
+			//	col = 4;
+			//}
+
+			// TODO remove
+			//row = 0;
+			//col = 0;
+
+			// TODO calculate rectangle around boss home so no candy drawn there!
+		//	//// Ensure no 
+		//	//if( !( col == board_object_homeX[ 0 ] - 2 && row == board_object_homeY[ 0 ] - 2 ) &&
+		//	//	!( col == board_object_homeX[ 1 ] - 2 && row == board_object_homeY[ 1 ] - 2 ) &&
+		//	//	!( col == board_object_homeX[ 2 ] - 2 && row == board_object_homeY[ 2 ] - 2 ) &&
+		//	//	!( col == board_object_homeX[ 3 ] - 2 && row == board_object_homeY[ 3 ] - 2 ) )
+		//	//{
+
+			index = ( row + 2 ) * MAZE_COLS + ( col + 2 );
+			tiles = level_object_tiles_array[ index ];
+			if( tile_type_blank == tiles )
+			{
+				break;
+			}
+		}
+
+		level_object_tiles_array[ index ] = tile_type_oneup;
+		lo->level_object_oneup_count++;
+	}
+
+	//col = 0;
+	//loops = 0;
+	//index = ( row + 2 ) * MAZE_COLS + ( col + 2 );
+	//level_object_tiles_array[ index ] = tile_type_oneup;
+}
+
+void engine_level_manager_directions()
+{
+	unsigned char row, col;
+	unsigned int index;
+	unsigned char test_type;
+	unsigned char direction;
+
+	// Set each tile directions available.
+	for( row = 0; row < MAX_ROWS; row++ )
+	{
+		for( col = 0; col < MAX_COLS; col++ )
+		{
+			direction = engine_level_manager_test_direction( ( row + 2 ), ( col + 2 ) );
+
+			index = ( row + 2 ) * MAZE_COLS + ( col + 2 );
+			test_type = level_object_tiles_array[ index ];
+
+			engine_function_manager_convertNibblesToByte( direction, test_type, &test_type );
+			level_object_tiles_array[ index ] = test_type;
+		}
 	}
 }
 
@@ -330,19 +440,19 @@ static void load_level( const unsigned char *data, const unsigned char size, con
 	unsigned char row, col;
 	unsigned char tile_data;
 
-	unsigned int index;
+	unsigned char index;
 	unsigned char tile_type;
 	unsigned char coll_type;
-	unsigned char test_type;
-	unsigned char direction;
+	//unsigned char test_type;
+	//unsigned char direction;
 
 	unsigned char load_cols;
 	unsigned char draw_cols;
 	load_cols = size / MAX_ROWS;
 	draw_cols = load_cols - CRLF;
-
 	lo->level_object_bonus_count = 0;
 	lo->level_object_candy_count = 0;
+	
 	lo->level_object_multiplier = mult;
 
 	mult = 0;
@@ -380,19 +490,23 @@ static void load_level( const unsigned char *data, const unsigned char size, con
 	}
 
 	// Set each tile directions available.
-	for( row = 0; row < MAX_ROWS; row++ )
-	{
-		for( col = 0; col < MAX_COLS; col++ )
-		{
-			direction = engine_level_manager_test_direction( ( row + 2 ), ( col + 2 ) );
+	//for( row = 0; row < MAX_ROWS; row++ )
+	//{
+	//	for( col = 0; col < MAX_COLS; col++ )
+	//	{
+	//	//	if( 3 == row && 1 == col )
+	//	//	{
+	//	//		index = 0;
+	//	//	}
+	//		direction = engine_level_manager_test_direction( ( row + 2 ), ( col + 2 ) );
 
-			index = ( row + 2 ) * MAZE_COLS + ( col + 2 );
-			test_type = level_object_tiles_array[ index ];
+	//		index = ( row + 2 ) * MAZE_COLS + ( col + 2 );
+	//		test_type = level_object_tiles_array[ index ];
 
-			engine_function_manager_convertNibblesToByte( direction, test_type, &test_type );
-			level_object_tiles_array[ index ] = test_type;
-		}
-	}
+	//		engine_function_manager_convertNibblesToByte( direction, test_type, &test_type );
+	//		level_object_tiles_array[ index ] = test_type;
+	//	}
+	//}
 }
 
 static void draw_tiles( unsigned char x, unsigned char y )

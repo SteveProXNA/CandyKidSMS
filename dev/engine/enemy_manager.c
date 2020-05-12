@@ -3,12 +3,14 @@
 #include "font_manager.h"
 #include "function_manager.h"
 #include "global_manager.h"
+#include "hack_manager.h"
 #include "level_manager.h"
 #include "memo_manager.h"
 #include "move_manager.h"
 #include "sprite_manager.h"
 #include "state_manager.h"
 #include "..\object\board_object.h"
+#include "..\object\move_object.h"
 #include <stdlib.h>
 
 #define SPRITE_TILES_ENEMY	256 + 48
@@ -32,7 +34,7 @@ void engine_enemy_manager_init()
 	for( enemy = 0; enemy < MAX_ENEMIES; enemy++ )
 	{
 		eo = &global_enemy_objects[ enemy ];
-		eo->actor = enemy;
+		//eo->actor = enemy;
 
 		eo->tileX = board_object_homeX[ enemy ];
 		eo->tileY = board_object_homeY[ enemy ];
@@ -40,7 +42,7 @@ void engine_enemy_manager_init()
 
 		eo->paths = 0;
 		eo->timer = 0;
-		eo->delta = 0;
+//		eo->delta = 0;
 		eo->total = 0;
 		eo->mover = 1;		// 1=move 0=stay.
 		eo->lifecycle = lifecycle_type_idle;
@@ -78,6 +80,7 @@ void engine_enemy_manager_load()
 	unsigned char offset;
 	unsigned char random = st->state_object_round_data + 2;
 
+	engine_state_manager_fight( fight_type_enemy );
 	engine_enemy_manager_stance();
 	for( enemy = 0; enemy < MAX_ENEMIES; enemy++ )
 	{
@@ -239,7 +242,7 @@ void engine_enemy_manager_update( unsigned char enemy )
 	}
 
 	eo->timer = 0;
-	eo->delta += eo->speed;
+//	eo->delta += eo->speed;
 	eo->total += eo->speed;
 
 	// Update position.
@@ -283,7 +286,7 @@ void engine_enemy_manager_update( unsigned char enemy )
 		calcd_spots( enemy );
 
 		eo->lifecycle = lifecycle_type_idle;
-		eo->delta = 0;
+//		eo->delta = 0;
 		eo->total = 0;
 	}
 }
@@ -383,7 +386,7 @@ void engine_enemy_manager_reset_home()
 		eo->lifecycle = lifecycle_type_idle;
 		eo->direction = direction_type_none;
 		eo->frame = frame_type_stance;
-		eo->delta = 0;
+		//eo->delta = 0;
 		eo->total = 0;
 		calcd_frame( enemy );
 	}
@@ -392,6 +395,7 @@ void engine_enemy_manager_reset_home()
 void engine_enemy_manager_reset_mode( unsigned char enemy, unsigned char mode )
 {
 	struct_state_object *st = &global_state_object;
+	struct_hack_object *ho = &global_hack_object;
 	struct_enemy_object *eo = &global_enemy_objects[ enemy ];
 	eo->action = mode;
 	eo->ticker = 0;
@@ -403,7 +407,7 @@ void engine_enemy_manager_reset_mode( unsigned char enemy, unsigned char mode )
 	eo->speed = eo->speeds[ mode ];
 	eo->delay = eo->delays[ mode ];
 
-	if( st->state_object_mydebugger )
+	if( ho->hack_object_mydebugger )
 	{
 		engine_memo_manager_debugging( enemy, eo->action );
 	}
@@ -434,17 +438,14 @@ void engine_enemy_manager_images( unsigned char image_pro, unsigned char image_a
 // TODO delete!!
 void engine_enemy_manager_debug()
 {
-	struct_state_object *st = &global_state_object;
+	struct_hack_object *ho = &global_hack_object;
 	struct_enemy_object *eo;
 	unsigned char enemy;
 
 	for( enemy = 0; enemy < MAX_ENEMIES; enemy++ )
 	{
 		eo = &global_enemy_objects[ enemy ];
-
-		// TODO delete as this will be replaced by menu selection.
-		eo->mover = st->state_object_enemy_move[ enemy ];
-		// TODO delete as this will be replaced by menu selection.
+		eo->mover = !ho->hack_object_enemy_move[ enemy ];
 	}
 }
 
@@ -496,7 +497,8 @@ unsigned char engine_enemy_manager_scatter_direction( unsigned char enemy )
 		targetY = board_object_homeY[ actor ];
 	}
 
-	enemy_direction = engine_enemy_manager_what_direction( enemy, targetX, targetY );
+	//enemy_direction = engine_enemy_manager_what_direction( enemy, targetX, targetY );
+	enemy_direction = engine_move_manager_what_direction( eo->tileX, eo->tileY, eo->prev_move, targetX, targetY );
 	return enemy_direction;
 }
 
@@ -518,7 +520,8 @@ unsigned char engine_enemy_manager_gohome_direction( unsigned char enemy )
 		return direction_type_none;
 	}
 
-	enemy_direction = engine_enemy_manager_what_direction( enemy, targetX, targetY );
+	//enemy_direction = engine_enemy_manager_what_direction( enemy, targetX, targetY );
+	enemy_direction = engine_move_manager_what_direction( eo->tileX, eo->tileY, eo->prev_move, targetX, targetY );
 	return enemy_direction;
 }
 
@@ -544,13 +547,15 @@ unsigned char engine_enemy_manager_attack_direction( unsigned char enemy, unsign
 	// ATTACK.
 	if( actor_type_pro == enemy )
 	{
-		enemy_direction = engine_enemy_manager_what_direction( enemy, targetX, targetY );
+		//enemy_direction = engine_enemy_manager_what_direction( enemy, targetX, targetY );
+		enemy_direction = engine_move_manager_what_direction( eo->tileX, eo->tileY, eo->prev_move, targetX, targetY );
 	}
 	else if( actor_type_adi == enemy )
 	{
 		// Look two tiles in front on Candy Kid.
 		engine_level_manager_get_next_index( &targetX, &targetY, eo->prev_move, offset_type_two );
-		enemy_direction = engine_enemy_manager_what_direction( enemy, targetX, targetY );
+		//enemy_direction = engine_enemy_manager_what_direction( enemy, targetX, targetY );
+		enemy_direction = engine_move_manager_what_direction( eo->tileX, eo->tileY, eo->prev_move, targetX, targetY );
 	}
 	else if( actor_type_suz == enemy )
 	{
@@ -562,101 +567,111 @@ unsigned char engine_enemy_manager_attack_direction( unsigned char enemy, unsign
 
 		// Look four tiles in front on Candy Kid.
 		engine_level_manager_get_next_index( &targetX, &targetY, direction_type_none, offset_type_none );
-		enemy_direction = engine_enemy_manager_what_direction( enemy, ( offset_type_four - 1 ) - targetX, ( offset_type_four - 1 ) - targetY );
+
+		targetX = ( offset_type_four - 1 ) - targetX;
+		targetY = ( offset_type_four - 1 ) - targetY;
+		//enemy_direction = engine_enemy_manager_what_direction( enemy, ( offset_type_four - 1 ) - targetX, ( offset_type_four - 1 ) - targetY );
+		enemy_direction = engine_move_manager_what_direction( eo->tileX, eo->tileY, eo->prev_move, targetX, targetY );
 	}
 
 	return enemy_direction;
 }
 
 
-unsigned char engine_enemy_manager_what_direction( unsigned char enemy, unsigned char targetX, unsigned char targetY )
-{
-	struct_enemy_object *eo = &global_enemy_objects[ enemy ];
-	unsigned char directions[ NUM_DIRECTIONS ] = { direction_type_none, direction_type_none, direction_type_none, direction_type_none };
-	unsigned char move_direction = direction_type_none;
-	unsigned char oppX_direction = direction_type_none;
-	//unsigned char prev_direction = direction_type_none;
-	unsigned char test_direction = direction_type_none;
-	unsigned char collision = direction_type_none;
-	unsigned char available = direction_type_none;
-
-	unsigned char sourceX = eo->tileX;
-	unsigned char sourceY = eo->tileY;
-	unsigned char index = 0;
-	//unsigned char byte = 0;
-	unsigned char list = 0;
-	unsigned char half = 0;
-	unsigned char flip = 0;
-
-	// Get the list of 4x possible directions in the order depending on tiles.
-	engine_move_manager_get_directions( sourceX, sourceY, targetX, targetY, &list, &half );
-
-	index = list * 2 * NUM_DIRECTIONS + half * NUM_DIRECTIONS;
-
-	// TODO fixed bank - change to data bank!!
-	directions[ 0 ] = enemy_object_directions[ index + 0 ];
-	directions[ 1 ] = enemy_object_directions[ index + 1 ];
-	directions[ 2 ] = enemy_object_directions[ index + 2 ];
-	directions[ 3 ] = enemy_object_directions[ index + 3 ];
-
-	//prev_direction = eo->prev_move[ 3 ];
-	//oppX_direction = engine_move_manager_opposite_direction( eo->prev_move[ 0 ] );
-	oppX_direction = engine_move_manager_opposite_direction( eo->prev_move );
-	available = engine_level_manager_get_direction( sourceX, sourceY, direction_type_none, offset_type_none );
-
-	for( index = 0; index < NUM_DIRECTIONS; index++ )
-	{
-		test_direction = directions[ index ];
-		if( oppX_direction == test_direction )
-		{
-			continue;
-		}
-
-		if( test_direction == ( available & test_direction ) )
-		{
-			move_direction = test_direction;
-			break;
-		}
-
-		//collision = engine_level_manager_get_collision( sourceX, sourceY, test_direction, offset_type_one );
-		//if( coll_type_empty == collision )
-		//{
-		//	move_direction = test_direction;
-		//	break;
-		//}
-	}
-
-	// TODO delete as back up of the code...
-	//oppX_direction = engine_move_manager_opposite_direction( eo->prev_move );
-	//for( index = 0; index < NUM_DIRECTIONS; index++ )
-	//{
-	//	test_direction = directions[ index ];
-	//	if( oppX_direction != test_direction )
-	//	{
-	//		//if( prev_direction != test_direction )
-	//		//{
-	//			collision = engine_level_manager_get_collision( sourceX, sourceY, test_direction, offset_type_one );
-	//			if( coll_type_empty == collision )
-	//			{
-	//				move_direction = test_direction;
-	//				break;
-	//			}
-	//		//}
-	//	}
-	//}
-
-	// Enemy in cul de sac so must be able to go in opposite direction!
-	if( direction_type_none == move_direction )
-	{
-		move_direction = oppX_direction;
-	}
-
-	return move_direction;
-}
+// TODO delete - this is now generic function in the move manager
+//unsigned char engine_enemy_manager_what_direction( unsigned char enemy, unsigned char targetX, unsigned char targetY )
+//{
+//	struct_enemy_object *eo = &global_enemy_objects[ enemy ];
+//	unsigned char directions[ NUM_DIRECTIONS ] = { direction_type_none, direction_type_none, direction_type_none, direction_type_none };
+//	unsigned char move_direction = direction_type_none;
+//	unsigned char oppX_direction = direction_type_none;
+//	//unsigned char prev_direction = direction_type_none;
+//	unsigned char test_direction = direction_type_none;
+//	unsigned char collision = direction_type_none;
+//	unsigned char available = direction_type_none;
+//
+//	unsigned char sourceX = eo->tileX;
+//	unsigned char sourceY = eo->tileY;
+//	unsigned char index = 0;
+//	//unsigned char byte = 0;
+//	unsigned char list = 0;
+//	unsigned char half = 0;
+//	unsigned char flip = 0;
+//
+//	// Get the list of 4x possible directions in the order depending on tiles.
+//	engine_move_manager_get_directions( sourceX, sourceY, targetX, targetY, &list, &half );
+//
+//	index = list * 2 * NUM_DIRECTIONS + half * NUM_DIRECTIONS;
+//
+//	// TODO fixed bank - change to data bank!!
+//	//directions[ 0 ] = enemy_object_directions[ index + 0 ];
+//	//directions[ 1 ] = enemy_object_directions[ index + 1 ];
+//	//directions[ 2 ] = enemy_object_directions[ index + 2 ];
+//	//directions[ 3 ] = enemy_object_directions[ index + 3 ];
+//	directions[ 0 ] = move_object_directions[ index + 0 ];
+//	directions[ 1 ] = move_object_directions[ index + 1 ];
+//	directions[ 2 ] = move_object_directions[ index + 2 ];
+//	directions[ 3 ] = move_object_directions[ index + 3 ];
+//
+//	//prev_direction = eo->prev_move[ 3 ];
+//	//oppX_direction = engine_move_manager_opposite_direction( eo->prev_move[ 0 ] );
+//	oppX_direction = engine_move_manager_opposite_direction( eo->prev_move );
+//	available = engine_level_manager_get_direction( sourceX, sourceY, direction_type_none, offset_type_none );
+//
+//	for( index = 0; index < NUM_DIRECTIONS; index++ )
+//	{
+//		test_direction = directions[ index ];
+//		if( oppX_direction == test_direction )
+//		{
+//			continue;
+//		}
+//
+//		if( test_direction == ( available & test_direction ) )
+//		{
+//			move_direction = test_direction;
+//			break;
+//		}
+//
+//		//collision = engine_level_manager_get_collision( sourceX, sourceY, test_direction, offset_type_one );
+//		//if( coll_type_empty == collision )
+//		//{
+//		//	move_direction = test_direction;
+//		//	break;
+//		//}
+//	}
+//
+//	// TODO delete as back up of the code...
+//	//oppX_direction = engine_move_manager_opposite_direction( eo->prev_move );
+//	//for( index = 0; index < NUM_DIRECTIONS; index++ )
+//	//{
+//	//	test_direction = directions[ index ];
+//	//	if( oppX_direction != test_direction )
+//	//	{
+//	//		//if( prev_direction != test_direction )
+//	//		//{
+//	//			collision = engine_level_manager_get_collision( sourceX, sourceY, test_direction, offset_type_one );
+//	//			if( coll_type_empty == collision )
+//	//			{
+//	//				move_direction = test_direction;
+//	//				break;
+//	//			}
+//	//		//}
+//	//	}
+//	//}
+//
+//	// Enemy in cul de sac so must be able to go in opposite direction!
+//	if( direction_type_none == move_direction )
+//	{
+//		move_direction = oppX_direction;
+//	}
+//
+//	return move_direction;
+//}
 
 unsigned char engine_enemy_manager_input_boost( unsigned char enemy )
 {
 	struct_state_object *st = &global_state_object;
+	struct_hack_object *ho = &global_hack_object;
 	struct_enemy_object *eo = &global_enemy_objects[ enemy ];
 	unsigned char toggle = eo->toggle[ eo->action ];
 	unsigned char boost = 0;
@@ -700,7 +715,7 @@ unsigned char engine_enemy_manager_input_boost( unsigned char enemy )
 	// IMPORTANT - this will alternate the images during game play - useful for debugging Scatter vs. Attack mode
 
 
-	if( st->state_object_mydebugger )
+	if( ho->hack_object_mydebugger )
 	{
 		engine_memo_manager_debugging( enemy, eo->action );
 	}

@@ -8,10 +8,8 @@ typedef struct tag_struct_gamer_object
 	// TODO test for this.
 	unsigned char posnX;		// PositionX during movement.
 	unsigned char posnY;		// PositionY during movement.
-	//int posnX;					// PositionX during movement.
-	//int posnY;					// PositionY during movement.
-	unsigned char tileX;		// Posn tileX on enemy stops. 
-	unsigned char tileY;		// Posn tileY on enemy stops.
+	unsigned char tileX;		// Posn tileX on gamer stops. 
+	unsigned char tileY;		// Posn tileY on gamer stops.
 	unsigned char tileZ;		// Posn tile stored as R x C.
 	unsigned char curr_boost;
 	unsigned char prev_boost;

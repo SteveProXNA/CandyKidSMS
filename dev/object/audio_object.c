@@ -4,6 +4,9 @@
 #include "..\banks\bank8.h"
 #include "..\banks\bank9.h"
 #include "..\banks\bank10.h"
+#include "..\banks\bank11.h"
+#include "..\banks\bank12.h"
+#include "..\banks\bank13.h"
 #include "..\psg.h"
 
 // DATA bank.
@@ -32,6 +35,9 @@ const unsigned char *music_object_data[] =
 	mus_game03_psg,
 	mus_beat_psg,
 	mus_candykid_psg,
+	mus_boss01_psg,
+	mus_boss02_psg,
+	mus_boss03_psg,
 };
 const unsigned char music_object_bank[] =
 {
@@ -43,4 +49,7 @@ const unsigned char music_object_bank[] =
 	mus_game03_psg_bank,
 	mus_beat_psg_bank,
 	mus_candykid_psg_bank,
+	mus_boss01_psg_bank,
+	mus_boss02_psg_bank,
+	mus_boss03_psg_bank,
 };

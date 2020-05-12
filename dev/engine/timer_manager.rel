@@ -2,8 +2,8 @@ XL2
 H 9 areas F global symbols
 M timer_manager
 O -mz80
+S _global_hack_object Ref0000
 S .__.ABS. Def0000
-S _global_state_object Ref0000
 S _engine_font_manager_draw_data Ref0000
 A _CODE size B5 flags 0 addr 0
 S _engine_frame_manager_draw Def0076
@@ -44,8 +44,8 @@ T 00 00 DD E5 DD 21 00 00 DD 39 21 00 00 DD 7E 04
 R 00 00 00 00 00 0B 01 00
 T 0E 00 77 23 DD 7E 05 77 21 00 00 22 02 00 3A
 R 00 00 00 00 00 0C 01 00
-T 1B 00 0E 00 B7 28 05 2E 00 22 00 00
-R 00 00 00 00 02 02 01 00 00 0A 01 00
+T 1B 00 00 00 B7 28 05 2E 00 22 00 00
+R 00 00 00 00 02 02 00 00 00 0A 01 00
 T 25 00
 R 00 00 00 00
 T 25 00 DD E1 C9

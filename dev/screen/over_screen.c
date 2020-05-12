@@ -8,6 +8,7 @@
 #include "..\engine\locale_manager.h"
 #include "..\engine\main_manager.h"
 #include "..\engine\memo_manager.h"
+#include "..\engine\state_manager.h"
 #include "..\engine\timer_manager.h"
 #include "..\object\audio_object.h"
 
@@ -33,6 +34,7 @@ void screen_over_screen_load()
 
 void screen_over_screen_update( unsigned char *screen_type )
 {
+	struct_state_object *st = &global_state_object;
 	unsigned char input;
 	unsigned char delay;
 
@@ -46,7 +48,11 @@ void screen_over_screen_update( unsigned char *screen_type )
 	}
 
 	// Draw sprites last.
-	engine_enemy_manager_hide();
+	if( fight_type_enemy == st->state_object_fight_type )
+	{
+		engine_enemy_manager_hide();
+	}
+
 	engine_gamer_manager_hide_death();
 
 	*screen_type = screen_type_over;

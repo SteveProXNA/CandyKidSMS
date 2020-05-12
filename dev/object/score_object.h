@@ -9,6 +9,7 @@ typedef struct tag_struct_score_object
 	unsigned char values[ SCORE_VALUES ];
 	unsigned char bonus;
 	unsigned char candy;
+	unsigned char oneup;
 
 } struct_score_object;
 

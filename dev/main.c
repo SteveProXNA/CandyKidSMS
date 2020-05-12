@@ -10,29 +10,14 @@ void main (void)
 	devkit_SMS_init();
 	devkit_SMS_displayOff();
 
-
 	devkit_SMS_setSpriteMode( devkit_SPRITEMODE_NORMAL() );
 	devkit_SMS_useFirstHalfTilesforSprites_False();
 	devkit_SMS_VDPturnOnFeature( devkit_VDPFEATURE_HIDEFIRSTCOL() );
-
-
 	engine_main_manager_init();
-	//engine_main_manager_load();
-	//engine_main_manager_debug();
 
-	//open_screen_type = screen_type_func;
-	//open_screen_type = screen_type_test;
 	open_screen_type = screen_type_splash;
 	//open_screen_type = screen_type_begin;
-	//open_screen_type = screen_type_start;
-	//open_screen_type = screen_type_init;
-	//open_screen_type = screen_type_pass;
-	//open_screen_type = screen_type_cont;
-	//open_screen_type = screen_type_over;
-	//open_screen_type = screen_type_beat;
-	//open_screen_type = screen_type_intro;
-	//open_screen_type = screen_type_option;
-	//open_screen_type = screen_type_start;
+	open_screen_type = screen_type_init;
 	//open_screen_type = screen_type_test;
 
 

@@ -24,8 +24,6 @@ unsigned char engine_storage_manager_available()
 	foundMagic = MAGIC == savegame->Magic;
 	devkit_SMS_disableSRAM();
 	return foundMagic;
-
-	//return 0;
 }
 
 void engine_storage_manager_read()
@@ -35,13 +33,12 @@ void engine_storage_manager_read()
 
 	devkit_SMS_enableSRAM();
 
-	//// adriana
 	st->state_object_high_score = savegame->save_high_score;
 
-	st->state_object_difficulty = savegame->save_difficulty;
-	st->state_object_pace_speed = savegame->save_game_speed;
 	st->state_object_trees_type = savegame->save_trees_type;
 	st->state_object_exits_type = savegame->save_exits_type;
+	st->state_object_difficulty = savegame->save_difficulty;
+	st->state_object_pace_speed = savegame->save_game_speed;
 
 	st->state_object_world_data = savegame->save_world_data;
 	st->state_object_round_data = savegame->save_round_data;
@@ -61,31 +58,14 @@ void engine_storage_manager_write()
 	struct_enemy_object *eo;
 
 
-	// TODO delete
-	//st->state_object_high_score += 20;
-	////st->state_object_trees_type = 1 - st->state_object_trees_type;
-	//st->state_object_exits_type = 1 - st->state_object_exits_type;
-	//st->state_object_round_data += 1;
-	//if( 10 == st->state_object_round_data )
-	//{
-	//	st->state_object_round_data = 0;
-	//}
-
-	//go->image = 1 - go->image;
-	//eo = &global_enemy_objects[ actor_type_pro ]; eo->image = 1 - eo->image;
-	//eo = &global_enemy_objects[ actor_type_adi ]; eo->image = 1 - eo->image;
-	//eo = &global_enemy_objects[ actor_type_suz ]; eo->image = 1 - eo->image;
-	// TODO delete
-
-
 	devkit_SMS_enableSRAM();
 	savegame->Magic = MAGIC;
 	savegame->save_high_score = st->state_object_high_score;
 
-	savegame->save_difficulty = st->state_object_difficulty;
-	savegame->save_game_speed = st->state_object_pace_speed;
 	savegame->save_trees_type = st->state_object_trees_type;
 	savegame->save_exits_type = st->state_object_exits_type;
+	savegame->save_difficulty = st->state_object_difficulty;
+	savegame->save_game_speed = pace_type_slow;				// st->state_object_pace_speed;			// unconditionally save Slow speed always!!	[not wired up]
 
 	savegame->save_world_data = st->state_object_world_data;
 	savegame->save_round_data = st->state_object_round_data;

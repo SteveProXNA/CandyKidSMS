@@ -11,6 +11,7 @@ void engine_score_manager_init();
 void engine_score_manager_load();
 
 unsigned char engine_score_manager_get_candy();
+unsigned char engine_score_manager_get_oneup();
 unsigned char engine_score_manager_get_bonus( unsigned char index );
 unsigned char engine_score_manager_get_value( unsigned char index );
 //unsigned char engine_score_manager_get_lives();

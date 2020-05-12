@@ -1,13 +1,14 @@
 #ifndef _GLOBAL_MANAGER_H_
 #define _GLOBAL_MANAGER_H_
 
-#define MAX_SCREEENS			18
+#define MAX_SCREEENS			21
 #define CONTENT_BANK			2
 
+#define MAX_BOSSES				2
 #define MAX_ENEMIES				3
 #define MAX_ACTORS				MAX_ENEMIES + 1
 
-#define INVALID_INDEX			-1
+//#define INVALID_INDEX			-1
 
 // Have capacity for 20 worlds i.e. 200 levels
 #define TOT_WORLDS				20
@@ -29,6 +30,7 @@
 
 #define TILE_SIZE				16
 #define TILE_HALF				8
+#define TILE_HEXS				6
 
 #define SCREEN_SIZE_WIDE		256
 #define SCREEN_SIZE_HIGH		192
@@ -79,6 +81,8 @@
 
 #define ENEMY_LOOPS				5
 #define SCORE_VALUES			5
+
+#define QUIT_SCREEN_DELAY		75
 #define SOUND_SCREEN_DELAY		50
 
 #endif//_GLOBAL_MANAGER_H_

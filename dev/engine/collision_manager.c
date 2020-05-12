@@ -72,7 +72,6 @@ unsigned char engine_collision_manager_tile_collision( unsigned char tile_type )
 	// Check gamer collision with candy.
 	if( tile_type_candy == tile_type )
 	{
-		// TODO sound effect...??
 		engine_score_manager_update_candy();
 		gamer_collision = coll_type_candy;
 	}
@@ -100,9 +99,10 @@ unsigned char engine_collision_manager_tile_collision( unsigned char tile_type )
 	else if( tile_type_oneup == tile_type )
 	{
 		// TODO sound effect...
-		engine_score_manager_update_lives( 1 );
-		//engine_audio_manager_sfx_play( sfx_type_power );		// adriana
-		gamer_collision = coll_type_oneup;						// adriana
+		//engine_score_manager_update_lives( 1 );
+		//engine_audio_manager_sfx_play( sfx_type_power );
+		engine_score_manager_update_oneup();
+		gamer_collision = coll_type_oneup;
 	}
 
 	// Check gamer collision with bonus.

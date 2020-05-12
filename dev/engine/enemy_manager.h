@@ -1,7 +1,7 @@
 #ifndef _ENEMY_MANAGER_H_
 #define _ENEMY_MANAGER_H_
 
-//#include "global_manager.h"
+#include "global_manager.h"
 #include "..\object\enemy_object.h"
 
 // Global variables.
@@ -32,7 +32,7 @@ void engine_enemy_manager_debug();
 unsigned char engine_enemy_manager_scatter_direction( unsigned char enemy );
 unsigned char engine_enemy_manager_gohome_direction( unsigned char enemy );
 unsigned char engine_enemy_manager_attack_direction( unsigned char enemy, unsigned char targetX, unsigned char targetY);
-unsigned char engine_enemy_manager_what_direction( unsigned char enemy, unsigned char targetX, unsigned char targetY );
+//unsigned char engine_enemy_manager_what_direction( unsigned char enemy, unsigned char targetX, unsigned char targetY );
 unsigned char engine_enemy_manager_input_boost( unsigned char enemy );
 
 #endif//_ENEMY_MANAGER_H_

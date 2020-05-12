@@ -8,6 +8,7 @@
 #include "..\engine\font_manager.h"
 #include "..\engine\gamer_manager.h"
 #include "..\engine\global_manager.h"
+#include "..\engine\hack_manager.h"
 #include "..\engine\input_manager.h"
 #include "..\engine\locale_manager.h"
 #include "..\engine\main_manager.h"
@@ -58,11 +59,12 @@ void screen_start_screen_load()
 void screen_start_screen_update( unsigned char *screen_type )
 {
 	struct_state_object *st = &global_state_object;
+	struct_hack_object *ho = &global_hack_object;
 	unsigned char input[ 2 ] = { 0, 0 };
 	unsigned char delay;
 
 	engine_option_manager_draw_actor( distance );
-	if( !st->state_object_delay_test )
+	if( !ho->hack_object_delay_test )
 	{
 		engine_option_manager_update( st->state_object_curr_screen );
 	}
@@ -106,7 +108,11 @@ void screen_start_screen_update( unsigned char *screen_type )
 		}
 
 		event_stage = event_stage_pause;
-		engine_audio_manager_sfx_play( sfx_type_accept );
+		if( !ho->hack_object_delay_test )
+		{
+			engine_audio_manager_sfx_play( sfx_type_accept );
+		}
+
 		return;
 	}
 

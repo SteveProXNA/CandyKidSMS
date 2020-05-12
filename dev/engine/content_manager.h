@@ -10,6 +10,5 @@ void engine_content_manager_load_tiles_splash();
 
 // Sprites.
 void engine_content_manager_load_sprites_game();
-void engine_content_manager_load_sprites_boss();
 
 #endif//_CONTENT_MANAGER_H_

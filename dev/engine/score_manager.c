@@ -2,6 +2,7 @@
 #include "enum_manager.h"
 #include "font_manager.h"
 #include "global_manager.h"
+#include "hack_manager.h"
 #include "locale_manager.h"
 #include "level_manager.h"
 #include "state_manager.h"
@@ -65,6 +66,7 @@ void engine_score_manager_load()
 	so->values[ score_type_level ] = st->state_object_world_data * MAX_ROUNDS + st->state_object_round_data + 1;
 	so->bonus = 0;
 	so->candy = 0;
+	so->oneup = 0;
 	so->values[ score_type_boost ] = boost_X[ st->state_object_pace_speed ];
 
 	draw_value( score_type_level );
@@ -75,6 +77,11 @@ unsigned char engine_score_manager_get_candy()
 {
 	struct_score_object *so = &global_score_object;
 	return so->candy;
+}
+unsigned char engine_score_manager_get_oneup()
+{
+	struct_score_object *so = &global_score_object;
+	return so->oneup;
 }
 unsigned char engine_score_manager_get_bonus( unsigned char index )
 {
@@ -117,8 +124,8 @@ void engine_score_manager_update_candy()
 void engine_score_manager_update_oneup()
 {
 	struct_score_object *so = &global_score_object;
-	//so->total++;
-	update_lives( 1 );
+	so->oneup++;
+	update_score( 5 );
 }
 
 void engine_score_manager_update_lives( signed char value )
@@ -130,7 +137,8 @@ void engine_score_manager_update_boost()
 {
 	struct_score_object *so = &global_score_object;
 	struct_state_object *st = &global_state_object;
-	if( st->state_object_full_boost )
+	struct_hack_object *ho = &global_hack_object;
+	if( ho->hack_object_full_boost )
 	{
 		return;
 	}
@@ -190,7 +198,7 @@ void engine_score_manager_reset_lives()
 	struct_state_object *st = &global_state_object;
 
 	so->values[ score_type_lives ] = NUMBER_LIVES - st->state_object_difficulty;
-	//so->values[ score_type_lives ] = 2; // stevepro
+	//so->values[ score_type_lives ] = 1; // stevepro
 	draw_value( score_type_lives );
 }
 void engine_score_manager_reset_boost()

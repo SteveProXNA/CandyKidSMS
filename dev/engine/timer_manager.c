@@ -1,5 +1,6 @@
 #include "timer_manager.h"
 #include "font_manager.h"
+#include "hack_manager.h"
 #include "state_manager.h"
 
 #define MAX_INT_VALUE		65535
@@ -15,11 +16,12 @@ void engine_delay_manager_load( unsigned int delay )
 {
 	struct_delay_object *dObj = &global_delay_object;
 	struct_state_object *st = &global_state_object;
+	struct_hack_object *ho = &global_hack_object;
 	dObj->delay_value = delay;
 	dObj->delay_timer = 0;
 
 	// Used for testing so no wait.
-	if( st->state_object_delay_test )
+	if( ho->hack_object_delay_test )
 	{
 		dObj->delay_value = 0;
 	}

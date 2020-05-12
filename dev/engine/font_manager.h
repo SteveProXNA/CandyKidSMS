@@ -6,6 +6,6 @@ void engine_font_manager_draw_text( const unsigned char *text, unsigned char x, 
 void engine_font_manager_draw_data( unsigned int data, unsigned char x, unsigned char y );
 
 // TODO delete
-void engine_font_manager_draw_data2( unsigned char data, unsigned char x, unsigned char y );
+//void engine_font_manager_draw_data2( unsigned char data, unsigned char x, unsigned char y );
 
 #endif//_FONT_MANAGER_H_

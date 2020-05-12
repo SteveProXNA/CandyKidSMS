@@ -1,5 +1,6 @@
 #include "cont_screen.h"
 #include "..\engine\audio_manager.h"
+#include "..\engine\boss_manager.h"
 #include "..\engine\collision_manager.h"
 #include "..\engine\enemy_manager.h"
 #include "..\engine\enum_manager.h"
@@ -46,7 +47,17 @@ void screen_cont_screen_update( unsigned char *screen_type )
 	if( event_stage_pause == event_stage )
 	{
 		// Draw sprites first.
-		engine_enemy_manager_hide();
+		if( fight_type_enemy == st->state_object_fight_type )
+		{
+			engine_enemy_manager_hide();
+		}
+		else
+		{
+			// TODO stevepro Adriana implement corresponding version of this
+			//engine_boss_manager_hide();
+			engine_boss_manager_draw();
+		}
+
 		engine_gamer_manager_hide_death();
 
 		delay = engine_delay_manager_update();
@@ -58,16 +69,35 @@ void screen_cont_screen_update( unsigned char *screen_type )
 
 				// Reset enemy that killed Kid to scatter mode only.
 				// Nasty bug : do NOT set when death tree kills Kid!
-				if( actor_type_pro == st->state_object_actor_kill || actor_type_adi == st->state_object_actor_kill || actor_type_suz == st->state_object_actor_kill )
+				if( fight_type_enemy == st->state_object_fight_type )
 				{
-					engine_enemy_manager_reset_mode( st->state_object_actor_kill, enemymove_type_tour );
+					if( actor_type_pro == st->state_object_actor_kill || actor_type_adi == st->state_object_actor_kill || actor_type_suz == st->state_object_actor_kill )
+					{
+						engine_enemy_manager_reset_mode( st->state_object_actor_kill, enemymove_type_tour );
+					}
+				}
+				else
+				{
+					//if( actor_type_boss1 == st->state_object_actor_kill || actor_type_boss2 == st->state_object_actor_kill )
+					//{
+					// TODO stevepro Adriana add this method to reset boss(es) to tour mode irrespective!
+					//engine_boss_manager_reset_mode( st->state_object_actor_kill, enemymove_type_tour );
+					//}
+				}
+
+				// If Kid dies from death tree then update directions
+				// because Mamas can now move through this empty tile.
+				if( actor_type_tree == st->state_object_actor_kill && tree_type_death == st->state_object_trees_type )
+				{
+					engine_level_manager_directions();
 				}
 
 				engine_score_manager_reset_boost();
 				engine_score_manager_reset_lives();
 				engine_level_manager_draw_middle();
 				engine_audio_manager_music_resume();
-				*screen_type = screen_type_ready;
+
+				*screen_type = fight_type_enemy == st->state_object_fight_type ? screen_type_ready : screen_type_fight;
 				return;
 			}
 			else
@@ -84,7 +114,17 @@ void screen_cont_screen_update( unsigned char *screen_type )
 	}
 
 	// Draw sprites last.
-	engine_enemy_manager_hide();
+	if( fight_type_enemy == st->state_object_fight_type )
+	{
+		engine_enemy_manager_hide();
+	}
+	else
+	{
+		// TODO stevepro Adriana implement corresponding version of this
+		//engine_boss_manager_hide();
+		engine_boss_manager_draw();
+	}
+
 	engine_gamer_manager_hide_death();
 
 	input[ 0 ] = engine_input_manager_hold( input_type_left );

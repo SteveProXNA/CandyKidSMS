@@ -1,6 +1,7 @@
 #include "dead_screen.h"
 #include "..\engine\audio_manager.h"
 #include "..\engine\board_manager.h"
+#include "..\engine\boss_manager.h"
 #include "..\engine\collision_manager.h"
 //#include "..\engine\command_manager.h"
 #include "..\engine\enum_manager.h"
@@ -8,6 +9,7 @@
 #include "..\engine\font_manager.h"
 #include "..\engine\gamer_manager.h"
 #include "..\engine\input_manager.h"
+#include "..\engine\level_manager.h"
 #include "..\engine\score_manager.h"
 #include "..\engine\state_manager.h"
 #include "..\engine\tile_manager.h"
@@ -26,7 +28,7 @@ static unsigned char event_stage;
 static unsigned char flash_count;
 
 static void reset_death();
-static unsigned char screen;
+//static unsigned char screen;
 
 void screen_dead_screen_load()
 {
@@ -51,9 +53,32 @@ void screen_dead_screen_load()
 
 	engine_score_manager_update_lives( -1 );
 	lives = engine_score_manager_get_value( score_type_lives );
-	screen = ( 0 == lives ) ? screen_type_cont : screen_type_ready;
+
+	st->state_object_next_screen = screen_type_cont;
+	//screen = screen_type_cont;
+	if( fight_type_enemy == st->state_object_fight_type )
+	{
+		st->state_object_next_screen = ( 0 == lives ) ? screen_type_cont : screen_type_ready;
+		//screen = ( 0 == lives ) ? screen_type_cont : screen_type_ready;
+	}
+	else
+	{
+		//st->state_object_next_screen = ( 0 == lives ) ? screen_type_cont : screen_type_load;
+		st->state_object_next_screen = ( 0 == lives ) ? screen_type_cont : screen_type_fight;
+		//screen = ( 0 == lives ) ? screen_type_cont : screen_type_load;
+	}
+	
 	//screen = screen_type_cont;
 	//screen = screen_type_ready;
+
+
+	// TODO if do here then only re-calc death tile rather than the entire maze!!
+	// If Kid dies from death tree then update directions
+	// because Mamas can now move through this empty tile.
+	//if( actor_type_tree == st->state_object_actor_kill && tree_type_death == st->state_object_trees_type )
+	//{
+		//engine_level_manager_directions();
+	//}
 
 	//if( !st->state_object_mydebugger )
 	//{
@@ -76,8 +101,19 @@ void screen_dead_screen_update( unsigned char *screen_type )
 	unsigned int frame = fo->frame_count;
 
 	// Draw sprites first.
-	engine_enemy_manager_draw();
-	engine_gamer_manager_draw_death( death_frame );
+	if( fight_type_enemy == st->state_object_fight_type )
+	{
+		engine_enemy_manager_draw();
+	}
+	else
+	{
+		engine_boss_manager_draw();
+	}
+
+	if( screen_type_cont == st->state_object_next_screen )
+	{
+		engine_gamer_manager_draw_death( death_frame );
+	}
 
 
 	// Check if Kid want to advance.
@@ -86,13 +122,26 @@ void screen_dead_screen_update( unsigned char *screen_type )
 		input = engine_input_manager_hold( input_type_fire2 );
 		if( input )
 		{
-			if( screen_type_ready == screen )
+			if( screen_type_cont != st->state_object_next_screen )
 			{
-				engine_audio_manager_music_resume();
 				reset_death();
+				engine_audio_manager_music_resume();
 			}
+			//if( screen_type_load == st->state_object_next_screen )
+			//if( screen_type_fight == st->state_object_next_screen )
+			//{
+			//	// TODO stevepro adriana goto fight
+			//	//engine_state_manager_level();
+			//}
 
-			*screen_type = screen;
+			// TODO stevepro include ready + fight once fight screen has music
+			//if( screen_type_cont != st->state_object_next_screen )
+			//if( screen_type_ready == st->state_object_next_screen )
+			//{
+			//	engine_audio_manager_music_resume();
+			//}
+
+			*screen_type = st->state_object_next_screen;
 			return;
 		}
 	//}
@@ -107,20 +156,33 @@ void screen_dead_screen_update( unsigned char *screen_type )
 		if( delay )
 		{
 			flash_count++;
-			if( screen_type_ready == screen )
+			if( screen_type_cont != st->state_object_next_screen )
 			{
 				death_frame = 1 - death_frame;
 			}
 
 			if( flash_count >= 7 )
 			{
-				if( screen_type_ready == screen )
+				if( screen_type_cont != st->state_object_next_screen )
 				{
-					engine_audio_manager_music_resume();
 					reset_death();
+					engine_audio_manager_music_resume();
 				}
+				//if( screen_type_load == st->state_object_next_screen )
+				//if( screen_type_fight == st->state_object_next_screen )
+				//{
+				//	// TODO stevepro adriana goto fight
+				//	//engine_state_manager_level();
+				//}
 
-				*screen_type = screen;
+				// TODO stevepro include ready + fight once fight screen has music
+				//if( screen_type_cont != st->state_object_next_screen )
+				//if( screen_type_ready == st->state_object_next_screen )
+				//{
+				//	engine_audio_manager_music_resume();
+				//}
+
+				*screen_type = st->state_object_next_screen;
 				return;
 			}
 		}
@@ -128,40 +190,43 @@ void screen_dead_screen_update( unsigned char *screen_type )
 
 
 	// Move enemies.
-	for( enemy = 0; enemy < MAX_ENEMIES; enemy++ )
+	if( fight_type_enemy == st->state_object_fight_type )
 	{
-		eo = &global_enemy_objects[ enemy ];
+		for( enemy = 0; enemy < MAX_ENEMIES; enemy++ )
+		{
+			eo = &global_enemy_objects[ enemy ];
 
-		// Swap hands first if enemy moving and not dead.
-		if( eo->mover && lifecycle_type_dead != eo->lifecycle )
-		{
-			engine_enemy_manager_dohand( enemy );
-		}
-
-		// If enemy not moving then skip all movement code.
-		if( !eo->mover )
-		{
-			continue;
-		}
-
-		// Move enemy.
-		if( direction_type_none != eo->direction && lifecycle_type_move == eo->lifecycle )
-		{
-			//  warning 110: conditional flow changed by optimizer: so said EVELYN the modified DOG
-			engine_enemy_manager_update( enemy );
-		}
-		if( direction_type_none != eo->direction && lifecycle_type_idle == eo->lifecycle )
-		{
-			engine_enemy_manager_stop( enemy );
-		}
-		// For continuity we want to check if actor can move immediately after stopping.
-		if( direction_type_none == eo->direction && lifecycle_type_idle == eo->lifecycle )
-		{
-			enemy_direction = engine_enemy_manager_gohome_direction( enemy );
-			if( direction_type_none != enemy_direction )
+			// Swap hands first if enemy moving and not dead.
+			if( eo->mover && lifecycle_type_dead != eo->lifecycle )
 			{
-//				engine_command_manager_add( frame, command_type_enemy_mover, ( enemy | ( enemy_direction << 4 ) ) );
-				engine_enemy_manager_move( enemy, enemy_direction );
+				engine_enemy_manager_dohand( enemy );
+			}
+
+			// If enemy not moving then skip all movement code.
+			if( !eo->mover )
+			{
+				continue;
+			}
+
+			// Move enemy.
+			if( direction_type_none != eo->direction && lifecycle_type_move == eo->lifecycle )
+			{
+				//  warning 110: conditional flow changed by optimizer: so said EVELYN the modified DOG
+				engine_enemy_manager_update( enemy );
+			}
+			if( direction_type_none != eo->direction && lifecycle_type_idle == eo->lifecycle )
+			{
+				engine_enemy_manager_stop( enemy );
+			}
+			// For continuity we want to check if actor can move immediately after stopping.
+			if( direction_type_none == eo->direction && lifecycle_type_idle == eo->lifecycle )
+			{
+				enemy_direction = engine_enemy_manager_gohome_direction( enemy );
+				if( direction_type_none != enemy_direction )
+				{
+					//				engine_command_manager_add( frame, command_type_enemy_mover, ( enemy | ( enemy_direction << 4 ) ) );
+					engine_enemy_manager_move( enemy, enemy_direction );
+				}
 			}
 		}
 	}
@@ -180,6 +245,7 @@ void screen_dead_screen_update( unsigned char *screen_type )
 		}
 	}
 
+	engine_gamer_manager_draw_death( death_frame );
 	*screen_type = screen_type_dead;
 }
 
@@ -193,9 +259,27 @@ static void reset_death()
 
 	// Reset enemy that killed Kid to scatter mode only.
 	// Nasty bug : do NOT set when death tree kills Kid!
-	if( actor_type_pro == st->state_object_actor_kill || actor_type_adi == st->state_object_actor_kill || actor_type_suz == st->state_object_actor_kill )
+	if( fight_type_enemy == st->state_object_fight_type )
 	{
-		engine_enemy_manager_reset_mode( st->state_object_actor_kill, enemymove_type_tour );
+		if( actor_type_pro == st->state_object_actor_kill || actor_type_adi == st->state_object_actor_kill || actor_type_suz == st->state_object_actor_kill )
+		{
+			engine_enemy_manager_reset_mode( st->state_object_actor_kill, enemymove_type_tour );
+		}
+	}
+	else
+	{
+		//if( actor_type_boss1 == st->state_object_actor_kill || actor_type_boss2 == st->state_object_actor_kill )
+		//{
+			// TODO stevepro Adriana add this method to reset boss(es) to tour mode irrespective!
+			//engine_boss_manager_reset_mode( st->state_object_actor_kill, enemymove_type_tour );
+		//}
+	}
+
+	// If Kid dies from death tree then update directions
+	// because Mamas can now move through this empty tile.
+	if( actor_type_tree == st->state_object_actor_kill && tree_type_death == st->state_object_trees_type )
+	{
+		engine_level_manager_directions();
 	}
 
 	// IMPORTANT I've decided NOT to reset boost on loss of life.

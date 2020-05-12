@@ -1,0 +1,30 @@
+XL2
+H 9 areas 3 global symbols
+M state_manager
+O -mz80
+S .__.ABS. Def0000
+A _CODE size 2A flags 0 addr 0
+S _engine_state_manager_init Def0000
+A _DATA size 11 flags 0 addr 0
+S _global_state_object Def0000
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 01 00
+T 00 00
+R 00 00 01 00
+T 00 00
+R 00 00 00 00
+T 00 00 21 00 00 36 00 21 03 00 36 00 21 04 00 36
+R 00 00 00 00 00 03 01 00 00 08 01 00 00 0D 01 00
+T 0E 00 00 21 00 00 22 05 00 21 07 00 36 00 21
+R 00 00 00 00 00 07 01 00 00 0A 01 00
+T 1B 00 08 00 36 00 21 0F 00 36 00 21 10 00 36 00
+R 00 00 00 00 00 02 01 00 00 07 01 00 00 0C 01 00
+T 29 00 C9
+R 00 00 00 00

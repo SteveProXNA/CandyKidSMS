@@ -1,0 +1,20 @@
+XL2
+H A areas 2 global symbols
+M bank14
+O -mz80
+S .__.ABS. Def0000
+A _CODE size 0 flags 0 addr 0
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _BANK14 size 6 flags 0 addr 0
+S _bank14_txt Def0000
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 07 00
+T 00 00 62 61 6E 6B 31 34
+R 00 00 07 00

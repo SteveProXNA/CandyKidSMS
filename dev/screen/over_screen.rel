@@ -1,0 +1,49 @@
+XL2
+H 9 areas C global symbols
+M over_screen
+O -mz80
+S _engine_enemy_manager_hide Ref0000
+S _engine_locale_manager_draw_text Ref0000
+S _engine_audio_manager_music_play_norepeat Ref0000
+S _engine_gamer_manager_hide_death Ref0000
+S .__.ABS. Def0000
+S _engine_delay_manager_update Ref0000
+S _engine_main_manager_save Ref0000
+S _engine_input_manager_hold Ref0000
+S _engine_audio_manager_music_stop Ref0000
+S _engine_delay_manager_load Ref0000
+A _CODE size 5D flags 0 addr 0
+S _screen_over_screen_load Def0000
+S _screen_over_screen_update Def002F
+A _DATA size 0 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 00 00
+T 00 00 CD 00 00 21 13 01 E5 CD 00 00 21 0A 0B E3
+R 00 00 00 00 02 03 08 00 02 0A 09 00
+T 0E 00 3E 13 F5 33 CD 00 00 33 21 0A 0C E3 3E 14
+R 00 00 00 00 02 07 01 00
+T 1C 00 F5 33 CD 00 00 F1 33 CD 00 00 3E 02 F5 33
+R 00 00 00 00 02 05 01 00 02 0A 06 00
+T 2A 00 CD 00 00 33 C9
+R 00 00 00 00 02 03 02 00
+T 2F 00
+R 00 00 00 00
+T 2F 00 3E 10 F5 33 CD 00 00 33 45 C5 CD 00 00 4D
+R 00 00 00 00 02 07 07 00 02 0D 05 00
+T 3D 00 F1 47 D1 E1 E5 D5 79 B7 20 03 B0 28 08
+R 00 00 00 00
+T 4A 00
+R 00 00 00 00
+T 4A 00 E5 CD 00 00 E1 36 02 C9
+R 00 00 00 00 02 04 08 00
+T 52 00
+R 00 00 00 00
+T 52 00 E5 CD 00 00 CD 00 00 E1 36 0D C9
+R 00 00 00 00 02 04 00 00 02 07 03 00

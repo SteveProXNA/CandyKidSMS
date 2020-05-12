@@ -1,0 +1,59 @@
+XL2
+H 9 areas 10 global symbols
+M test_screen
+O -mz80
+S _engine_option_manager_text_kid Ref0000
+S _engine_option_manager_draw_candy Ref0000
+S _engine_content_manager_load_sprites_game Ref0000
+S _engine_option_manager_draw_actor Ref0000
+S _engine_main_manager_load Ref0000
+S _engine_board_manager_border Ref0000
+S _engine_font_manager_draw_text Ref0000
+S _engine_option_manager_draw_bonus Ref0000
+S .__.ABS. Def0000
+S _engine_tile_manager_main_title Ref0000
+S _engine_option_manager_text_enemy Ref0000
+S _engine_asm_manager_clear_VRAM Ref0000
+S _engine_content_manager_load_tiles_main Ref0000
+S _engine_content_manager_load_tiles_font Ref0000
+A _CODE size 67 flags 0 addr 0
+S _screen_test_screen_load Def0000
+S _screen_test_screen_update Def0055
+A _DATA size 1 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 01 00
+T 00 00
+R 00 00 01 00
+T 00 00
+R 00 00 00 00
+T 00 00 CD 00 00 CD 00 00 CD 00 00 CD
+R 00 00 00 00 02 03 04 00 02 06 0B 00 02 09 0D 00
+T 0A 00 00 00 CD 00 00 3E 01 F5 33 CD 00 00 33 21
+R 00 00 00 00 02 02 0C 00 02 05 02 00 02 0C 05 00
+T 18 00 02 02 E5 CD 00 00 F1 21 00 00 36 01 21
+R 00 00 00 00 02 06 09 00 00 0A 01 00
+T 25 00 01 00 E5 CD 00 00 F1 CD 00 00 21 00 00 4E
+R 00 00 00 00 02 06 00 00 02 0A 0A 00 00 0D 01 00
+T 33 00 06 00 C5 CD 00 00 F1 21 00 00 4E 06 00 C5
+R 00 00 00 00 02 06 07 00 00 0A 01 00
+T 41 00 CD 00 00 21 02 06 E3 21 52 00 E5 CD 00 00
+R 00 00 00 00 02 03 01 00 00 0A 00 00 02 0E 06 00
+T 4F 00 F1 F1 C9
+R 00 00 00 00
+T 52 00
+R 00 00 00 00
+T 52 00 54 53 00
+R 00 00 00 00
+T 55 00
+R 00 00 00 00
+T 55 00 21 00 00 4E 06 00 C5 CD 00 00 F1 C1 E1 E5
+R 00 00 00 00 00 03 01 00 02 0A 03 00
+T 63 00 C5 36 11 C9
+R 00 00 00 00

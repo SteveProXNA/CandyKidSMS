@@ -1,0 +1,72 @@
+XL2
+H 9 areas 19 global symbols
+M main
+O -mz80
+S _engine_input_manager_update Ref0000
+S _engine_screen_manager_init Ref0000
+S _devkit_SMS_copySpritestoSAT Ref0000
+S _devkit_SMS_displayOn Ref0000
+S _devkit_SMS_init Ref0000
+S _devkit_PSGSFXFrame Ref0000
+S _engine_screen_manager_update Ref0000
+S _devkit_SMS_VDPturnOnFeature Ref0000
+S _devkit_SMS_finalizeSprites Ref0000
+S _devkit_VDPFEATURE_HIDEFIRSTCOL Ref0000
+S _devkit_PSGFrame Ref0000
+S _devkit_PSGSilenceChannels Ref0000
+S .__.ABS. Def0000
+S _devkit_SMS_setSpriteMode Ref0000
+S _devkit_SMS_resetPauseRequest Ref0000
+S _devkit_SMS_useFirstHalfTilesforSprites_False Ref0000
+S _engine_main_manager_init Ref0000
+S _devkit_SMS_displayOff Ref0000
+S _devkit_SPRITEMODE_NORMAL Ref0000
+S _engine_asm_manager_clear_VRAM Ref0000
+S _devkit_SMS_waitForVBlank Ref0000
+S _devkit_SMS_initSprites Ref0000
+S _devkit_SMS_queryPauseRequested Ref0000
+S _devkit_PSGRestoreVolumes Ref0000
+A _CODE size 71 flags 0 addr 0
+S _main Def0000
+A _DATA size 1 flags 0 addr 0
+A _INITIALIZED size 0 flags 0 addr 0
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 01 00
+T 00 00
+R 00 00 01 00
+T 00 00
+R 00 00 00 00
+T 00 00 CD 00 00 CD 00 00 CD 00 00 CD
+R 00 00 00 00 02 03 13 00 02 06 04 00 02 09 11 00
+T 0A 00 00 00 45 C5 33 CD 00 00 33 CD 00 00 CD
+R 00 00 00 00 02 02 12 00 02 08 0D 00 02 0C 0F 00
+T 17 00 00 00 E5 CD 00 00 F1 CD 00 00 3E 01 F5 33
+R 00 00 00 00 02 02 09 00 02 06 07 00 02 0A 10 00
+T 25 00 CD 00 00 33 CD 00 00
+R 00 00 00 00 02 03 01 00 02 07 03 00
+T 2C 00
+R 00 00 00 00
+T 2C 00 CD 00 00 7D B7 28 1D CD 00 00 FD 21 00 00
+R 00 00 00 00 02 03 16 00 02 0A 0E 00 00 0E 01 00
+T 3A 00 FD 7E 00 EE 01 FD 77 00 FD CB 00 46 28 05
+R 00 00 00 00
+T 48 00 CD 00 00 18 03
+R 00 00 00 00 02 03 0B 00
+T 4D 00
+R 00 00 00 00
+T 4D 00 CD 00 00
+R 00 00 00 00 02 03 17 00
+T 50 00
+R 00 00 00 00
+T 50 00 21 00 00 CB 46 20 D5 CD 00 00 CD 00 00 CD
+R 00 00 00 00 00 03 01 00 02 0A 15 00 02 0D 00 00
+T 5E 00 00 00 CD 00 00 CD 00 00 CD
+R 00 00 00 00 02 02 06 00 02 05 08 00 02 08 14 00
+T 67 00 00 00 CD 00 00 CD 00 00 18 BB
+R 00 00 00 00 02 02 02 00 02 05 0A 00 02 08 05 00

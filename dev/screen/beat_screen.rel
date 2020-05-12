@@ -1,0 +1,140 @@
+XL2
+H 9 areas 17 global symbols
+M beat_screen
+O -mz80
+S _engine_gamer_manager_draw Ref0000
+S _engine_level_manager_draw_level Ref0000
+S _engine_gamer_manager_move Ref0000
+S _global_gamer_object Ref0000
+S _engine_audio_manager_music_play_norepeat Ref0000
+S _engine_gamer_manager_update Ref0000
+S .__.ABS. Def0000
+S _engine_gamer_manager_stop Ref0000
+S _engine_delay_manager_update Ref0000
+S _engine_main_manager_save Ref0000
+S _engine_input_manager_hold Ref0000
+S _engine_audio_manager_music_stop Ref0000
+S _global_state_object Ref0000
+S _engine_memo_manager_draw Ref0000
+S _beats0000_txt Ref0000
+S _engine_level_manager_beat_level Ref0000
+S _engine_gamer_manager_load Ref0000
+S _engine_gamer_manager_reset Ref0000
+S _engine_delay_manager_load Ref0000
+A _CODE size 131 flags 0 addr 0
+S _screen_beat_screen_update Def004F
+S _screen_beat_screen_load Def0000
+A _DATA size 4 flags 0 addr 0
+A _INITIALIZED size 8 flags 0 addr 0
+S _beat_walking_cmds Def0000
+S _beat_walking_move Def0004
+A _DABS size 0 flags 8 addr 0
+A _HOME size 0 flags 0 addr 0
+A _GSINIT size 0 flags 0 addr 0
+A _GSFINAL size 0 flags 0 addr 0
+A _INITIALIZER size 8 flags 0 addr 0
+A _CABS size 0 flags 8 addr 0
+T 00 00
+R 00 00 01 00
+T 00 00
+R 00 00 01 00
+T 01 00
+R 00 00 01 00
+T 01 00
+R 00 00 01 00
+T 02 00
+R 00 00 01 00
+T 02 00
+R 00 00 01 00
+T 03 00
+R 00 00 01 00
+T 03 00
+R 00 00 01 00
+T 00 00
+R 00 00 02 00
+T 00 00
+R 00 00 02 00
+T 04 00
+R 00 00 02 00
+T 04 00
+R 00 00 02 00
+T 00 00
+R 00 00 00 00
+T 00 00 21 0F 00 36 0E 21 10 00 36 02 CD 00 00 21
+R 00 00 00 00 02 03 0C 00 02 08 0C 00 02 0D 0B 00
+T 0E 00 84 03 E5 CD 00 00 21 78 06 E3 21 00 00 E5
+R 00 00 00 00 02 06 12 00 02 0D 0E 00
+T 1C 00 CD 00 00 F1 F1 CD 00 00 21 15 16 E5 CD
+R 00 00 00 00 02 03 0F 00 02 08 01 00
+T 29 00 00 00 F1 21 00 00 36 00 21 01 00 36 04 21
+R 00 00 00 00 02 02 0D 00 00 06 01 00 00 0B 01 00
+T 37 00 02 00 36 00 21 03 00 36 00 CD 00 00 CD
+R 00 00 00 00 00 02 01 00 00 07 01 00 02 0C 10 00
+T 44 00 00 00 3E 06 F5 33 CD 00 00 33 C9
+R 00 00 00 00 02 02 11 00 02 09 04 00
+T 4F 00
+R 00 00 00 00
+T 4F 00 DD E5 DD 21 00 00 DD 39 F5 01 00 00 C5 CD
+R 00 00 00 00 02 0C 03 00
+T 5D 00 00 00 5D D5 3E 20 F5 33 CD 00 00 33 D1 C1
+R 00 00 00 00 02 02 08 00 02 0B 0A 00
+T 6B 00 DD 7E 04 DD 77 FE DD 7E 05 DD 77 FF 7B B7
+R 00 00 00 00
+T 79 00 20 03 B5 28 1A
+R 00 00 00 00
+T 7E 00
+R 00 00 00 00
+T 7E 00 CD 00 00 21 0B 00 36 00 21 0C 00 36 00 CD
+R 00 00 00 00 02 03 0B 00 02 06 0C 00 02 0B 0C 00
+T 8C 00 00 00 21 10 00 4E E1 E5 71 C3 2C 01
+R 00 00 00 00 02 02 09 00 02 05 0C 00 00 0C 00 00
+T 98 00
+R 00 00 00 00
+T 98 00 C5 CD 00 00 C1 3A 11 00 B7 28 0F 69 60 11
+R 00 00 00 00 02 04 00 00 02 08 03 00
+T A6 00 12 00 19 5E 1D 20 05 C5 CD 00 00 C1
+R 00 00 00 00 02 0B 05 00
+T B2 00
+R 00 00 00 00
+T B2 00 3A 11 00 B7 28 0E C5 FD E1 FD 7E 12 B7 20
+R 00 00 00 00 02 03 03 00
+T C0 00 05 C5 CD 00 00 C1
+R 00 00 00 00 02 05 07 00
+T C6 00
+R 00 00 00 00
+T C6 00 3A 11 00 B7 20 59 69 60 11 12 00 19 7E B7
+R 00 00 00 00 02 03 03 00
+T D4 00 20 4F 21 03 00 36 00 21 01 00 FD 21 00 00
+R 00 00 00 00 00 05 01 00 00 0A 01 00 00 0E 01 00
+T E2 00 FD 7E 00 96 38 04 FD 36 00 00
+R 00 00 00 00
+T EC 00
+R 00 00 00 00
+T EC 00 01 00 00 2A 00 00 26 00 09 46 11 04 00 3A
+R 00 00 00 00 00 03 02 00 00 06 01 00 00 0D 02 00
+T FA 00 00 00 83 5F 3E 00 8A 57 1A 32 03 00 FD 21
+R 00 00 00 00 00 02 01 00 00 0C 01 00
+T 08 01 02 00 FD 34 00 21 03 00 FD 7E 00 96 38 09
+R 00 00 00 00 00 02 01 00 00 08 01 00
+T 16 01 21 00 00 34 21 02 00 36 00
+R 00 00 00 00 00 03 01 00 00 07 01 00
+T 1F 01
+R 00 00 00 00
+T 1F 01 C5 33 CD 00 00 33
+R 00 00 00 00 02 05 02 00
+T 25 01
+R 00 00 00 00
+T 25 01 21 0F 00 4E E1 E5 71
+R 00 00 00 00 02 03 0C 00
+T 2C 01
+R 00 00 00 00
+T 2C 01 DD F9 DD E1 C9
+R 00 00 00 00
+T 00 00
+R 00 00 07 00
+T 00 00 08 02 04 01
+R 00 00 07 00
+T 04 00
+R 00 00 07 00
+T 04 00 07 07 07 07
+R 00 00 07 00

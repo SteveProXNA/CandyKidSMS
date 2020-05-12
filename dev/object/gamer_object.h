@@ -35,8 +35,8 @@ typedef struct tag_struct_gamer_object
 
 // FIXED bank.
 // Gamer Manager.
-extern const unsigned char gamer_object_image[];
-extern const unsigned char gamer_object_speed[];
-extern const unsigned char gamer_object_delay[];
+//extern const unsigned char gamer_object_image[];
+//extern const unsigned char gamer_object_speed[];
+//extern const unsigned char gamer_object_delay[];
 
 #endif//_GAMER_OBJECT_H_

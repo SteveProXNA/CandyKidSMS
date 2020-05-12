@@ -1,5 +1,5 @@
 XL2
-H 9 areas D global symbols
+H 9 areas E global symbols
 M over_screen
 O -mz80
 S _engine_enemy_manager_hide Ref0000
@@ -12,8 +12,9 @@ S _engine_main_manager_save Ref0000
 S _engine_input_manager_hold Ref0000
 S _engine_audio_manager_music_stop Ref0000
 S _global_state_object Ref0000
+S ___sdcc_enter_ix Ref0000
 S _engine_delay_manager_load Ref0000
-A _CODE size 77 flags 0 addr 0
+A _CODE size 71 flags 0 addr 0
 S _screen_over_screen_load Def0000
 S _screen_over_screen_update Def002F
 A _DATA size 0 flags 0 addr 0
@@ -27,7 +28,7 @@ A _CABS size 0 flags 8 addr 0
 T 00 00
 R 00 00 00 00
 T 00 00 CD 00 00 21 13 01 E5 CD 00 00 21 0A 0B E3
-R 00 00 00 00 02 03 08 00 02 0A 0A 00
+R 00 00 00 00 02 03 08 00 02 0A 0B 00
 T 0E 00 3E 13 F5 33 CD 00 00 33 21 0A 0C E3 3E 14
 R 00 00 00 00 02 07 01 00
 T 1C 00 F5 33 CD 00 00 F1 33 CD 00 00 3E 02 F5 33
@@ -36,25 +37,25 @@ T 2A 00 CD 00 00 33 C9
 R 00 00 00 00 02 03 02 00
 T 2F 00
 R 00 00 00 00
-T 2F 00 DD E5 DD 21 00 00 DD 39 F5 3E 10 F5 33 CD
+T 2F 00 CD 00 00 F5 3E 10 F5 33 CD 00 00 33 E5 CD
+R 00 00 00 00 02 03 0A 00 02 0B 07 00
+T 3D 00 00 00 4D E1 DD 7E 04 DD 77 FE DD 7E 05 DD
+R 00 00 00 00 02 02 05 00
+T 4B 00 77 FF 79 B7 20 03 B5 28 09
 R 00 00 00 00
-T 3D 00 00 00 33 E5 CD 00 00 4D E1 DD 7E 04 DD 77
-R 00 00 00 00 02 02 07 00 02 07 05 00
-T 4B 00 FE DD 7E 05 DD 77 FF 79 B7 20 03 B5 28 09
+T 54 00
 R 00 00 00 00
-T 59 00
-R 00 00 00 00
-T 59 00 CD 00 00 E1 E5 36 02 18 10
+T 54 00 CD 00 00 E1 E5 36 02 18 10
 R 00 00 00 00 02 03 08 00
-T 62 00
+T 5D 00
 R 00 00 00 00
-T 62 00 3A 0B 00 B7 20 03 CD 00 00
+T 5D 00 3A 0B 00 B7 20 03 CD 00 00
 R 00 00 00 00 02 03 09 00 02 09 00 00
-T 6B 00
+T 66 00
 R 00 00 00 00
-T 6B 00 CD 00 00 E1 E5 36 0D
+T 66 00 CD 00 00 E1 E5 36 0D
 R 00 00 00 00 02 03 03 00
-T 72 00
+T 6D 00
 R 00 00 00 00
-T 72 00 DD F9 DD E1 C9
+T 6D 00 F1 DD E1 C9
 R 00 00 00 00

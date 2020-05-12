@@ -300,6 +300,9 @@
     <ClInclude Include="object\move_object.h">
       <Filter>Header Files\object</Filter>
     </ClInclude>
+    <ClInclude Include="banks\fixedbank.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
@@ -550,6 +553,9 @@
     </ClCompile>
     <ClCompile Include="object\move_object.c">
       <Filter>Source Files\object</Filter>
+    </ClCompile>
+    <ClCompile Include="banks\fixedbank.c">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

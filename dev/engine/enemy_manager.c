@@ -11,6 +11,8 @@
 #include "state_manager.h"
 #include "..\object\board_object.h"
 #include "..\object\move_object.h"
+#include "..\devkit\_sms_manager.h"
+#include "..\banks\fixedbank.h"
 #include <stdlib.h>
 
 #define SPRITE_TILES_ENEMY	256 + 48
@@ -31,6 +33,7 @@ void engine_enemy_manager_init()
 	unsigned char frame;
 	unsigned char enemy;
 
+	devkit_SMS_mapROMBank( FIXED_BANK );
 	for( enemy = 0; enemy < MAX_ENEMIES; enemy++ )
 	{
 		eo = &global_enemy_objects[ enemy ];
@@ -82,6 +85,8 @@ void engine_enemy_manager_load()
 
 	engine_state_manager_fight( fight_type_enemy );
 	engine_enemy_manager_stance();
+
+	devkit_SMS_mapROMBank( FIXED_BANK );
 	for( enemy = 0; enemy < MAX_ENEMIES; enemy++ )
 	{
 		eo = &global_enemy_objects[ enemy ];

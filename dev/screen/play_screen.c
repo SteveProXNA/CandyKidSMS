@@ -28,7 +28,7 @@
 //#define QUIT_SCREEN_DELAY		75
 
 // PLAY screen - is the main command add + execute driver
-static unsigned char first_time;
+//static unsigned char first_time;
 //static unsigned char frame_spot;
 static unsigned char nextr_direction;
 
@@ -54,7 +54,7 @@ void screen_play_screen_load()
 		eo = &global_enemy_objects[ actor_type_suz ];	engine_memo_manager_debugging( actor_type_suz, eo->action );
 	}
 
-	first_time = 1;
+	//first_time = 1;
 	//frame_spot = 0;
 
 	//power1 = state_object_invincibie;
@@ -82,7 +82,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 	unsigned char gamer_tile_type = tile_type_blank;
 	unsigned char candy_count = 0;
 
-	unsigned char proceed;
+	//unsigned char proceed;
 	unsigned char input;
 	unsigned char enemy;
 	unsigned char check;
@@ -95,22 +95,22 @@ void screen_play_screen_update( unsigned char *screen_type )
 
 	//engine_frame_manager_draw();
 	//engine_delay_manager_draw();
-	if( !first_time )
-	{
-		proceed = engine_delay_manager_update();
-		if( !proceed )
-		{
-			*screen_type = screen_type_play;
-			return;
-		}
+	//if( !first_time )
+	//{
+	//	proceed = engine_delay_manager_update();
+	//	if( !proceed )
+	//	{
+	//		*screen_type = screen_type_play;
+	//		return;
+	//	}
 
-		engine_frame_manager_update();
-		first_time = 1;
-	}
+	//	engine_frame_manager_update();
+	//	first_time = 1;
+	//}
 
 	// Continue...
 	frame = fo->frame_count;
-
+	engine_frame_manager_update();
 
 	// Does player want to quit out?
 	input = engine_input_manager_move( input_type_fire2 );
@@ -233,7 +233,6 @@ void screen_play_screen_update( unsigned char *screen_type )
 		}
 		if( direction_type_none != eo->direction && lifecycle_type_idle == eo->lifecycle )
 		{
-			// Check collision.
 			engine_enemy_manager_stop( enemy );
 		}
 		// For continuity we want to check if actor can move immediately after stopping.
@@ -278,7 +277,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 
 	// Execute all commands for this frame.
 	//engine_command_manager_execute( frame );
-	first_time = 0;
+	//first_time = 0;
 
 
 
@@ -318,7 +317,7 @@ void screen_play_screen_update( unsigned char *screen_type )
 	gamer_collision = devkit_isCollisionDetected();
 	if( 0 != gamer_collision )
 	{
-		st->state_object_actor_kill = engine_collision_manager_sprite_collision();
+		st->state_object_actor_kill = engine_collision_manager_enemy_collision();
 		if( actor_type_kid != st->state_object_actor_kill )
 		{
 			engine_enemy_manager_dead( st->state_object_actor_kill );

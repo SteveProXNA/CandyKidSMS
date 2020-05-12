@@ -53,9 +53,7 @@ void screen_cont_screen_update( unsigned char *screen_type )
 		}
 		else
 		{
-			// TODO stevepro Adriana implement corresponding version of this
-			//engine_boss_manager_hide();
-			engine_boss_manager_draw();
+			engine_boss_manager_hide();
 		}
 
 		engine_gamer_manager_hide_death();
@@ -120,9 +118,7 @@ void screen_cont_screen_update( unsigned char *screen_type )
 	}
 	else
 	{
-		// TODO stevepro Adriana implement corresponding version of this
-		//engine_boss_manager_hide();
-		engine_boss_manager_draw();
+		engine_boss_manager_hide();
 	}
 
 	engine_gamer_manager_hide_death();

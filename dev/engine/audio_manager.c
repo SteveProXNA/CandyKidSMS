@@ -3,6 +3,7 @@
 #include "..\object\audio_object.h"
 #include "..\devkit\_sms_manager.h"
 #include "..\devkit\_snd_manager.h"
+#include "..\banks\fixedbank.h"
 
 static unsigned char music_bank;
 
@@ -17,6 +18,7 @@ void engine_audio_manager_music_play( unsigned char index )
 		return;
 	}
 
+	devkit_SMS_mapROMBank( FIXED_BANK );
 	music_data = music_object_data[ index ];
 	music_bank = music_object_bank[ index ];
 
@@ -34,6 +36,7 @@ void engine_audio_manager_music_play_norepeat( unsigned char index )
 		return;
 	}
 
+	devkit_SMS_mapROMBank( FIXED_BANK );
 	music = music_object_data[ index ];
 	bank = music_object_bank[ index ];
 

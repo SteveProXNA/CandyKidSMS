@@ -1,16 +1,9 @@
 XL2
-H 9 areas 8 global symbols
+H 9 areas 1 global symbols
 M enemy_object
 O -mz80
 S .__.ABS. Def0000
-A _CODE size 6C flags 0 addr 0
-S _enemy_object_hands Def003C
-S _enemy_object_delay Def0024
-S _enemy_object_speed Def000C
-S _enemy_object_kills Def0060
-S _enemy_object_waits Def0048
-S _enemy_object_tours Def0054
-S _enemy_object_image Def0000
+A _CODE size 0 flags 0 addr 0
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -19,35 +12,3 @@ A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
 A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
-T 00 00
-R 00 00 00 00
-T 00 00 00 02 04 0C 0E 10 18 1A 1C 24 26 28
-R 00 00 00 00
-T 0C 00
-R 00 00 00 00
-T 0C 00 02 03 01 03 02 01 03 02 01 01 02 03 01 02
-R 00 00 00 00
-T 1A 00 03 01 01 01 01 02 01 01 02 03
-R 00 00 00 00
-T 24 00
-R 00 00 00 00
-T 24 00 03 03 01 02 03 01 02 01 02 02 03 03 02 03
-R 00 00 00 00
-T 32 00 03 01 03 03 02 03 03 02 03 03
-R 00 00 00 00
-T 3C 00
-R 00 00 00 00
-T 3C 00 5A 50 46 3C 5F 55 4B 41 63 5A 50 46
-R 00 00 00 00
-T 48 00
-R 00 00 00 00
-T 48 00 50 3C 28 14 55 41 2D 19 5A 46 32 1E
-R 00 00 00 00
-T 54 00
-R 00 00 00 00
-T 54 00 40 48 50 58 44 4C 54 5C 48 50 58 60
-R 00 00 00 00
-T 60 00
-R 00 00 00 00
-T 60 00 41 49 51 59 45 4D 55 5D 49 51 59 61
-R 00 00 00 00

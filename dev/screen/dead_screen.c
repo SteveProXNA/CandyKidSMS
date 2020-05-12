@@ -10,6 +10,7 @@
 #include "..\engine\gamer_manager.h"
 #include "..\engine\input_manager.h"
 #include "..\engine\level_manager.h"
+#include "..\engine\move_manager.h"
 #include "..\engine\score_manager.h"
 #include "..\engine\state_manager.h"
 #include "..\engine\tile_manager.h"
@@ -26,6 +27,7 @@
 static unsigned char death_frame;
 static unsigned char event_stage;
 static unsigned char flash_count;
+static unsigned char first_times;
 
 static void reset_death();
 //static unsigned char screen;
@@ -50,6 +52,7 @@ void screen_dead_screen_load()
 	event_stage = event_stage_start;
 	death_frame = 0;
 	flash_count = 0;
+	first_times = 1;
 
 	engine_score_manager_update_lives( -1 );
 	lives = engine_score_manager_get_value( score_type_lives );
@@ -93,10 +96,13 @@ void screen_dead_screen_update( unsigned char *screen_type )
 	struct_frame_object *fo = &global_frame_object;
 	struct_state_object *st = &global_state_object;
 	struct_enemy_object *eo;
+	struct_boss_object *bo;
 
 	unsigned char enemy_direction = direction_type_none;
+	unsigned char bossX_direction = direction_type_none;
 	unsigned char input;
 	unsigned char enemy;
+	unsigned char bossX;
 	unsigned char delay;
 	unsigned int frame = fo->frame_count;
 
@@ -221,11 +227,67 @@ void screen_dead_screen_update( unsigned char *screen_type )
 			// For continuity we want to check if actor can move immediately after stopping.
 			if( direction_type_none == eo->direction && lifecycle_type_idle == eo->lifecycle )
 			{
-				enemy_direction = engine_enemy_manager_gohome_direction( enemy );
+				// First time around to in the opposite direction.
+				if( 1 == first_times )
+				{
+					first_times = 0;
+					enemy_direction = engine_move_manager_opposite_direction( eo->prev_move );
+				}
+				else
+				{
+					//bossX_direction = engine_boss_manager_gohome_direction( bossX );
+					enemy_direction = engine_enemy_manager_gohome_direction( enemy );
+				}
+
+				//enemy_direction = engine_enemy_manager_gohome_direction( enemy );
 				if( direction_type_none != enemy_direction )
 				{
 					//				engine_command_manager_add( frame, command_type_enemy_mover, ( enemy | ( enemy_direction << 4 ) ) );
 					engine_enemy_manager_move( enemy, enemy_direction );
+				}
+			}
+		}
+	}
+	else if ( fight_type_enemy != st->state_object_fight_type )
+	{
+		for( bossX = 0; bossX < MAX_BOSSES; bossX++ )
+		{
+			bo = &global_boss_objects[ bossX ];
+
+			// If boss not moving then skip all movement code.
+			if( !bo->mover )
+			{
+				continue;
+			}
+
+			// Move boss.
+			if( direction_type_none != bo->direction && lifecycle_type_move == bo->lifecycle )
+			{
+				//  warning 110: conditional flow changed by optimizer: so said EVELYN the modified DOG
+				engine_boss_manager_update( bossX );
+			}
+			if( direction_type_none != bo->direction && lifecycle_type_idle == bo->lifecycle )
+			{
+				engine_boss_manager_stop( bossX );
+			}
+			// For continuity we want to check if actor can move immediately after stopping.
+			if( direction_type_none == bo->direction && lifecycle_type_idle == bo->lifecycle )
+			{
+				// First time around to in the opposite direction.
+				if( 1 == first_times )
+				{
+					first_times = 0;
+					bossX_direction = engine_move_manager_opposite_direction( bo->prev_move );
+				}
+				else
+				{
+					bossX_direction = engine_boss_manager_gohome_direction( bossX );
+				}
+				
+				if( direction_type_none != bossX_direction )
+				{
+					//				engine_command_manager_add( frame, command_type_enemy_mover, ( enemy | ( enemy_direction << 4 ) ) );
+					engine_boss_manager_move( bossX, bossX_direction );
 				}
 			}
 		}

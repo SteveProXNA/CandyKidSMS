@@ -3,11 +3,13 @@
 #include "enum_manager.h"
 #include "font_manager.h"
 #include "function_manager.h"
+#include "global_manager.h"
 #include "mask_manager.h"
 #include "state_manager.h"
 #include "tile_manager.h"
 #include "..\object\board_object.h"
 #include "..\devkit\_sms_manager.h"
+#include "..\banks\fixedbank.h"
 #include <stdlib.h>
 
 #define CRLF	2				// char
@@ -59,6 +61,7 @@ void engine_level_manager_load_level( const unsigned char world, const unsigned 
 		index = level;
 	}
 
+	devkit_SMS_mapROMBank( FIXED_BANK );
 	if( level < halve )
 	{
 		const unsigned char *data = level_object_AAdata[ index ];
@@ -92,7 +95,7 @@ void engine_level_manager_temp_level( unsigned char tileX, unsigned char tileY, 
 	}
 }
 
-void engine_level_manager_load_oneup( unsigned char quantity )
+void engine_level_manager_load_extra( unsigned char quantity, unsigned char tile_type )
 {
 	struct_level_object *lo = &global_level_object;
 	unsigned char row, col;
@@ -105,7 +108,6 @@ void engine_level_manager_load_oneup( unsigned char quantity )
 	{
 		while( 1 )
 		{
-			
 			row = rand() % MAX_ROWS;
 			col = rand() % MAX_COLS;
 
@@ -136,8 +138,12 @@ void engine_level_manager_load_oneup( unsigned char quantity )
 			}
 		}
 
-		level_object_tiles_array[ index ] = tile_type_oneup;
-		lo->level_object_oneup_count++;
+		level_object_tiles_array[ index ] = tile_type;
+		if( tile_type_oneup == tile_type )
+		{
+			lo->level_object_oneup_count++;
+		}
+		
 	}
 
 	//col = 0;

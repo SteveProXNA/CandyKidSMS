@@ -21,7 +21,7 @@
 //#pragma disable_warning 110
 //#endif
 
-static unsigned char first_time;
+//static unsigned char first_time;
 //static unsigned char frame_spot;
 static unsigned char nextr_direction;
 
@@ -31,7 +31,7 @@ void screen_boss_screen_load()
 	struct_state_object *st = &global_state_object;
 
 	//struct_boss_object *bo;
-	engine_delay_manager_load( 0 );
+	//engine_delay_manager_load( 0 );
 
 	//	engine_command_manager_load();
 	engine_frame_manager_load();
@@ -40,7 +40,7 @@ void screen_boss_screen_load()
 	//engine_delay_manager_draw();
 
 
-	first_time = 1;
+	//first_time = 1;
 	nextr_direction = direction_type_none;
 
 	engine_reset_manager_load( QUIT_SCREEN_DELAY );
@@ -64,7 +64,7 @@ void screen_boss_screen_update( unsigned char *screen_type )
 	unsigned char gamer_tile_type = tile_type_blank;
 	unsigned char oneup_count = 0;
 
-	unsigned char proceed;
+	//unsigned char proceed;
 	unsigned char input;
 	unsigned char bossX;
 	unsigned char check;
@@ -81,20 +81,21 @@ void screen_boss_screen_update( unsigned char *screen_type )
 
 	//engine_frame_manager_draw();
 	//engine_delay_manager_draw();
-	if( !first_time )
-	{
-		proceed = engine_delay_manager_update();
-		if( !proceed )
-		{
-			return;
-		}
+	//if( !first_time )
+	//{
+	//	proceed = engine_delay_manager_update();
+	//	if( !proceed )
+	//	{
+	//		return;
+	//	}
 
-		engine_frame_manager_update();
-		first_time = 1;
-	}
+	//	engine_frame_manager_update();
+	//	first_time = 1;
+	//}
 
 	// Continue...
 	frame = fo->frame_count;
+	engine_frame_manager_update();
 
 
 	// Does player want to quit out?
@@ -185,7 +186,6 @@ void screen_boss_screen_update( unsigned char *screen_type )
 
 
 	// Move boss(es).
-	//bossX = 0;
 	for( bossX = 0; bossX < MAX_BOSSES; bossX++ )
 	{
 		bo = &global_boss_objects[ bossX ];
@@ -204,7 +204,6 @@ void screen_boss_screen_update( unsigned char *screen_type )
 		}
 		if( direction_type_none != bo->direction && lifecycle_type_idle == bo->lifecycle )
 		{
-			// Check collision.
 			engine_boss_manager_stop( bossX );
 		}
 		// For continuity we want to check if actor can move immediately after stopping.
@@ -220,12 +219,14 @@ void screen_boss_screen_update( unsigned char *screen_type )
 			//	//}
 			//}
 
-			if( enemymove_type_tour == bo->action )
-			{
+			// Bosses will NOT wait.
+			// Bosses will only scatter OR go home.
+			//if( enemymove_type_tour == bo->action )
+			//{
 				bossX_direction = engine_boss_manager_scatter_direction( bossX );
 				//engine_font_manager_draw_data( bossX_direction, 10, 10 );
 				//bossX_direction = direction_type_upxx;
-			}
+			//}
 			//else if( enemymove_type_kill == bo->action )
 			//{
 			//	bossX_direction = engine_enemy_manager_attack_direction( bossX, go->tileX, go->tileY );
@@ -242,7 +243,7 @@ void screen_boss_screen_update( unsigned char *screen_type )
 
 	// Execute all commands for this frame.
 	//engine_command_manager_execute( frame );
-	first_time = 0;
+	//first_time = 0;
 
 
 	// Check oneup collision before sprite collision as we want to test if all oneup eaten = boss complete.
@@ -274,6 +275,20 @@ void screen_boss_screen_update( unsigned char *screen_type )
 		{
 			*screen_type = screen_type_dead;
 			return;
+		}
+	}
+
+	// Kid can only collide with Candy Mama;
+	// i.e. Candy Mamas will NOT overlap...!
+	gamer_collision = devkit_isCollisionDetected();
+	if( 0 != gamer_collision )
+	{
+		st->state_object_actor_kill = engine_collision_manager_boss_collision();
+		if( actor_type_kid != st->state_object_actor_kill )
+		{
+			// Offset of five for the enumeration.
+			engine_boss_manager_dead( BOSS_OFFSET - st->state_object_actor_kill );
+			*screen_type = screen_type_dead;
 		}
 	}
 }

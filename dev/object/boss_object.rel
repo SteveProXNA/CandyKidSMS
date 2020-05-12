@@ -1,73 +1,14 @@
 XL2
-H 9 areas 18 global symbols
+H 9 areas 1 global symbols
 M boss_object
 O -mz80
-S _boss32_00__tiles__psgcompr Ref0000
-S _boss32_01__tiles__psgcompr Ref0000
-S _boss32_02__tiles__psgcompr Ref0000
-S _boss64_00__tiles__psgcompr Ref0000
-S _boss64_01__tiles__psgcompr Ref0000
-S _boss64_02__tiles__psgcompr Ref0000
-S _boss64_03__tiles__psgcompr Ref0000
-S _boss64_04__tiles__psgcompr Ref0000
-S _boss64_05__tiles__psgcompr Ref0000
-S _boss32_00__palette__bin Ref0000
 S .__.ABS. Def0000
-S _boss32_01__palette__bin Ref0000
-S _boss32_02__palette__bin Ref0000
-S _boss64_00__palette__bin Ref0000
-S _boss64_01__palette__bin Ref0000
-S _boss64_02__palette__bin Ref0000
-S _boss64_03__palette__bin Ref0000
-S _boss64_04__palette__bin Ref0000
-S _boss64_05__palette__bin Ref0000
-A _CODE size 11 flags 0 addr 0
-S _boss_object_tileX Def0009
-S _boss_object_tileY Def000D
-S _boss_object_bank Def0000
+A _CODE size 0 flags 0 addr 0
 A _DATA size 0 flags 0 addr 0
-A _INITIALIZED size 24 flags 0 addr 0
-S _boss_object_color Def0012
-S _boss_object_tiles Def0000
+A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
-A _INITIALIZER size 24 flags 0 addr 0
+A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
-T 00 00
-R 00 00 02 00
-T 00 00
-R 00 00 02 00
-T 12 00
-R 00 00 02 00
-T 12 00
-R 00 00 02 00
-T 00 00
-R 00 00 00 00
-T 00 00 0B 0B 0B 0C 0C 0C 0D 0D 0D
-R 00 00 00 00
-T 09 00
-R 00 00 00 00
-T 09 00 00 00 04 04
-R 00 00 00 00
-T 0D 00
-R 00 00 00 00
-T 0D 00 00 03 00 03
-R 00 00 00 00
-T 00 00
-R 00 00 07 00
-T 00 00 00 00 00 00 00 00
-R 00 00 07 00 02 02 00 00 02 04 01 00 02 06 02 00
-T 06 00 00 00 00 00 00 00
-R 00 00 07 00 02 02 03 00 02 04 04 00 02 06 05 00
-T 0C 00 00 00 00 00 00 00
-R 00 00 07 00 02 02 06 00 02 04 07 00 02 06 08 00
-T 12 00
-R 00 00 07 00
-T 12 00 00 00 00 00 00 00
-R 00 00 07 00 02 02 09 00 02 04 0B 00 02 06 0C 00
-T 18 00 00 00 00 00 00 00
-R 00 00 07 00 02 02 0D 00 02 04 0E 00 02 06 0F 00
-T 1E 00 00 00 00 00 00 00
-R 00 00 07 00 02 02 10 00 02 04 11 00 02 06 12 00

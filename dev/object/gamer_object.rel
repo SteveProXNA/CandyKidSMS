@@ -1,12 +1,9 @@
 XL2
-H 9 areas 4 global symbols
+H 9 areas 1 global symbols
 M gamer_object
 O -mz80
 S .__.ABS. Def0000
-A _CODE size E flags 0 addr 0
-S _gamer_object_image Def0000
-S _gamer_object_delay Def000A
-S _gamer_object_speed Def0006
+A _CODE size 0 flags 0 addr 0
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0
@@ -15,15 +12,3 @@ A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
 A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
-T 00 00
-R 00 00 00 00
-T 00 00 00 02 04 0C 0E 10
-R 00 00 00 00
-T 06 00
-R 00 00 00 00
-T 06 00 01 02 03 03
-R 00 00 00 00
-T 0A 00
-R 00 00 00 00
-T 0A 00 01 01 02 01
-R 00 00 00 00

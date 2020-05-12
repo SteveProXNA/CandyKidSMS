@@ -3,6 +3,7 @@
 
 // FIXED bank.
 // Locale Manager.
+/*
 const unsigned char *locale_object_texts[] =
 {
 	"V1.1",
@@ -58,7 +59,7 @@ const unsigned char *locale_object_texts[] =
 	"BIG BOSS",
 	"LIL BOSS",
 };
-
+*/
 
 const unsigned char *locale_object_number[] =
 {

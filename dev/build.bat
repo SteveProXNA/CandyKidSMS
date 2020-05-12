@@ -8,88 +8,93 @@ set /a _started=_hours*60*60*100+_min*60*100+_sec*100+_cs
 
 
 :: Compile
+cd banks
+::sdcc -c --no-std-crt0 -mz80 --Werror --opt-code-size --constseg BANK15 fixedbank.c
+cd ..
+
+
 cd devkit
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 _sms_manager.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 _snd_manager.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 _sms_manager.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 _snd_manager.c
 cd ..
 
 
 cd engine
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 asm_manager.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 actor_manager.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 audio_manager.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 board_manager.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 boss_manager.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 collision_manager.c
-::::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 command_manager.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 content_manager.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 enemy_manager.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 enum_manager.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 font_manager.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 function_manager.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 gamer_manager.c
-::::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 global_manager.c
-sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 hack_manager.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 input_manager.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 level_manager.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 locale_manager.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 main_manager.c
-::::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 mask_manager.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 memo_manager.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 move_manager.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 option_manager.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 score_manager.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 screen_manager.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 sprite_manager.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 state_manager.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 storage_manager.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 tile_manager.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 timer_manager.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 asm_manager.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 actor_manager.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 audio_manager.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 board_manager.c
+sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 boss_manager.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 collision_manager.c
+::::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 command_manager.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 content_manager.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 enemy_manager.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 enum_manager.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 font_manager.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 function_manager.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 gamer_manager.c
+::::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 global_manager.c
+sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 hack_manager.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 input_manager.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 level_manager.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 locale_manager.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 main_manager.c
+::::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 mask_manager.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 memo_manager.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 move_manager.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 option_manager.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 score_manager.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 screen_manager.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 sprite_manager.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 state_manager.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 storage_manager.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 tile_manager.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 timer_manager.c
 cd ..
 
 cd object
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 audio_object.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 board_object.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 boss_object.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 enemy_object.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 gamer_object.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 hack_object.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 level_object.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 locale_object.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 move_object.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 score_object.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 state_object.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 storage_object.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 timer_object.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 audio_object.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 board_object.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 boss_object.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 enemy_object.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 gamer_object.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 hack_object.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 level_object.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 locale_object.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 move_object.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 score_object.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 state_object.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 storage_object.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 timer_object.c
 cd ..
 
 cd screen
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 none_screen.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 splash_screen.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 begin_screen.c
-::::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 intro_screen.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 title_screen.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 start_screen.c
-sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 init_screen.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 load_screen.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 ready_screen.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 play_screen.c
-sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 pass_screen.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 dead_screen.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 cont_screen.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 over_screen.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 prep_screen.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 fight_screen.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 boss_screen.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 beat_screen.c
-::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 option_screen.c
-::::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 credit_screen.c
-::::sdcc -c -mz80 --opt-code-speed --peep-file ..\peep-rules.txt --std-c99 test_screen.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 none_screen.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 splash_screen.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 begin_screen.c
+::::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 intro_screen.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 title_screen.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 start_screen.c
+sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 init_screen.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 load_screen.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 ready_screen.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 play_screen.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 pass_screen.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 dead_screen.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 cont_screen.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 over_screen.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 prep_screen.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 fight_screen.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 boss_screen.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 beat_screen.c
+::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 option_screen.c
+::::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 credit_screen.c
+::::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 test_screen.c
 cd ..
 
 
 :: echo Build main
-::sdcc -c -mz80 --opt-code-speed --peep-file peep-rules.txt --std-c99 main.c
+sdcc -c -mz80 --opt-code-size --peep-file peep-rules.txt --std-c99 main.c
 
 
 :: Time build -END-
@@ -116,7 +121,7 @@ engine\global_manager.rel ^
 banks\bank2.rel  banks\bank3.rel  banks\bank4.rel  banks\bank5.rel ^
 banks\bank6.rel  banks\bank7.rel  banks\bank8.rel  banks\bank9.rel ^
 banks\bank10.rel banks\bank11.rel banks\bank12.rel banks\bank13.rel ^
-banks\bank14.rel banks\bank15.rel ^
+banks\bank14.rel banks\fixedbank.rel ^
 devkit\_sms_manager.rel devkit\_snd_manager.rel ^
 engine\actor_manager.rel engine\asm_manager.rel engine\audio_manager.rel engine\board_manager.rel engine\boss_manager.rel ^
 engine\collision_manager.rel engine\content_manager.rel engine\enum_manager.rel engine\enemy_manager.rel ^

@@ -6,8 +6,9 @@
 #include "locale_manager.h"
 #include "level_manager.h"
 #include "state_manager.h"
-#include "..\devkit\_sms_manager.h"
 #include "..\object\locale_object.h"
+#include "..\devkit\_sms_manager.h"
+#include "..\banks\fixedbank.h"
 
 #define TEXTS_Y		22
 #define WORLD_Y		22
@@ -35,6 +36,7 @@ void engine_score_manager_text()
 	const unsigned char *text;
 	unsigned char index;
 
+	devkit_SMS_mapROMBank( FIXED_BANK );
 	for( index = 0; index < SCORE_VALUES; index++ )
 	{
 		text = locale_object_texts[ index + 3 ];
@@ -125,7 +127,7 @@ void engine_score_manager_update_oneup()
 {
 	struct_score_object *so = &global_score_object;
 	so->oneup++;
-	update_score( 5 );
+	update_score( 2 );
 }
 
 void engine_score_manager_update_lives( signed char value )

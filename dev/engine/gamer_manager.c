@@ -12,6 +12,8 @@
 #include "state_manager.h"
 #include "..\devkit\_sms_manager.h"
 #include "..\object\board_object.h"
+#include "..\devkit\_sms_manager.h"
+#include "..\banks\fixedbank.h"
 #include <stdlib.h>
 
 #define SPRITE_TILES_GAMER	256 + 96
@@ -26,6 +28,7 @@ void engine_gamer_manager_init()
 {
 	struct_gamer_object *go = &global_gamer_object;
 
+	devkit_SMS_mapROMBank( FIXED_BANK );
 	go->prev_boost = pace_type_slow;
 	go->curr_boost = pace_type_slow;
 	engine_gamer_manager_pace( go->curr_boost );
@@ -66,6 +69,7 @@ void engine_gamer_manager_load()
 
 	unsigned char index = st->state_object_pace_speed * 2;
 
+	devkit_SMS_mapROMBank( FIXED_BANK );
 	go->speeds[ 0 ] = gamer_object_speed[ index + 0 ];
 	go->delays[ 0 ] = gamer_object_delay[ index + 0 ];
 	go->speeds[ 1 ] = gamer_object_speed[ index + 1 ];

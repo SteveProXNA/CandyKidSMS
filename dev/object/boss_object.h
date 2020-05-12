@@ -41,11 +41,13 @@ typedef struct tag_struct_boss_object
 
 // FIXED bank.
 // Boss Manager.
-extern const unsigned char *boss_object_tiles[];
-extern const unsigned char *boss_object_color[];
-extern const unsigned char boss_object_bank[];
+//extern const unsigned char *boss_object_tiles[];
+//extern const unsigned char *boss_object_color[];
+//extern const unsigned char boss_object_bank[];
 
-extern const unsigned char boss_object_tileX[];
-extern const unsigned char boss_object_tileY[];
+//TODO delete
+//extern const unsigned char boss_object_tileX[];
+//extern const unsigned char boss_object_tileY[];
+//TODO delete
 
 #endif//_GAMER_OBJECT_H_

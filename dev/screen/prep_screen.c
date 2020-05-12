@@ -4,7 +4,7 @@
 #include "..\engine\board_manager.h"
 #include "..\engine\boss_manager.h"
 #include "..\engine\content_manager.h"
-//#include "..\engine\collision_manager.h"
+#include "..\engine\collision_manager.h"
 #include "..\engine\enum_manager.h"
 #include "..\engine\font_manager.h"
 #include "..\engine\gamer_manager.h"
@@ -21,8 +21,9 @@
 #include "..\engine\state_manager.h"
 //#include "..\engine\tile_manager.h"
 #include "..\engine\timer_manager.h"
-#include "..\devkit\_sms_manager.h"
 #include "..\object\locale_object.h"
+#include "..\devkit\_sms_manager.h"
+#include "..\banks\fixedbank.h"
 #include <stdlib.h>
 
 #define PREP_SCREEN_DELAY	150
@@ -38,7 +39,16 @@ void screen_prep_screen_load()
 	struct_hack_object *ho = &global_hack_object;
 
 	// TODO calc how many oneup
-	unsigned char oneup_count = 2;
+	//unsigned char oneup_count = 25;
+
+	// boss1
+	// Eash		min 5 max =  10
+	// hard		mix 10 max 15
+	// boss 2
+	// easy		min=10	max = 15
+	// hard		min=25 max = 35
+	//unsigned char oneup_count = 35;
+	unsigned char oneup_count;
 
 
 	st->state_object_curr_screen = screen_type_prep;
@@ -70,11 +80,19 @@ void screen_prep_screen_load()
 	engine_boss_manager_setup( st->state_object_round_data );
 	engine_boss_manager_content();
 	engine_boss_manager_load();
+	engine_collision_manager_load();
+
+	// algorithm to determine oneup count.
+	oneup_count = ( 10 + st->state_object_world_data ) * st->state_object_fight_type + ( st->state_object_difficulty * 5 );
+	if( oneup_count > 45 )
+	{
+		oneup_count = 45;
+	}
 
 	// load oneup
 	engine_level_manager_clear();
 	setup_level( tile_type_trees );
-	engine_level_manager_load_oneup( oneup_count );		// TODO revert stevepro
+	engine_level_manager_load_extra( oneup_count, tile_type_oneup );
 	setup_level( tile_type_blank );
 	engine_level_manager_directions();
 
@@ -95,6 +113,8 @@ void screen_prep_screen_update( unsigned char *screen_type )
 	unsigned char delay;
 	unsigned char input;
 	unsigned char index;
+
+	unsigned char gamer_collision = coll_type_empty;
 
 	// Draw sprites first.
 	engine_boss_manager_draw();
@@ -141,6 +161,7 @@ static void print_level()
 	engine_board_manager_midd_text();
 	engine_memo_manager_levels( 14, 11, 12 );
 
+	devkit_SMS_mapROMBank( FIXED_BANK );
 	engine_font_manager_draw_text( locale_object_texts[ 12 ], SCREEN_TILE_LEFT + 8, 11 );
 	engine_font_manager_draw_text( locale_object_texts[ index ], SCREEN_TILE_LEFT + 8, 12 );
 }

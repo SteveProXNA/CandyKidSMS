@@ -186,7 +186,7 @@ const unsigned char gamer_object_delay[] = { 1, 1, 2, 1 };
 // Locale Manager.
 const unsigned char *locale_object_texts[] =
 {
-	"V2.0",
+	"V2.1",
 	"INSERT COIN(S)",
 	"CHEAT!",
 	" HIGH",

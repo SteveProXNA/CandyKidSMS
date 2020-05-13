@@ -4,8 +4,8 @@
 #define productCode	9999
 #define revision	0
 
-#define verMaj		1
-#define verMin		0
+#define verMaj		2
+#define verMin		1
 #define dateYear	2020
 #define dateMonth	3
 #define dateDay		27

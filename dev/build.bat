@@ -21,7 +21,7 @@ cd ..
 
 cd engine
 ::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 asm_manager.c
-::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 actor_manager.c
+::::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 actor_manager.c
 ::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 audio_manager.c
 ::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 board_manager.c
 sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 boss_manager.c

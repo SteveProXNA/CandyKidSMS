@@ -294,6 +294,9 @@
     <ClInclude Include="banks\fixedbank.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="engine\command_manager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
@@ -538,6 +541,9 @@
     </ClCompile>
     <ClCompile Include="banks\fixedbank.c">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\command_manager.c">
+      <Filter>Source Files\engine</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

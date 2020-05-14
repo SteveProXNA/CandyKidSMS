@@ -45,6 +45,7 @@
     <ClInclude Include="engine\board_manager.h" />
     <ClInclude Include="engine\boss_manager.h" />
     <ClInclude Include="engine\collision_manager.h" />
+    <ClInclude Include="engine\command_manager.h" />
     <ClInclude Include="engine\content_manager.h" />
     <ClInclude Include="engine\enemy_manager.h" />
     <ClInclude Include="engine\enum_manager.h" />
@@ -128,6 +129,7 @@
     <ClCompile Include="engine\board_manager.c" />
     <ClCompile Include="engine\boss_manager.c" />
     <ClCompile Include="engine\collision_manager.c" />
+    <ClCompile Include="engine\command_manager.c" />
     <ClCompile Include="engine\content_manager.c" />
     <ClCompile Include="engine\enemy_manager.c" />
     <ClCompile Include="engine\enum_manager.c" />

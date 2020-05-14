@@ -87,8 +87,6 @@ void engine_board_manager_toggle()
 	}
 }
 
-
-
 // This is the function that draws opaque tile to hide Kid when moving through exit!
 void engine_board_manager_side_tile()
 {

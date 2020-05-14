@@ -17,6 +17,5 @@ void screen_fight_screen_update( unsigned char *screen_type )
 	engine_boss_manager_draw();
 	engine_gamer_manager_draw();
 
-	//*screen_type = screen_type_fight;
 	*screen_type = screen_type_boss;
 }

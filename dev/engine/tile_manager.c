@@ -72,7 +72,6 @@ void engine_tile_manager_load_coll( unsigned char *coll_type, unsigned char tile
 	*coll_type = coll_type_empty;
 }
 
-// TODO rename this as is too generic!
 void engine_tile_manager_draw_tile( unsigned char tile, unsigned char x, unsigned char y, unsigned char mult )
 {
 	struct_state_object *st = &global_state_object;
@@ -93,7 +92,6 @@ void engine_tile_manager_draw_tile( unsigned char tile, unsigned char x, unsigne
 	}
 	else if( tile_type >= tile_type_bonusA  && tile_type <= tile_type_bonusD )
 	{
-		//engine_tile_manager_draw_bonus( tile_type, x, y, level_object_multiplier );
 		engine_tile_manager_draw_bonus( tile_type, x, y, mult );
 	}
 	else if( tile_type_candy == tile_type )
@@ -128,7 +126,6 @@ void engine_tile_manager_draw_trees( unsigned char type, unsigned char x, unsign
 void engine_tile_manager_draw_bonus( unsigned char type, unsigned char x, unsigned char y, unsigned char multiplier )
 {
 	unsigned char offset = ( type - 1 ) * 2;
-	//offset += ( level_object_multiplier - 1 ) * 8;
 	offset += ( multiplier - 1 ) * 8;
 	draw_tile( offset, x, y );
 }
@@ -149,7 +146,6 @@ void engine_tile_manager_draw_sides( unsigned char x, unsigned char y )
 {
 	unsigned char offset = BASE_BLOCK_OFFSET * 2 + BASE_CANDY_OFFSET;
 	draw_tile_priority( offset, x, y );
-	//draw_tile( offset, x, y );
 }
 
 // Methods used for this main title screen.
@@ -160,7 +156,7 @@ void engine_tile_manager_main_title( unsigned char x, unsigned char y )
 	unsigned char i;
 	unsigned char j;
 
-	// CANDY KID title is 26 cols * 4 rows of 8x8 tiles.
+	// Candy Kid title is 26 cols * 4 rows of 8x8 tiles.
 	for( j = 2; j < 6; j++ )
 	{
 		for( i = 0; i < 26; i++ )
@@ -210,7 +206,6 @@ static void main_tile( unsigned char offset, unsigned char x, unsigned char y )
 
 static void comm_tile( const unsigned char *pnt, unsigned char offset, unsigned int priority, unsigned char x, unsigned char y )
 {
-	//devkit_SMS_mapROMBank( CONTENT_BANK );
 	devkit_SMS_setNextTileatXY( x + 0, y + 0 );	devkit_SMS_setTile( ( *pnt + offset + 0 ) | priority );
 	devkit_SMS_setNextTileatXY( x + 1, y + 0 );	devkit_SMS_setTile( ( *pnt + offset + 1 ) | priority );
 	devkit_SMS_setNextTileatXY( x + 0, y + 1 );	devkit_SMS_setTile( ( *pnt + offset + BASE_TILES_OFFSET + 0 ) | priority );

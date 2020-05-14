@@ -10,16 +10,6 @@
 #include "..\devkit\_sms_manager.h"
 #include "..\banks\fixedbank.h"
 
-//void engine_memo_manager_clear()
-//{
-//	unsigned char row;
-//	for( row = 0; row < 24; row++ )
-//	{
-//		engine_font_manager_draw_text( locale_object_blank18, 0, row );
-//		engine_font_manager_draw_text( locale_object_blank18, 14, row );
-//	}
-//}
-
 void engine_memo_manager_draw( unsigned char topIndex, unsigned char botIndex )
 {
 	unsigned char x = SCREEN_TILE_LEFT + LFT_SIDE_X + 8;
@@ -42,21 +32,6 @@ void engine_memo_manager_pass( unsigned char perfect )
 
 	engine_memo_manager_draw( topIndex, botIndex );
 }
-
-// TODO maybe take out permanently as I won't use...
-//void engine_memo_manager_bonus( unsigned char perfect )
-//{
-//	unsigned char topIndex = 18;
-//	unsigned char botIndex = 19;
-//
-//	if( perfect )
-//	{
-//		topIndex = 20;
-//		botIndex = 21;
-//	}
-//
-//	engine_memo_manager_draw( topIndex, botIndex );
-//}
 
 void engine_memo_manager_levels( unsigned char x, unsigned char y1, unsigned char y2 )
 {
@@ -82,8 +57,6 @@ void engine_memo_manager_option()
 	}
 	else
 	{
-		// TODO do I want to delete this code?
-		// extra bytes for ROM hack mode
 		if( diff_type_hard == st->state_object_difficulty && pace_type_fast == st->state_object_pace_speed )
 		{
 			text = locale_object_texts[ st->state_object_difficulty + 8 ];

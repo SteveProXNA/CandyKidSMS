@@ -2,7 +2,6 @@
 #include "..\engine\audio_manager.h"
 #include "..\engine\enemy_manager.h"
 #include "..\engine\enum_manager.h"
-#include "..\engine\font_manager.h"
 #include "..\engine\gamer_manager.h"
 #include "..\engine\input_manager.h"
 #include "..\engine\locale_manager.h"
@@ -21,7 +20,6 @@ void screen_over_screen_load()
 
 	engine_audio_manager_music_stop();
 	engine_delay_manager_load( OVER_SCREEN_DELAY );
-	//engine_memo_manager_draw( 24, 25 );
 
 	engine_locale_manager_draw_text( 19, x, y + 1 );
 	engine_locale_manager_draw_text( 20, x, y + 2 );
@@ -54,6 +52,5 @@ void screen_over_screen_update( unsigned char *screen_type )
 	}
 
 	engine_gamer_manager_hide_death();
-
 	*screen_type = screen_type_over;
 }

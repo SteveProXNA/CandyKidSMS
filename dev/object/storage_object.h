@@ -1,5 +1,5 @@
-#ifndef _SAVEGAME_OBJECT_H_
-#define _SAVEGAME_OBJECT_H_
+#ifndef _STORAGE_OBJECT_H_
+#define _STORAGE_OBJECT_H_
 
 // Reference: http://www.smspower.org/forums/16013-DevkitSMSSMSlibMissingRequestingFeatures#91899
 typedef struct tag_struct_storage_object
@@ -24,4 +24,4 @@ typedef struct tag_struct_storage_object
 
 } struct_storage_object;
 
-#endif//_SAVEGAME_OBJECT_H_
+#endif//_STORAGE_OBJECT_H_

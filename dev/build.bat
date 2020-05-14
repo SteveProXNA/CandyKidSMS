@@ -72,7 +72,6 @@ cd screen
 ::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 none_screen.c
 ::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 splash_screen.c
 ::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 begin_screen.c
-::::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 intro_screen.c
 ::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 title_screen.c
 ::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 start_screen.c
 sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 init_screen.c
@@ -88,8 +87,6 @@ sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 init_scree
 ::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 boss_screen.c
 ::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 beat_screen.c
 ::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 option_screen.c
-::::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 credit_screen.c
-::::sdcc -c -mz80 --opt-code-size --peep-file ..\peep-rules.txt --std-c99 test_screen.c
 cd ..
 
 
@@ -134,11 +131,10 @@ object\audio_object.rel object\board_object.rel object\boss_object.rel object\en
 object\hack_object.rel object\move_object.rel ^
 object\level_object.rel object\locale_object.rel object\score_object.rel object\state_object.rel ^
 object\storage_object.rel object\timer_object.rel ^
-screen\none_screen.rel screen\splash_screen.rel screen\begin_screen.rel screen\intro_screen.rel screen\title_screen.rel ^
+screen\none_screen.rel screen\splash_screen.rel screen\begin_screen.rel screen\title_screen.rel ^
 screen\start_screen.rel screen\init_screen.rel screen\load_screen.rel screen\ready_screen.rel screen\play_screen.rel ^
 screen\pass_screen.rel screen\dead_screen.rel screen\cont_screen.rel screen\over_screen.rel screen\prep_screen.rel ^
-screen\fight_screen.rel screen\boss_screen.rel screen\beat_screen.rel screen\option_screen.rel screen\credit_screen.rel ^
-screen\test_screen.rel ^
+screen\fight_screen.rel screen\boss_screen.rel screen\beat_screen.rel screen\option_screen.rel ^
 gfx.rel ^
 psg.rel
 

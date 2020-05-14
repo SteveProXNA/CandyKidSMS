@@ -3,7 +3,6 @@
 #include "..\engine\board_manager.h"
 //#include "..\engine\command_manager.h"
 #include "..\engine\enum_manager.h"
-#include "..\engine\font_manager.h"
 #include "..\engine\gamer_manager.h"
 #include "..\engine\input_manager.h"
 #include "..\engine\level_manager.h"
@@ -27,8 +26,6 @@ unsigned char beat_walking_move[] = { 7, 7, 7, 7 };
 
 void screen_beat_screen_load()
 {
-	// TODO wipe all the level before draw empty beat screen
-
 	struct_state_object *st = &global_state_object;
 	const unsigned char *data = beats0000_txt;
 	const unsigned char size = beats0000_txt_size;
@@ -48,7 +45,6 @@ void screen_beat_screen_load()
 	command_count = 4;
 	walking_delta = 0;
 	walking_count = 0;
-	//first_time = 1;
 
 	engine_gamer_manager_load();
 	engine_gamer_manager_reset();
@@ -126,6 +122,5 @@ void screen_beat_screen_update( unsigned char *screen_type )
 	// Execute all commands for this frame.
 //	engine_command_manager_execute( frame );
 
-	//first_time = 0;
 	*screen_type = st->state_object_curr_screen;
 }

@@ -201,9 +201,6 @@
     <ClInclude Include="engine\tile_manager.h">
       <Filter>Header Files\engine</Filter>
     </ClInclude>
-    <ClInclude Include="screen\test_screen.h">
-      <Filter>Header Files\screen</Filter>
-    </ClInclude>
     <ClInclude Include="screen\title_screen.h">
       <Filter>Header Files\screen</Filter>
     </ClInclude>
@@ -266,12 +263,6 @@
     </ClInclude>
     <ClInclude Include="object\hack_object.h">
       <Filter>Header Files\object</Filter>
-    </ClInclude>
-    <ClInclude Include="screen\credit_screen.h">
-      <Filter>Header Files\screen</Filter>
-    </ClInclude>
-    <ClInclude Include="screen\intro_screen.h">
-      <Filter>Header Files\screen</Filter>
     </ClInclude>
     <ClInclude Include="screen\start_screen.h">
       <Filter>Header Files\screen</Filter>
@@ -455,9 +446,6 @@
     <ClCompile Include="engine\tile_manager.c">
       <Filter>Source Files\engine</Filter>
     </ClCompile>
-    <ClCompile Include="screen\test_screen.c">
-      <Filter>Source Files\screen</Filter>
-    </ClCompile>
     <ClCompile Include="screen\title_screen.c">
       <Filter>Source Files\screen</Filter>
     </ClCompile>
@@ -520,12 +508,6 @@
     </ClCompile>
     <ClCompile Include="object\hack_object.c">
       <Filter>Source Files\object</Filter>
-    </ClCompile>
-    <ClCompile Include="screen\credit_screen.c">
-      <Filter>Source Files\screen</Filter>
-    </ClCompile>
-    <ClCompile Include="screen\intro_screen.c">
-      <Filter>Source Files\screen</Filter>
     </ClCompile>
     <ClCompile Include="screen\option_screen.c">
       <Filter>Source Files\screen</Filter>

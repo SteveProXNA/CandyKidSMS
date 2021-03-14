@@ -1,5 +1,5 @@
 XL2
-H A areas 6 global symbols
+H A areas B global symbols
 M bank6
 O -mz80
 S .__.ABS. Def0000
@@ -11,8 +11,13 @@ A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
 A _BANK6 size 1C47 flags 0 addr 0
+S G$mus_level_psg$0$0 Def16C4
+S G$mus_beat_psg$0$0 Def0078
 S _mus_level_psg Def16C4
 S _mus_beat_psg Def0078
+S G$beats0000_txt$0$0 Def0000
+S G$mus_cont_psg$0$0 Def069D
+S G$mus_over_psg$0$0 Def18D6
 S _beats0000_txt Def0000
 S _mus_cont_psg Def069D
 S _mus_over_psg Def18D6

@@ -1,5 +1,5 @@
 XL2
-H A areas FE global symbols
+H A areas 14F global symbols
 M fixedbank
 O -mz80
 S _level2008_txt Ref0000
@@ -235,36 +235,117 @@ S _level0108_txt Ref0000
 A _CODE size 0 flags 0 addr 0
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 232 flags 0 addr 0
+S G$music_object_data$0$0 Def0000
 S _level_object_AAdata Def00A2
 S _level_object_BBdata Def016A
 S _music_object_data Def0000
+S G$boss_object_color$0$0 Def0028
+S G$boss_object_tiles$0$0 Def0016
 S _boss_object_color Def0028
 S _boss_object_tiles Def0016
+S G$locale_object_texts$0$0 Def003A
+S G$level_object_AAdata$0$0 Def00A2
 S _locale_object_texts Def003A
+S G$level_object_BBdata$0$0 Def016A
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
 A _BANK15 size 3A5 flags 0 addr 0
+S G$level_object_BBbank$0$0 Def01EA
 S _enemy_object_hands Def0080
 S _enemy_object_delay Def0068
 S _enemy_object_speed Def0050
+S G$enemy_object_kills$0$0 Def00A4
+S G$music_object_bank$0$0 Def0000
 S _level_object_AAbank Def0122
 S _level_object_BBbank Def01EA
+S G$enemy_object_waits$0$0 Def008C
+S G$boss_object_delay$0$0 Def002C
+S G$boss_object_speed$0$0 Def0014
 S _music_object_bank Def0000
 S _enemy_object_kills Def00A4
+S Ffixedbank$__str_10$0$0 Def0291
+S Ffixedbank$__str_20$0$0 Def02DD
+S Ffixedbank$__str_11$0$0 Def0296
+S Ffixedbank$__str_30$0$0 Def0320
+S Ffixedbank$__str_21$0$0 Def02E6
+S Ffixedbank$__str_12$0$0 Def029B
+S G$gamer_object_image$0$0 Def00B0
+S Ffixedbank$__str_40$0$0 Def035A
+S Ffixedbank$__str_31$0$0 Def0325
+S Ffixedbank$__str_22$0$0 Def02EF
+S Ffixedbank$__str_13$0$0 Def02A1
+S Ffixedbank$__str_50$0$0 Def039C
+S Ffixedbank$__str_41$0$0 Def035F
+S Ffixedbank$__str_32$0$0 Def032B
+S Ffixedbank$__str_23$0$0 Def02F8
+S Ffixedbank$__str_14$0$0 Def02A7
+S Ffixedbank$__str_42$0$0 Def0364
+S Ffixedbank$__str_33$0$0 Def0334
+S Ffixedbank$__str_24$0$0 Def0300
+S Ffixedbank$__str_15$0$0 Def02B0
 S _boss_object_delay Def002C
 S _enemy_object_waits Def008C
+S Ffixedbank$__str_43$0$0 Def036A
+S Ffixedbank$__str_34$0$0 Def033C
+S Ffixedbank$__str_25$0$0 Def0305
+S Ffixedbank$__str_16$0$0 Def02B9
+S G$boss_object_bank$0$0 Def000B
+S Ffixedbank$__str_44$0$0 Def0370
+S Ffixedbank$__str_35$0$0 Def0341
+S Ffixedbank$__str_26$0$0 Def030B
+S Ffixedbank$__str_17$0$0 Def02C2
 S _boss_object_speed Def0014
+S Ffixedbank$__str_45$0$0 Def0376
+S Ffixedbank$__str_36$0$0 Def0346
+S Ffixedbank$__str_27$0$0 Def0310
+S Ffixedbank$__str_18$0$0 Def02CB
+S G$level_object_AAsize$0$0 Def00BE
+S Ffixedbank$__str_46$0$0 Def037C
+S Ffixedbank$__str_37$0$0 Def034B
+S Ffixedbank$__str_28$0$0 Def0315
+S Ffixedbank$__str_19$0$0 Def02D4
+S Ffixedbank$__str_47$0$0 Def0382
+S Ffixedbank$__str_38$0$0 Def0350
+S Ffixedbank$__str_29$0$0 Def031A
+S G$level_object_BBsize$0$0 Def0186
+S Ffixedbank$__str_48$0$0 Def0388
+S Ffixedbank$__str_39$0$0 Def0355
+S Ffixedbank$__str_49$0$0 Def0393
+S G$gamer_object_delay$0$0 Def00BA
+S G$enemy_object_tours$0$0 Def0098
 S _gamer_object_image Def00B0
+S Ffixedbank$__str_0$0$0 Def024E
+S Ffixedbank$__str_1$0$0 Def0253
+S G$gamer_object_speed$0$0 Def00B6
+S Ffixedbank$__str_2$0$0 Def0262
+S Ffixedbank$__str_3$0$0 Def0269
 S _boss_object_bank Def000B
+S Ffixedbank$__str_4$0$0 Def026F
+S Ffixedbank$__str_5$0$0 Def0275
+S G$enemy_object_image$0$0 Def0044
 S _level_object_AAsize Def00BE
+S Ffixedbank$__str_6$0$0 Def027B
+S Ffixedbank$__str_7$0$0 Def0281
 S _level_object_BBsize Def0186
+S Ffixedbank$__str_8$0$0 Def0287
+S Ffixedbank$__str_9$0$0 Def028C
 S _enemy_object_tours Def0098
 S _gamer_object_delay Def00BA
 S _gamer_object_speed Def00B6
+S G$enemy_object_hands$0$0 Def0080
+S G$enemy_object_delay$0$0 Def0068
 S _enemy_object_image Def0044
+S G$enemy_object_speed$0$0 Def0050
+S G$level_object_AAbank$0$0 Def0122
 A _INITIALIZER size 232 flags 0 addr 0
+S Ffixedbank$__xinit_boss_object_color$0$0 Def0028
+S Ffixedbank$__xinit_boss_object_tiles$0$0 Def0016
+S Ffixedbank$__xinit_locale_object_texts$0$0 Def003A
+S Ffixedbank$__xinit_level_object_AAdata$0$0 Def00A2
+S Ffixedbank$__xinit_level_object_BBdata$0$0 Def016A
+S Ffixedbank$__xinit_music_object_data$0$0 Def0000
 A _CABS size 0 flags 8 addr 0
 T 00 00
 R 00 00 02 00
@@ -428,7 +509,7 @@ T 4C 02 05 05
 R 00 00 07 00
 T 4E 02
 R 00 00 07 00
-T 4E 02 56 32 2E 31 00
+T 4E 02 56 33 2E 30 00
 R 00 00 07 00
 T 53 02
 R 00 00 07 00

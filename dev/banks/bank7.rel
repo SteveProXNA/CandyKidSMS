@@ -1,5 +1,5 @@
 XL2
-H A areas 2 global symbols
+H A areas 3 global symbols
 M bank7
 O -mz80
 S .__.ABS. Def0000
@@ -11,6 +11,7 @@ A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
 A _BANK7 size 2029 flags 0 addr 0
+S G$mus_game01_psg$0$0 Def0000
 S _mus_game01_psg Def0000
 A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0

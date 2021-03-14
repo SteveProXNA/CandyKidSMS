@@ -1,5 +1,5 @@
 XL2
-H A areas 8 global symbols
+H A areas F global symbols
 M bank11
 O -mz80
 S .__.ABS. Def0000
@@ -14,10 +14,17 @@ A _BANK11 size 21FB flags 0 addr 0
 S _boss32_00__tiles__psgcompr Def0010
 S _boss32_01__tiles__psgcompr Def065E
 S _boss32_02__tiles__psgcompr Def0D28
+S G$mus_boss01_psg$0$0 Def1402
+S G$boss32_00__palette__bin$0$0 Def0000
+S G$boss32_01__palette__bin$0$0 Def064E
+S G$boss32_02__palette__bin$0$0 Def0D18
 S _mus_boss01_psg Def1402
 S _boss32_00__palette__bin Def0000
 S _boss32_01__palette__bin Def064E
 S _boss32_02__palette__bin Def0D18
+S G$boss32_00__tiles__psgcompr$0$0 Def0010
+S G$boss32_01__tiles__psgcompr$0$0 Def065E
+S G$boss32_02__tiles__psgcompr$0$0 Def0D28
 A _INITIALIZER size 0 flags 0 addr 0
 A _CABS size 0 flags 8 addr 0
 T 00 00

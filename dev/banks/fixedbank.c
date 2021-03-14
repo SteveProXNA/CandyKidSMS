@@ -186,7 +186,7 @@ const unsigned char gamer_object_delay[] = { 1, 1, 2, 1 };
 // Locale Manager.
 const unsigned char *locale_object_texts[] =
 {
-	"V2.1",
+	"V3.0",
 	"INSERT COIN(S)",
 	"CHEAT!",
 	" HIGH",
@@ -211,11 +211,11 @@ const unsigned char *locale_object_texts[] =
 	"  WINS  ",
 	"(C)1984",
 	"MODE",
-	"ENEMY",
+	"ENEMY",		// 25
 	"PRO ",
 	"ADI ",
 	"SUZ ",
-	"CANDY",
+	"CANDY",		// 29
 	"KID ",
 	" PTS ",
 	"NEW GAME",
@@ -866,3 +866,20 @@ extern const unsigned char level_object_BBbank[] =
 	level2009_txt_bank,
 	level2010_txt_bank,
 };
+
+
+
+//void engine_option_manager_clear()
+//{
+//	//unsigned char x[ NUM_DIRECTIONS ] = { 2, 14, 2, 14 };
+//	//unsigned char y[ NUM_DIRECTIONS ] = { 0, 0, 1, 1 };
+//	//unsigned char idx;
+//	//for( idx = 0; idx < NUM_DIRECTIONS; idx++ )
+//	//{
+//	//	engine_font_manager_draw_text( locale_object_blank14, SCREEN_TILE_LEFT + x[ idx ], TEXT4_Y + y[ idx ] );
+//	//}
+//	engine_font_manager_draw_text( locale_object_blank14, SCREEN_TILE_LEFT + 2, TEXT4_Y + 0 );
+//	engine_font_manager_draw_text( locale_object_blank14, SCREEN_TILE_LEFT + 14, TEXT4_Y + 0 );
+//	engine_font_manager_draw_text( locale_object_blank14, SCREEN_TILE_LEFT + 2, TEXT4_Y + 1 );
+//	engine_font_manager_draw_text( locale_object_blank14, SCREEN_TILE_LEFT + 14, TEXT4_Y + 1 );
+//}

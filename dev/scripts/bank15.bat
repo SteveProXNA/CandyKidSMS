@@ -6,7 +6,7 @@ cd banks
 
 folder2c bank15 bank15 15
 
-sdcc -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg BANK15 bank15.c
+sdcc --debug -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg BANK15 bank15.c
 
 del *.asm > nul; del *.lst > nul; del *.sym > nul
 

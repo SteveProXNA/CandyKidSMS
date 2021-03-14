@@ -13,7 +13,7 @@ bmp2tile.exe raw\boss32_02.png -savetiles "boss32_02 (tiles).psgcompr" -noremove
 cd ..
 folder2c bank11 bank11 11
 
-sdcc -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg BANK11 bank11.c
+sdcc --debug -c --no-std-crt0 -mz80 --Werror --opt-code-speed --constseg BANK11 bank11.c
 
 del *.asm > nul; del *.lst > nul; del *.sym > nul
 

@@ -1,8 +1,11 @@
 # Candy Kid
-Candy Kid game for the SMS Power! 2020 Competition.
+Candy Kid game for the SMS Power! 2021 Competition.
 
 ###### RELEASE
-Friday, 27th March 2020
+Saturday, 27th March 2021
+
+###### SYNOPSIS
+Candy Kid was an entry in the SMS Power! 2020 Competition.  The 100 levels have been re-designed and bosses introduced.
 
 ###### INTRO
 Candy Kid is a simple maze chase game.  Eat all the candy to pass each level.  Eat all bonuses to maximize your score!
@@ -54,6 +57,11 @@ There are 4x different bonuses: 100 / 200 / 400 / 800 pts.  Double bonus points 
 <br />
 Player will receive extra 2000 pts after eating all candy and collecting all bonuses in level.
 
+###### BOSSES
+At the end of every two rounds there is a small boss.  Eat all the mega candy to defeat.
+<br />
+At the end of every ten rounds there is a large boss.  Eat all the mega candy to defeat.
+
 ###### CHEATS
 Press button 2 five times on Title screen and you'll be invincible each game this is actioned.
 <br />
@@ -88,6 +96,8 @@ http://steveproxna.blogspot.com/2017/11/devkitsms-programming-sample.html
 http://steveproxna.blogspot.com/2018/03/devkitsms-programming-sample-ii.html
 <br />
 http://steveproxna.blogspot.com/2019/04/devkitsms-programming-sample-iii.html
+<br />
+http://steveproxna.blogspot.com/2020/05/devkitsms-programming-sample-iv.html
 
 ###### COMPANY BIO
 StevePro Studios is an independent game developer that builds and publishes 80s retro arcade video games!

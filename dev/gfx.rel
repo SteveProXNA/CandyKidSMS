@@ -1,15 +1,23 @@
 XL2
-H 9 areas 9 global symbols
+H 9 areas 11 global symbols
 M gfx
 O -mz80
 S .__.ABS. Def0000
 A _CODE size DB9 flags 0 addr 0
+S G$sprites__palette__bin$0$0 Def0967
 S _game_tiles__tiles__psgcompr Def0407
 S _sprites__palette__bin Def0967
+S G$game_tiles__tilemap__bin$0$0 Def0337
+S G$game_tiles__palette__bin$0$0 Def0327
+S G$font_tiles__tiles__psgcompr$0$0 Def0090
 S _game_tiles__tilemap__bin Def0337
 S _game_tiles__palette__bin Def0327
 S _font_tiles__tiles__psgcompr Def0090
+S G$sprites__tiles__psgcompr$0$0 Def0977
+S G$font_tiles__tilemap__bin$0$0 Def0010
+S G$font_tiles__palette__bin$0$0 Def0000
 S _sprites__tiles__psgcompr Def0977
+S G$game_tiles__tiles__psgcompr$0$0 Def0407
 S _font_tiles__tilemap__bin Def0010
 S _font_tiles__palette__bin Def0000
 A _DATA size 0 flags 0 addr 0

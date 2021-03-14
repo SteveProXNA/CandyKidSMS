@@ -16,6 +16,9 @@ void main (void)
 	engine_main_manager_init();
 
 	open_screen_type = screen_type_splash;
+	//open_screen_type = screen_type_begin;
+
+
 	engine_screen_manager_init( open_screen_type );
 	devkit_SMS_displayOn();
 	for( ;; )

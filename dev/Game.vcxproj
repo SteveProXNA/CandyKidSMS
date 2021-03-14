@@ -45,7 +45,6 @@
     <ClInclude Include="engine\board_manager.h" />
     <ClInclude Include="engine\boss_manager.h" />
     <ClInclude Include="engine\collision_manager.h" />
-    <ClInclude Include="engine\command_manager.h" />
     <ClInclude Include="engine\content_manager.h" />
     <ClInclude Include="engine\enemy_manager.h" />
     <ClInclude Include="engine\enum_manager.h" />
@@ -90,9 +89,11 @@
     <ClInclude Include="screen\begin_screen.h" />
     <ClInclude Include="screen\boss_screen.h" />
     <ClInclude Include="screen\cont_screen.h" />
+    <ClInclude Include="screen\credit_screen.h" />
     <ClInclude Include="screen\dead_screen.h" />
     <ClInclude Include="screen\fight_screen.h" />
     <ClInclude Include="screen\init_screen.h" />
+    <ClInclude Include="screen\intro_screen.h" />
     <ClInclude Include="screen\load_screen.h" />
     <ClInclude Include="screen\none_screen.h" />
     <ClInclude Include="screen\option_screen.h" />
@@ -103,6 +104,7 @@
     <ClInclude Include="screen\ready_screen.h" />
     <ClInclude Include="screen\splash_screen.h" />
     <ClInclude Include="screen\start_screen.h" />
+    <ClInclude Include="screen\test_screen.h" />
     <ClInclude Include="screen\title_screen.h" />
   </ItemGroup>
   <ItemGroup>
@@ -129,7 +131,6 @@
     <ClCompile Include="engine\board_manager.c" />
     <ClCompile Include="engine\boss_manager.c" />
     <ClCompile Include="engine\collision_manager.c" />
-    <ClCompile Include="engine\command_manager.c" />
     <ClCompile Include="engine\content_manager.c" />
     <ClCompile Include="engine\enemy_manager.c" />
     <ClCompile Include="engine\enum_manager.c" />

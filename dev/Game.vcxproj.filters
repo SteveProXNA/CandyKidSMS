@@ -201,6 +201,9 @@
     <ClInclude Include="engine\tile_manager.h">
       <Filter>Header Files\engine</Filter>
     </ClInclude>
+    <ClInclude Include="screen\test_screen.h">
+      <Filter>Header Files\screen</Filter>
+    </ClInclude>
     <ClInclude Include="screen\title_screen.h">
       <Filter>Header Files\screen</Filter>
     </ClInclude>
@@ -264,6 +267,12 @@
     <ClInclude Include="object\hack_object.h">
       <Filter>Header Files\object</Filter>
     </ClInclude>
+    <ClInclude Include="screen\credit_screen.h">
+      <Filter>Header Files\screen</Filter>
+    </ClInclude>
+    <ClInclude Include="screen\intro_screen.h">
+      <Filter>Header Files\screen</Filter>
+    </ClInclude>
     <ClInclude Include="screen\start_screen.h">
       <Filter>Header Files\screen</Filter>
     </ClInclude>
@@ -293,9 +302,6 @@
     </ClInclude>
     <ClInclude Include="banks\fixedbank.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="engine\command_manager.h">
-      <Filter>Header Files\engine</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -541,9 +547,6 @@
     </ClCompile>
     <ClCompile Include="banks\fixedbank.c">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="engine\command_manager.c">
-      <Filter>Source Files\engine</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

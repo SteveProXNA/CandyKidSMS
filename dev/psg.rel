@@ -1,14 +1,21 @@
 XL2
-H 9 areas 8 global symbols
+H 9 areas F global symbols
 M psg
 O -mz80
 S .__.ABS. Def0000
 A _CODE size 100 flags 0 addr 0
+S G$sfx_reset_psg$0$0 Def00DD
+S G$sfx_death01_psg$0$0 Def0020
+S G$sfx_death02_psg$0$0 Def003E
+S G$sfx_death03_psg$0$0 Def005C
+S G$sfx_power_psg$0$0 Def00BA
 S _sfx_reset_psg Def00DD
+S G$sfx_accept_psg$0$0 Def0000
 S _sfx_death01_psg Def0020
 S _sfx_death02_psg Def003E
 S _sfx_death03_psg Def005C
 S _sfx_power_psg Def00BA
+S G$sfx_over_psg$0$0 Def007A
 S _sfx_accept_psg Def0000
 S _sfx_over_psg Def007A
 A _DATA size 0 flags 0 addr 0

@@ -13,9 +13,13 @@
 #include "..\engine\input_manager.h"
 #include "..\engine\level_manager.h"
 #include "..\engine\locale_manager.h"
+//#include "..\engine\main_manager.h"
 #include "..\engine\memo_manager.h"
+//#include "..\engine\option_manager.h"
 #include "..\engine\score_manager.h"
+//#include "..\engine\sprite_manager.h"
 #include "..\engine\state_manager.h"
+//#include "..\engine\tile_manager.h"
 #include "..\engine\timer_manager.h"
 #include "..\object\locale_object.h"
 #include "..\devkit\_sms_manager.h"
@@ -23,6 +27,7 @@
 #include <stdlib.h>
 
 #define PREP_SCREEN_DELAY	150
+//#define PREP_SCREEN_DELAY	0
 
 static void setup_level( unsigned char tile_type );
 static void print_level();
@@ -32,15 +37,44 @@ void screen_prep_screen_load()
 	struct_state_object *st = &global_state_object;
 	struct_level_object *lo = &global_level_object;
 	struct_hack_object *ho = &global_hack_object;
+
+	// TODO calc how many oneup
+	//unsigned char oneup_count = 25;
+
+	// boss1
+	// Eash		min 5 max =  10
+	// hard		mix 10 max 15
+	// boss 2
+	// easy		min=10	max = 15
+	// hard		min=25 max = 35
+	//unsigned char oneup_count = 35;
 	unsigned char oneup_count;
 
+
 	st->state_object_curr_screen = screen_type_prep;
+	//st->state_object_next_screen = screen_type_prep;
 	st->state_object_next_screen = screen_type_fight;
+
 	engine_delay_manager_load( PREP_SCREEN_DELAY );
 
+
+	// TODO calculate which content to load depending on boos1 or boss2
+	// If boss2 then also calculate what index of 4 to render per boss.
+	//engine_boss_manager_content( 3 );
+	//engine_boss_manager_content( 0 );
+
+
+	// load screen
 	// Reset all score data.
 	engine_score_manager_load();
+
+	// TODO
+	//engine_boss_manager_reset_home()
 	engine_gamer_manager_reset();
+
+	// Force override enemy move!
+	//engine_enemy_manager_debug();
+	//engine_boss_manager_debug();
 
 	engine_gamer_manager_load();
 	engine_boss_manager_setup( st->state_object_round_data );
@@ -61,12 +95,16 @@ void screen_prep_screen_load()
 	engine_level_manager_load_extra( oneup_count, tile_type_oneup );
 	setup_level( tile_type_blank );
 	engine_level_manager_directions();
-	engine_level_manager_draw_level();
 
+	engine_level_manager_draw_level();
+	//engine_level_manager_draw_middle();
+	
 	if( !ho->hack_object_delay_test )
 	{
 		print_level();
 	}
+
+	//engine_font_manager_draw_text( "PREP", 4, 10 );
 }
 
 void screen_prep_screen_update( unsigned char *screen_type )
@@ -86,6 +124,7 @@ void screen_prep_screen_update( unsigned char *screen_type )
 	input = devkit_SMS_getKeysStatus();
 	if( delay || input )
 	{
+		//index = rand() % MAX_MUSIC;
 		index = engine_boss_manager_index() / MAX_ENEMIES;
 		engine_level_manager_draw_middle();
 		engine_audio_manager_music_play( index + 8 );

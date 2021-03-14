@@ -175,7 +175,7 @@ void screen_option_screen_update( unsigned char *screen_type )
 		{
 			display_cursor( cursor_type_spaces );
 
-			// Special case.
+			// Special case
 			if( 0 == cursorX && 3 == cursorY )
 			{
 				if( 0 == lastVert )

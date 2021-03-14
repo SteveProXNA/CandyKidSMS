@@ -1,5 +1,6 @@
+;!FILE over_screen.asm
 XL2
-H 9 areas E global symbols
+H 9 areas 66 global symbols
 M over_screen
 O -mz80
 S _engine_enemy_manager_hide Ref0000
@@ -15,8 +16,96 @@ S _global_state_object Ref0000
 S ___sdcc_enter_ix Ref0000
 S _engine_delay_manager_load Ref0000
 A _CODE size 71 flags 0 addr 0
+S A$over_screen$192 Def006D
+S A$over_screen$174 Def0060
+S A$over_screen$138 Def0040
+S A$over_screen$129 Def0036
+S A$over_screen$193 Def006E
+S A$over_screen$184 Def0066
+S A$over_screen$175 Def0061
+S C$over_screen.c$46$1$43 Def0041
+S C$over_screen.c$37$1$43 Def0033
+S A$over_screen$158 Def0054
+S A$over_screen$149 Def004D
+S C$over_screen.c$56$1$43 Def0066
+S C$over_screen.c$53$2$45 Def0063
+S C$over_screen.c$45$2$44 Def0054
+S A$over_screen$168 Def005B
+S C$over_screen.c$46$2$44 Def0057
+S C$over_screen.c$58$1$43 Def0069
+S C$over_screen.c$47$2$44 Def005B
+S A$over_screen$188 Def0069
+S A$over_screen$179 Def0063
+S C$over_screen.c$59$1$43 Def0070
+S A$over_screen$198 Def0070
+S A$over_screen$189 Def006A
+S XG$screen_over_screen_update$0$0 Def0070
+S C$over_screen.c$17$0$0 Def0000
+S A$over_screen$70 Def0006
+S A$over_screen$80 Def0012
+S A$over_screen$71 Def0007
+S G$screen_over_screen_load$0$0 Def0000
+S A$over_screen$90 Def001E
+S A$over_screen$91 Def0021
+S A$over_screen$92 Def0022
+S A$over_screen$65 Def0000
+S A$over_screen$84 Def0015
+S A$over_screen$75 Def000A
+S A$over_screen$85 Def0016
+S A$over_screen$76 Def000D
+S A$over_screen$86 Def0019
+S A$over_screen$77 Def000E
+S A$over_screen$96 Def0023
+S A$over_screen$87 Def001A
+S A$over_screen$78 Def0010
+S A$over_screen$69 Def0003
+S A$over_screen$88 Def001C
+S A$over_screen$79 Def0011
+S A$over_screen$89 Def001D
 S _screen_over_screen_load Def0000
+S XG$screen_over_screen_load$0$0 Def002E
+S G$screen_over_screen_update$0$0 Def002F
+S A$over_screen$100 Def0026
+S A$over_screen$101 Def0028
+S A$over_screen$120 Def0032
+S A$over_screen$102 Def0029
+S A$over_screen$130 Def0037
+S A$over_screen$103 Def002A
+S C$over_screen.c$30$1$41 Def0023
+S A$over_screen$131 Def003A
+S A$over_screen$104 Def002D
+S C$over_screen.c$22$1$41 Def0000
+S A$over_screen$150 Def004E
+S C$over_screen.c$32$1$41 Def0026
+S C$over_screen.c$23$1$41 Def0003
+S A$over_screen$151 Def004F
+S A$over_screen$142 Def0041
+S C$over_screen.c$33$1$41 Def002E
 S _screen_over_screen_update Def002F
+S A$over_screen$152 Def0051
+S A$over_screen$143 Def0044
+S C$over_screen.c$41$1$43 Def0033
+S A$over_screen$162 Def0057
+S A$over_screen$153 Def0052
+S A$over_screen$144 Def0047
+S A$over_screen$135 Def003B
+S C$over_screen.c$51$1$43 Def005D
+S C$over_screen.c$42$1$43 Def003B
+S C$over_screen.c$35$1$41 Def002F
+S C$over_screen.c$26$1$41 Def000A
+S A$over_screen$190 Def006B
+S A$over_screen$163 Def0058
+S A$over_screen$145 Def004A
+S A$over_screen$136 Def003C
+S A$over_screen$127 Def0033
+S A$over_screen$109 Def002E
+S C$over_screen.c$43$1$43 Def004D
+S C$over_screen.c$27$1$41 Def0015
+S A$over_screen$173 Def005D
+S A$over_screen$164 Def0059
+S A$over_screen$137 Def003F
+S A$over_screen$128 Def0035
+S A$over_screen$119 Def002F
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0

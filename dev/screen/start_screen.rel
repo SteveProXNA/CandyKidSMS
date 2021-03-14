@@ -1,5 +1,6 @@
+;!FILE start_screen.asm
 XL2
-H 9 areas 15 global symbols
+H 9 areas 154 global symbols
 M start_screen
 O -mz80
 S _engine_option_manager_text_kid Ref0000
@@ -21,16 +22,335 @@ S ___sdcc_enter_ix Ref0000
 S _engine_option_manager_text_start Ref0000
 S _engine_delay_manager_load Ref0000
 A _CODE size 1C2 flags 0 addr 0
+S C$start_screen.c$67$1$89 Def0091
+S A$start_screen$83 Def0000
+S A$start_screen$84 Def0003
+S C$start_screen.c$78$1$89 Def00B5
+S C$start_screen.c$69$1$89 Def008E
+S C$start_screen.c$98$1$89 Def0114
+S Fstart_screen$__str_0$0$0 Def01BC
+S C$start_screen.c$99$1$89 Def0126
+S Fstart_screen$__str_1$0$0 Def01BF
+S A$start_screen$89 Def0005
 S _screen_start_screen_load Def0006
+S Fstart_screen$display_cursor$0$0 Def0180
+S G$screen_start_screen_init$0$0 Def0000
+S XG$screen_start_screen_load$0$0 Def0053
 S _screen_start_screen_init Def0000
+S G$screen_start_screen_update$0$0 Def0054
+S C$start_screen.c$110$2$94 Def013D
+S C$start_screen.c$101$2$94 Def0129
+S C$start_screen.c$111$2$94 Def0142
+S C$start_screen.c$120$1$89 Def0163
+S C$start_screen.c$105$2$94 Def0134
+S C$start_screen.c$103$3$95 Def012F
+S A$start_screen$110 Def000C
+S C$start_screen.c$131$1$89 Def0180
+S C$start_screen.c$116$2$94 Def014F
+S A$start_screen$300 Def00D0
+S A$start_screen$210 Def006C
+S C$start_screen.c$122$2$98 Def0166
+S C$start_screen.c$113$3$97 Def0148
+S A$start_screen$400 Def013D
+S A$start_screen$310 Def00E1
+S A$start_screen$301 Def00D1
+S A$start_screen$220 Def007F
+S A$start_screen$211 Def006F
+S A$start_screen$130 Def0021
+S A$start_screen$121 Def0016
+S XFstart_screen$display_cursor$0$0 Def01BB
+S C$start_screen.c$123$2$98 Def016B
+S XG$screen_start_screen_init$0$0 Def0005
+S A$start_screen$401 Def0140
+S A$start_screen$320 Def00EB
+S A$start_screen$302 Def00D3
+S A$start_screen$230 Def008D
+S A$start_screen$221 Def0082
+S A$start_screen$212 Def0072
+S A$start_screen$203 Def005B
+S A$start_screen$131 Def0024
+S A$start_screen$122 Def0019
+S C$start_screen.c$133$1$99 Def0180
+S C$start_screen.c$124$2$98 Def016E
+S C$start_screen.c$107$3$96 Def013A
+S A$start_screen$510 Def019E
+S A$start_screen$411 Def0148
+S A$start_screen$330 Def00FA
+S A$start_screen$321 Def00EC
+S A$start_screen$303 Def00D4
+S A$start_screen$240 Def0093
+S A$start_screen$222 Def0083
+S A$start_screen$213 Def0074
+S A$start_screen$204 Def005E
+S A$start_screen$132 Def0025
+S A$start_screen$123 Def001A
+S A$start_screen$114 Def000E
+S A$start_screen$105 Def0006
+S C$start_screen.c$134$1$99 Def0193
+S C$start_screen.c$125$2$98 Def0176
+S A$start_screen$520 Def01AA
+S A$start_screen$511 Def019F
+S A$start_screen$502 Def0193
+S A$start_screen$430 Def015A
+S A$start_screen$412 Def0149
+S A$start_screen$331 Def00FB
+S A$start_screen$322 Def00ED
+S A$start_screen$304 Def00D5
+S A$start_screen$250 Def009D
+S A$start_screen$223 Def0085
+S A$start_screen$214 Def0077
+S A$start_screen$205 Def005F
+S A$start_screen$133 Def0027
+S A$start_screen$124 Def001C
+S A$start_screen$115 Def0011
+S C$start_screen.c$135$1$99 Def01A5
 S _screen_start_screen_update Def0054
+S A$start_screen$530 Def01B9
+S A$start_screen$521 Def01AB
+S A$start_screen$512 Def01A2
+S A$start_screen$503 Def0194
+S A$start_screen$431 Def015B
+S A$start_screen$413 Def014A
+S A$start_screen$350 Def0110
+S A$start_screen$332 Def00FC
+S A$start_screen$323 Def00F0
+S A$start_screen$314 Def00E2
+S A$start_screen$305 Def00D8
+S A$start_screen$260 Def00AB
+S A$start_screen$224 Def0086
+S A$start_screen$215 Def007A
+S A$start_screen$206 Def0062
+S A$start_screen$152 Def0039
+S A$start_screen$143 Def002F
+S A$start_screen$134 Def0028
+S A$start_screen$125 Def001D
+S A$start_screen$116 Def0012
+S C$start_screen.c$136$1$99 Def01BB
+S C$start_screen.c$128$1$89 Def0178
+S C$start_screen.c$119$1$89 Def0151
+S A$start_screen$531 Def01BA
+S A$start_screen$522 Def01AC
+S A$start_screen$513 Def01A3
+S A$start_screen$504 Def0195
+S A$start_screen$432 Def015C
+S A$start_screen$414 Def014B
+S A$start_screen$405 Def0142
+S A$start_screen$360 Def0119
+S A$start_screen$351 Def0113
+S A$start_screen$342 Def0108
+S A$start_screen$333 Def00FE
+S A$start_screen$324 Def00F3
+S A$start_screen$315 Def00E3
+S A$start_screen$306 Def00D9
+S A$start_screen$270 Def00B5
+S A$start_screen$261 Def00AE
+S A$start_screen$234 Def008E
+S A$start_screen$225 Def0089
+S A$start_screen$216 Def007D
+S A$start_screen$207 Def0065
+S A$start_screen$144 Def0032
+S A$start_screen$135 Def002B
+S A$start_screen$126 Def0020
+S A$start_screen$117 Def0015
+S C$start_screen.c$129$1$89 Def017F
+S A$start_screen$523 Def01AD
+S A$start_screen$514 Def01A4
+S A$start_screen$505 Def0196
+S A$start_screen$433 Def015F
+S A$start_screen$424 Def0151
+S A$start_screen$415 Def014E
+S A$start_screen$406 Def0145
+S A$start_screen$370 Def0126
+S A$start_screen$361 Def011C
+S A$start_screen$343 Def010B
+S A$start_screen$334 Def0101
+S A$start_screen$316 Def00E5
+S A$start_screen$307 Def00DA
+S A$start_screen$271 Def00B8
+S A$start_screen$262 Def00B1
+S A$start_screen$244 Def0095
+S A$start_screen$208 Def0067
+S A$start_screen$190 Def0057
+S A$start_screen$163 Def0044
+S A$start_screen$145 Def0033
+S A$start_screen$109 Def0009
+S A$start_screen$524 Def01AE
+S A$start_screen$506 Def0197
+S A$start_screen$461 Def0176
+S A$start_screen$443 Def0166
+S A$start_screen$434 Def0162
+S A$start_screen$425 Def0152
+S A$start_screen$407 Def0146
+S A$start_screen$371 Def0127
+S A$start_screen$362 Def011D
+S A$start_screen$344 Def010D
+S A$start_screen$335 Def0104
+S A$start_screen$317 Def00E6
+S A$start_screen$308 Def00DB
+S A$start_screen$290 Def00C9
+S A$start_screen$272 Def00B9
+S A$start_screen$245 Def0096
+S A$start_screen$209 Def006A
+S A$start_screen$191 Def0058
+S A$start_screen$173 Def004E
+S A$start_screen$164 Def0047
+S A$start_screen$146 Def0034
+S A$start_screen$525 Def01B0
+S A$start_screen$507 Def0198
+S A$start_screen$453 Def016E
+S A$start_screen$444 Def0169
+S A$start_screen$426 Def0154
+S A$start_screen$390 Def0138
+S A$start_screen$381 Def012F
+S A$start_screen$363 Def011E
+S A$start_screen$345 Def010E
+S A$start_screen$336 Def0105
+S A$start_screen$318 Def00E7
+S A$start_screen$309 Def00DE
+S A$start_screen$291 Def00CC
+S A$start_screen$282 Def00C0
+S A$start_screen$255 Def009E
+S A$start_screen$246 Def0097
+S A$start_screen$192 Def0059
+S A$start_screen$174 Def0051
+S A$start_screen$156 Def003C
+S A$start_screen$147 Def0035
+S A$start_screen$526 Def01B1
+S A$start_screen$508 Def019A
+S A$start_screen$490 Def0185
+S A$start_screen$454 Def0170
+S A$start_screen$427 Def0155
+S A$start_screen$382 Def0131
+S A$start_screen$364 Def011F
+S A$start_screen$337 Def0106
+S A$start_screen$328 Def00F4
+S A$start_screen$319 Def00EA
+S A$start_screen$283 Def00C1
+S A$start_screen$256 Def00A1
+S A$start_screen$247 Def0098
+S A$start_screen$238 Def0091
+S A$start_screen$229 Def008A
+S A$start_screen$193 Def005A
+S A$start_screen$157 Def003F
+S A$start_screen$148 Def0038
+S A$start_screen$139 Def002C
+S C$start_screen.c$30$1$86 Def0005
+S A$start_screen$536 Def01BB
+S A$start_screen$527 Def01B2
+S A$start_screen$518 Def01A5
+S A$start_screen$509 Def019B
+S A$start_screen$491 Def0186
+S A$start_screen$455 Def0171
+S A$start_screen$428 Def0156
+S A$start_screen$419 Def014F
+S A$start_screen$383 Def0132
+S A$start_screen$365 Def0122
+S A$start_screen$356 Def0114
+S A$start_screen$329 Def00F7
+S A$start_screen$284 Def00C2
+S A$start_screen$266 Def00B2
+S A$start_screen$257 Def00A4
+S A$start_screen$248 Def0099
+S A$start_screen$239 Def0092
+S A$start_screen$158 Def0040
+S A$start_screen$528 Def01B5
+S A$start_screen$519 Def01A8
+S A$start_screen$492 Def0188
+S A$start_screen$474 Def017F
+S A$start_screen$456 Def0172
+S A$start_screen$438 Def0163
+S A$start_screen$429 Def0159
+S A$start_screen$375 Def0129
+S A$start_screen$366 Def0125
+S A$start_screen$357 Def0115
+S A$start_screen$276 Def00BB
+S A$start_screen$258 Def00A7
+S A$start_screen$249 Def009C
+S A$start_screen$168 Def0049
+S A$start_screen$159 Def0043
+S C$start_screen.c$80$2$91 Def00BB
+S C$start_screen.c$40$1$87 Def0016
+S C$start_screen.c$32$1$86 Def0006
+S A$start_screen$529 Def01B6
+S A$start_screen$493 Def0189
+S A$start_screen$466 Def0178
+S A$start_screen$457 Def0175
+S A$start_screen$448 Def016B
+S A$start_screen$439 Def0164
+S A$start_screen$394 Def013A
+S A$start_screen$376 Def012C
+S A$start_screen$358 Def0117
+S A$start_screen$349 Def010F
+S A$start_screen$295 Def00CD
+S A$start_screen$277 Def00BC
+S A$start_screen$259 Def00AA
+S A$start_screen$169 Def004C
+S C$start_screen.c$81$2$91 Def00C0
+S C$start_screen.c$50$1$87 Def003C
+S A$start_screen$494 Def018C
+S A$start_screen$449 Def016D
+S A$start_screen$395 Def013C
+S A$start_screen$377 Def012D
+S A$start_screen$359 Def0118
+S A$start_screen$278 Def00BF
+S A$start_screen$179 Def0053
+S C$start_screen.c$51$1$87 Def0044
+S A$start_screen$495 Def018D
+S A$start_screen$468 Def017B
+S A$start_screen$288 Def00C5
+S A$start_screen$189 Def0054
+S C$start_screen.c$43$1$87 Def0021
+S C$start_screen.c$34$1$87 Def0006
+S A$start_screen$496 Def0190
+S A$start_screen$487 Def0180
+S A$start_screen$469 Def017D
+S A$start_screen$388 Def0134
+S A$start_screen$289 Def00C6
+S XG$screen_start_screen_update$0$0 Def017F
+S C$start_screen.c$53$1$87 Def0049
+S C$start_screen.c$44$1$87 Def002C
+S A$start_screen$497 Def0191
+S A$start_screen$488 Def0183
+S A$start_screen$389 Def0137
+S C$start_screen.c$83$3$92 Def00C5
+S C$start_screen.c$61$1$89 Def005B
+S C$start_screen.c$27$0$0 Def0000
+S A$start_screen$498 Def0192
+S A$start_screen$489 Def0184
+S C$start_screen.c$86$2$91 Def00CD
+S C$start_screen.c$69$2$90 Def0095
+S C$start_screen.c$62$1$89 Def005B
+S C$start_screen.c$37$1$87 Def0006
+S C$start_screen.c$29$1$86 Def0000
+S C$start_screen.c$94$2$93 Def0108
+S C$start_screen.c$90$1$89 Def00D0
+S C$start_screen.c$63$1$89 Def005B
+S C$start_screen.c$56$1$87 Def004E
+S C$start_screen.c$47$1$87 Def002F
+S C$start_screen.c$38$1$87 Def0009
+S C$start_screen.c$95$2$93 Def010F
+S C$start_screen.c$91$1$89 Def00E2
+S C$start_screen.c$57$1$87 Def0053
+S C$start_screen.c$48$1$87 Def0039
+S C$start_screen.c$39$1$87 Def000E
+S C$start_screen.c$92$1$89 Def00F4
+S C$start_screen.c$83$1$89 Def00B2
+S C$start_screen.c$74$1$89 Def009E
+S G$screen_start_screen_load$0$0 Def0006
+S C$start_screen.c$66$1$89 Def007F
+S C$start_screen.c$59$1$87 Def0054
 A _DATA size 3 flags 0 addr 0
+S Fstart_screen$distance$0$0 Def0001
+S Fstart_screen$event_stage$0$0 Def0000
+S Fstart_screen$cursor$0$0 Def0002
 A _INITIALIZED size 2 flags 0 addr 0
+S Fstart_screen$cursorY$0$0 Def0000
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
 A _INITIALIZER size 2 flags 0 addr 0
+S Fstart_screen$__xinit_cursorY$0$0 Def0000
 A _CABS size 0 flags 8 addr 0
 T 00 00
 R 00 00 01 00
@@ -68,11 +388,11 @@ T 4A 00 0D 00 36 06 21 0C 00 36 05 C9
 R 00 00 00 00 02 02 0B 00 02 07 0B 00
 T 54 00
 R 00 00 00 00
-T 54 00 CD 00 00 F5 F5 F5 F5 21 00 00 39 DD 75 FC
+T 54 00 CD 00 00 F5 F5 F5 F5 21 00 00 39 DD 75 FE
 R 00 00 00 00 02 03 0F 00
-T 62 00 DD 74 FD 36 00 DD 7E FC C6 01 DD 77 FA DD
+T 62 00 DD 74 FF 36 00 DD 7E FE C6 01 DD 77 FA DD
 R 00 00 00 00
-T 70 00 7E FD CE 00 DD 77 FB DD 6E FA DD 66 FB 36
+T 70 00 7E FF CE 00 DD 77 FB DD 6E FA DD 66 FB 36
 R 00 00 00 00
 T 7E 00 00 21 01 00 4E 06 00 C5 CD 00 00 F1 21
 R 00 00 00 00 00 04 01 00 02 0B 04 00
@@ -82,21 +402,21 @@ T 99 00 CD 00 00 33 E1
 R 00 00 00 00 02 03 0D 00
 T 9E 00
 R 00 00 00 00
-T 9E 00 DD 7E 04 DD 77 FE DD 7E 05 DD 77 FF 4E DD
+T 9E 00 DD 7E 04 DD 77 FC DD 7E 05 DD 77 FD 4E DD
 R 00 00 00 00
-T AC 00 6E FE DD 66 FF 71 11 0D 00 3A 00 00 3D 20
+T AC 00 6E FC DD 66 FD 71 11 0D 00 3A 00 00 3D 20
 R 00 00 00 00 02 09 0B 00 00 0C 01 00
 T BA 00 15 D5 CD 00 00 D1 7D B7 CA 7B 01 1A DD 6E
 R 00 00 00 00 02 05 09 00 00 0B 00 00
-T C8 00 FE DD 66 FF 77 C3 7B 01
+T C8 00 FC DD 66 FD 77 C3 7B 01
 R 00 00 00 00 00 08 00 00
 T D0 00
 R 00 00 00 00
-T D0 00 D5 3E 01 F5 33 CD 00 00 33 4D D1 DD 6E FC
+T D0 00 D5 3E 01 F5 33 CD 00 00 33 4D D1 DD 6E FE
 R 00 00 00 00 02 08 0A 00
-T DE 00 DD 66 FD 71 D5 3E 02 F5 33 CD 00 00 33 4D
+T DE 00 DD 66 FF 71 D5 3E 02 F5 33 CD 00 00 33 4D
 R 00 00 00 00 02 0C 0A 00
-T EC 00 D1 DD 6E FA DD 66 FB 71 DD 6E FC DD 66 FD
+T EC 00 D1 DD 6E FA DD 66 FB 71 DD 6E FE DD 66 FF
 R 00 00 00 00
 T FA 00 7E B7 20 0A DD 6E FA DD 66 FB 7E B7 28 0C
 R 00 00 00 00
@@ -106,9 +426,9 @@ T 08 01 21 02 00 3E 01 96 77 D5 CD 80 01 D1
 R 00 00 00 00 00 03 01 00 00 0B 00 00
 T 14 01
 R 00 00 00 00
-T 14 01 D5 3E 10 F5 33 CD 00 00 33 7D D1 DD 6E FC
+T 14 01 D5 3E 10 F5 33 CD 00 00 33 7D D1 DD 6E FE
 R 00 00 00 00 02 08 0A 00
-T 22 01 DD 66 FD 77 B7 28 28 3A 02 00 B7 20 05 3E
+T 22 01 DD 66 FF 77 B7 28 28 3A 02 00 B7 20 05 3E
 R 00 00 00 00 00 0A 01 00
 T 30 01 06 12 18 09
 R 00 00 00 00

@@ -1,11 +1,29 @@
+;!FILE none_screen.asm
 XL2
-H 9 areas 3 global symbols
+H 9 areas 14 global symbols
 M none_screen
 O -mz80
 S .__.ABS. Def0000
 A _CODE size 8 flags 0 addr 0
+S G$screen_none_screen_load$0$0 Def0000
+S A$none_screen$73 Def0001
+S A$none_screen$83 Def0007
+S A$none_screen$74 Def0002
+S A$none_screen$75 Def0003
+S A$none_screen$76 Def0004
+S A$none_screen$77 Def0005
+S A$none_screen$78 Def0006
+S C$none_screen.c$4$0$0 Def0000
+S C$none_screen.c$6$0$0 Def0000
+S C$none_screen.c$8$0$0 Def0001
 S _screen_none_screen_load Def0000
+S XG$screen_none_screen_load$0$0 Def0000
+S G$screen_none_screen_update$0$0 Def0001
 S _screen_none_screen_update Def0001
+S C$none_screen.c$10$1$4 Def0001
+S C$none_screen.c$11$1$4 Def0007
+S XG$screen_none_screen_update$0$0 Def0007
+S A$none_screen$60 Def0000
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0

@@ -1,18 +1,41 @@
 XL2
-H 9 areas 3 global symbols
+H 9 areas 1A global symbols
 M locale_object
 O -mz80
 S .__.ABS. Def0000
 A _CODE size 4B flags 0 addr 0
+S Flocale_object$__str_2$0$0 Def0015
+S Flocale_object$__str_3$0$0 Def0018
+S Flocale_object$__str_4$0$0 Def001B
+S Flocale_object$__str_5$0$0 Def001E
+S Flocale_object$__str_6$0$0 Def0021
+S Flocale_object$__str_7$0$0 Def0024
+S Flocale_object$__str_8$0$0 Def0027
+S Flocale_object$__str_9$0$0 Def002A
+S G$locale_object_blank14$0$0 Def0000
+S Flocale_object$__str_10$0$0 Def002D
+S Flocale_object$__str_11$0$0 Def0030
+S Flocale_object$__str_12$0$0 Def0033
 S _locale_object_blank14 Def0000
+S Flocale_object$__str_13$0$0 Def0036
+S Flocale_object$__str_14$0$0 Def0039
+S Flocale_object$__str_15$0$0 Def003C
+S Flocale_object$__str_16$0$0 Def003F
+S Flocale_object$__str_17$0$0 Def0042
+S Flocale_object$__str_18$0$0 Def0045
+S Flocale_object$__str_19$0$0 Def0048
+S Flocale_object$__str_0$0$0 Def000F
+S Flocale_object$__str_1$0$0 Def0012
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 28 flags 0 addr 0
+S G$locale_object_number$0$0 Def0000
 S _locale_object_number Def0000
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
 A _INITIALIZER size 28 flags 0 addr 0
+S Flocale_object$__xinit_locale_object_number$0$0 Def0000
 A _CABS size 0 flags 8 addr 0
 T 00 00
 R 00 00 02 00

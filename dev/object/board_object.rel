@@ -1,19 +1,29 @@
 XL2
-H 9 areas B global symbols
+H 9 areas 15 global symbols
 M board_object
 O -mz80
 S .__.ABS. Def0000
 A _CODE size 3C flags 0 addr 0
+S G$board_object_rght$0$0 Def0026
 S _board_object_wide Def0024
 S _board_object_left Def0028
+S G$board_object_homeX$0$0 Def001C
 S _board_object_rght Def0026
+S G$board_object_homeY$0$0 Def0020
 S _board_object_homeX Def001C
 S _board_object_homeY Def0020
+S G$board_object_exitX$0$0 Def002C
+S G$board_object_exitY$0$0 Def0034
+S G$board_object_posnX$0$0 Def0000
+S G$board_object_posnY$0$0 Def000E
+S G$board_object_midd$0$0 Def002A
 S _board_object_exitX Def002C
 S _board_object_exitY Def0034
 S _board_object_posnX Def0000
 S _board_object_posnY Def000E
+S G$board_object_wide$0$0 Def0024
 S _board_object_midd Def002A
+S G$board_object_left$0$0 Def0028
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0

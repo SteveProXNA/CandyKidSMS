@@ -28,6 +28,10 @@ void devkit_SMS_setTile( const unsigned int tile );
 void devkit_SMS_setTilePriority( const unsigned char tile );
 
 void devkit_SMS_addSprite( unsigned char x, unsigned char y, int tile );
+//void devkit_SMS_addSprite_bulk4( unsigned char x, unsigned char y, int tile );
+//void devkit_SMS_addSprite_bulk8( unsigned char x, unsigned char y, int tile );
+//void devkit_SMS_addSprite_bulk12( unsigned char x, unsigned char y, int tile );
+
 void devkit_SMS_initSprites();
 void devkit_SMS_finalizeSprites();
 void devkit_SMS_waitForVBlank();

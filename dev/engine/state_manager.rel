@@ -1,12 +1,71 @@
+;!FILE state_manager.asm
 XL2
-H 9 areas 4 global symbols
+H 9 areas 3E global symbols
 M state_manager
 O -mz80
 S .__.ABS. Def0000
 A _CODE size 51 flags 0 addr 0
+S A$state_manager$147 Def004A
+S A$state_manager$129 Def0042
 S _engine_state_manager_fight Def0043
+S A$state_manager$148 Def004C
+S A$state_manager$149 Def004F
+S C$state_manager.c$20$1$2 Def0024
+S C$state_manager.c$11$1$2 Def0000
+S C$state_manager.c$21$1$2 Def0029
+S C$state_manager.c$12$1$2 Def0005
+S C$state_manager.c$22$1$2 Def002E
+S C$state_manager.c$13$1$2 Def000A
+S C$state_manager.c$23$1$2 Def0033
+S C$state_manager.c$31$1$4 Def0043
+S C$state_manager.c$15$1$2 Def0010
+S C$state_manager.c$32$1$4 Def0043
+S C$state_manager.c$25$1$2 Def0038
+S C$state_manager.c$16$1$2 Def0015
+S C$state_manager.c$33$1$4 Def0050
+S C$state_manager.c$26$1$2 Def003D
+S C$state_manager.c$17$1$2 Def001A
+S C$state_manager.c$27$1$2 Def0042
+S C$state_manager.c$18$1$2 Def001F
+S XG$engine_state_manager_fight$0$0 Def0050
+S A$state_manager$63 Def0000
+S C$state_manager.c$29$1$2 Def0043
+S A$state_manager$73 Def000A
+S A$state_manager$64 Def0003
+S A$state_manager$83 Def0015
+S A$state_manager$74 Def000D
+S A$state_manager$93 Def001F
+S A$state_manager$84 Def0018
+S A$state_manager$94 Def0022
+S A$state_manager$68 Def0005
+S A$state_manager$78 Def0010
+S A$state_manager$69 Def0008
+S A$state_manager$88 Def001A
+S A$state_manager$79 Def0013
+S A$state_manager$98 Def0024
+S A$state_manager$89 Def001D
+S A$state_manager$99 Def0027
+S C$state_manager.c$7$0$0 Def0000
+S G$engine_state_manager_init$0$0 Def0000
+S C$state_manager.c$9$1$2 Def0000
 S _engine_state_manager_init Def0000
+S XG$engine_state_manager_init$0$0 Def0042
+S G$engine_state_manager_fight$0$0 Def0043
+S A$state_manager$103 Def0029
+S A$state_manager$113 Def0033
+S A$state_manager$104 Def002C
+S A$state_manager$123 Def003D
+S A$state_manager$114 Def0036
+S A$state_manager$124 Def0040
+S A$state_manager$108 Def002E
+S A$state_manager$154 Def0050
+S A$state_manager$145 Def0043
+S A$state_manager$118 Def0038
+S A$state_manager$109 Def0031
+S A$state_manager$146 Def0046
+S A$state_manager$119 Def003B
 A _DATA size E flags 0 addr 0
+S G$global_state_object$0$0 Def0000
 S _global_state_object Def0000
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0

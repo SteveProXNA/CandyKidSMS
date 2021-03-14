@@ -1,7 +1,7 @@
 #ifndef _GLOBAL_MANAGER_H_
 #define _GLOBAL_MANAGER_H_
 
-#define MAX_SCREEENS			21
+#define MAX_SCREEENS			22
 #define CONTENT_BANK			2
 
 #define MAX_BOSSES				2

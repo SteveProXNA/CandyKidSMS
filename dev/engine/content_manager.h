@@ -5,6 +5,7 @@
 void engine_content_manager_load_tiles_font();
 void engine_content_manager_load_tiles_game();
 void engine_content_manager_load_tiles_main();
+//void engine_content_manager_load_tiles_screen();
 void engine_content_manager_load_tiles_splash();
 
 // Sprites.

@@ -1,10 +1,30 @@
+;!FILE asm_manager.asm
 XL2
-H 9 areas 2 global symbols
+H 9 areas 15 global symbols
 M asm_manager
 O -mz80
+S G$VDPControlPort$0$0 Def00BF
+S G$VDPDataPort$0$0 Def00BE
 S .__.ABS. Def0000
 A _CODE size 16 flags 0 addr 0
+S G$engine_asm_manager_clear_VRAM$0$0 Def0000
+S C$asm_manager.c$11$0$0 Def0000
+S C$asm_manager.c$30$1$1 Def0000
+S C$asm_manager.c$33$1$1 Def0015
+S A$asm_manager$60 Def0002
 S _engine_asm_manager_clear_VRAM Def0000
+S A$asm_manager$70 Def0012
+S A$asm_manager$61 Def0004
+S A$asm_manager$62 Def0006
+S A$asm_manager$63 Def0008
+S A$asm_manager$65 Def000B
+S A$asm_manager$75 Def0015
+S A$asm_manager$66 Def000D
+S A$asm_manager$67 Def000F
+S A$asm_manager$68 Def0010
+S A$asm_manager$59 Def0000
+S A$asm_manager$69 Def0011
+S XG$engine_asm_manager_clear_VRAM$0$0 Def0015
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0

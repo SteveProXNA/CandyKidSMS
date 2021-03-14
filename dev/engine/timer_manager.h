@@ -4,6 +4,9 @@
 #include "..\object\timer_object.h"
 
 
+// ADRIAANA - split out to 3x object files
+
+
 // Global variables.
 extern struct_delay_object global_delay_object;
 extern struct_frame_object global_frame_object;

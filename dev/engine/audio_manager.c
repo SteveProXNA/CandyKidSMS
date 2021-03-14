@@ -60,7 +60,7 @@ void engine_audio_manager_sfx_play( unsigned char index )
 	const unsigned char *sfx;
 	unsigned char status;
 
-	// If sound effects are disabled then return.
+	// If sound effects are  disabled then return.
 	if( !ho->hack_object_sound_data )
 	{
 		return;

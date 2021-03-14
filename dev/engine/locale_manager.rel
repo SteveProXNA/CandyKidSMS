@@ -1,5 +1,6 @@
+;!FILE locale_manager.asm
 XL2
-H 9 areas 6 global symbols
+H 9 areas 24 global symbols
 M locale_manager
 O -mz80
 S _engine_font_manager_draw_text Ref0000
@@ -8,7 +9,37 @@ S ___sdcc_enter_ix Ref0000
 S _locale_object_texts Ref0000
 S _devkit_SMS_mapROMBank Ref0000
 A _CODE size 28 flags 0 addr 0
+S G$engine_locale_manager_draw_text$0$0 Def0000
+S C$locale_manager.c$11$1$19 Def0003
+S C$locale_manager.c$12$1$19 Def000B
+S C$locale_manager.c$13$1$19 Def0018
+S C$locale_manager.c$14$1$19 Def0027
 S _engine_locale_manager_draw_text Def0000
+S A$locale_manager$60 Def0006
+S A$locale_manager$70 Def0014
+S A$locale_manager$61 Def0007
+S A$locale_manager$80 Def001F
+S A$locale_manager$71 Def0015
+S A$locale_manager$62 Def000A
+S XG$engine_locale_manager_draw_text$0$0 Def0027
+S A$locale_manager$81 Def0020
+S A$locale_manager$72 Def0016
+S A$locale_manager$54 Def0000
+S A$locale_manager$82 Def0023
+S A$locale_manager$73 Def0017
+S A$locale_manager$83 Def0024
+S A$locale_manager$84 Def0025
+S A$locale_manager$66 Def000B
+S A$locale_manager$67 Def000E
+S A$locale_manager$58 Def0003
+S A$locale_manager$77 Def0018
+S A$locale_manager$68 Def0011
+S A$locale_manager$59 Def0005
+S A$locale_manager$78 Def001B
+S A$locale_manager$69 Def0013
+S A$locale_manager$79 Def001E
+S A$locale_manager$89 Def0027
+S C$locale_manager.c$8$0$0 Def0000
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0

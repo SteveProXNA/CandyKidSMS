@@ -11,6 +11,7 @@ struct_hack_object global_hack_object;
 
 #define HACKER_START		0x0050
 
+// TODO delete this - set only during debugging / play testing
 #ifdef _CONSOLE
 #else
 #pragma disable_warning 110
@@ -72,8 +73,33 @@ void engine_hack_manager_load()
 
 void engine_hack_manager_invert()
 {
+	// TODO delete this hard coded
 	struct_hack_object *ho = &global_hack_object;
 	struct_state_object *st = &global_state_object;
+
+	// Ensure all commented out : us	ed for testing!
+	//ho->hack_object_delay_test = 0;
+	//ho->hack_object_mydebugger = 0;
+	//ho->hack_object_invincibie = 1;
+	//ho->hack_object_full_boost = 1;
+
+	// These need offset of one to differentiate from SRAM values.
+	//ho->hack_object_trees_type = 1 + 1;
+	//ho->hack_object_exits_type = 0 + 1;
+	//ho->hack_object_difficulty = 1 + 1;
+	//ho->hack_object_pace_speed = 0 + 1;
+
+
+	// Enable enemy movement via ROM hack = 0.
+	//ho->hack_object_enemy_move[ actor_type_pro ] = 0;
+	//ho->hack_object_enemy_move[ actor_type_adi ] = 0;
+	//ho->hack_object_enemy_move[ actor_type_suz ] = 0;
+
+	// Disable  enemy movement via ROM hack = 1.
+	//ho->hack_object_enemy_move[ actor_type_pro ] = 1;
+	//ho->hack_object_enemy_move[ actor_type_adi ] = 1;
+	//ho->hack_object_enemy_move[ actor_type_suz ] = 1;
+
 
 
 	// Trees.
@@ -129,4 +155,15 @@ void engine_hack_manager_invert()
 	// Invert default values.
 	ho->hack_object_music_data = !ho->hack_object_music_data;
 	ho->hack_object_sound_data = !ho->hack_object_sound_data;
+
+	//ho->hack_object_music_data = 0;
+	//ho->hack_object_sound_data = 0;
+
+
+	// TODO delete this hard coded!!
+	//st->state_object_world_data = 0;
+	//st->state_object_round_data = 1;
+
+	//st->state_object_localcheat = 1;
+	// TODO delete this hard coded!!
 }

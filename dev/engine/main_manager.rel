@@ -1,5 +1,6 @@
+;!FILE main_manager.asm
 XL2
-H 9 areas E global symbols
+H 9 areas 34 global symbols
 M main_manager
 O -mz80
 S _engine_hack_manager_load Ref0000
@@ -14,9 +15,47 @@ S _global_state_object Ref0000
 S _engine_storage_manager_write Ref0000
 S _engine_hack_manager_invert Ref0000
 A _CODE size 25 flags 0 addr 0
+S A$main_manager$125 Def001F
+S A$main_manager$116 Def001A
+S A$main_manager$107 Def0013
+S C$main_manager.c$40$1$26 Def0022
+S A$main_manager$117 Def001D
+S A$main_manager$108 Def0014
+S C$main_manager.c$15$1$25 Def0003
+S C$main_manager.c$16$1$25 Def0006
+S C$main_manager.c$32$2$27 Def0017
+S C$main_manager.c$25$1$26 Def0009
+S C$main_manager.c$17$1$25 Def0006
+S C$main_manager.c$42$1$28 Def0022
+S C$main_manager.c$33$2$27 Def001A
+S C$main_manager.c$26$1$26 Def000C
+S C$main_manager.c$43$1$28 Def0022
+S C$main_manager.c$19$1$25 Def0009
+S C$main_manager.c$11$0$0 Def0000
+S C$main_manager.c$37$1$26 Def001F
+S G$engine_main_manager_load$0$0 Def0009
+S C$main_manager.c$38$1$26 Def001F
+S C$main_manager.c$29$1$26 Def000F
+S A$main_manager$70 Def0003
 S _engine_main_manager_load Def0009
+S A$main_manager$66 Def0000
+S A$main_manager$94 Def0009
+S G$engine_main_manager_save$0$0 Def0022
+S A$main_manager$78 Def0006
+S A$main_manager$98 Def000C
+S G$engine_main_manager_init$0$0 Def0000
+S XG$engine_main_manager_load$0$0 Def001F
 S _engine_main_manager_save Def0022
 S _engine_main_manager_init Def0000
+S XG$engine_main_manager_save$0$0 Def0022
+S XG$engine_main_manager_init$0$0 Def0006
+S A$main_manager$102 Def000F
+S A$main_manager$112 Def0017
+S A$main_manager$142 Def0022
+S A$main_manager$106 Def0012
+S C$main_manager.c$30$1$26 Def0012
+S C$main_manager.c$21$1$26 Def0009
+S C$main_manager.c$13$1$25 Def0000
 A _DATA size 0 flags 0 addr 0
 A _INITIALIZED size 0 flags 0 addr 0
 A _DABS size 0 flags 8 addr 0

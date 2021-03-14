@@ -1,5 +1,6 @@
+;!FILE collision_manager.asm
 XL2
-H 9 areas 14 global symbols
+H 9 areas 217 global symbols
 M collision_manager
 O -mz80
 S _engine_level_manager_get_collision Ref0000
@@ -18,18 +19,533 @@ S _engine_score_manager_update_oneup Ref0000
 S ___sdcc_enter_ix Ref0000
 S _engine_level_manager_blank_tile Ref0000
 A _CODE size 342 flags 0 addr 0
+S A$collision_manager$98 Def001B
+S A$collision_manager$89 Def000F
+S A$collision_manager$99 Def001C
+S XG$engine_collision_manager_load$0$0 Def0028
+S XG$engine_collision_manager_boss_collision$0$0 Def01C7
+S C$collision_manager.c$191$2$102 Def02FA
+S C$collision_manager.c$185$1$101 Def02E6
+S C$collision_manager.c$186$1$101 Def02E6
+S C$collision_manager.c$176$3$100 Def02D0
+S C$collision_manager.c$193$3$103 Def0304
+S C$collision_manager.c$189$1$101 Def02E9
+S C$collision_manager.c$199$1$101 Def0341
+S C$collision_manager.c$195$4$104 Def0323
+S G$engine_collision_manager_reset_death$0$0 Def02E2
+S G$engine_collision_manager_enemy_collision$0$0 Def0029
+S C$collision_manager.c$102$1$82 Def01C0
+S C$collision_manager.c$103$1$82 Def01C7
+S C$collision_manager.c$122$2$90 Def01FA
+S C$collision_manager.c$105$1$82 Def01C8
+S C$collision_manager.c$110$1$88 Def01D1
+S C$collision_manager.c$124$3$91 Def0207
+S C$collision_manager.c$120$1$88 Def01F4
+S C$collision_manager.c$125$3$91 Def0220
+S A$collision_manager$100 Def001D
+S C$collision_manager.c$113$1$88 Def01E3
+S C$collision_manager.c$122$1$88 Def01E3
+S A$collision_manager$200 Def0085
+S A$collision_manager$101 Def0020
+S C$collision_manager.c$134$3$93 Def023C
 S _engine_collision_manager_reset_death Def02E2
+S A$collision_manager$300 Def00F2
+S A$collision_manager$201 Def0088
+S A$collision_manager$120 Def002F
+S A$collision_manager$102 Def0021
+S C$collision_manager.c$152$2$95 Def026E
+S C$collision_manager.c$144$2$94 Def0249
+S C$collision_manager.c$124$1$88 Def01E3
 S _engine_collision_manager_enemy_collision Def0029
+S A$collision_manager$400 Def01A4
+S A$collision_manager$301 Def00F3
+S A$collision_manager$220 Def00A0
+S A$collision_manager$211 Def0094
+S A$collision_manager$202 Def0089
+S A$collision_manager$121 Def0030
+S A$collision_manager$103 Def0025
+S C$collision_manager.c$161$2$96 Def0293
+S C$collision_manager.c$145$2$94 Def024C
+S C$collision_manager.c$107$1$88 Def01CD
+S A$collision_manager$500 Def01F8
+S A$collision_manager$401 Def01A7
+S A$collision_manager$302 Def00F5
+S A$collision_manager$230 Def00AF
+S A$collision_manager$221 Def00A3
+S A$collision_manager$212 Def0097
+S A$collision_manager$203 Def008A
+S A$collision_manager$140 Def003F
+S A$collision_manager$131 Def0031
+S C$collision_manager.c$180$1$88 Def02DA
+S C$collision_manager.c$128$4$92 Def0227
+S C$collision_manager.c$115$2$89 Def01EA
+S C$collision_manager.c$108$1$88 Def01CD
+S A$collision_manager$600 Def0276
+S A$collision_manager$510 Def0205
+S A$collision_manager$420 Def01BA
+S A$collision_manager$330 Def0123
+S A$collision_manager$321 Def0109
+S A$collision_manager$303 Def00F6
+S A$collision_manager$240 Def00B8
+S A$collision_manager$231 Def00B0
+S A$collision_manager$213 Def009A
+S A$collision_manager$204 Def008B
+S A$collision_manager$141 Def0040
+S C$collision_manager.c$181$1$88 Def02E1
+S C$collision_manager.c$129$4$92 Def0234
+S C$collision_manager.c$116$2$89 Def01ED
+S C$collision_manager.c$109$1$88 Def01CD
+S A$collision_manager$520 Def0213
+S A$collision_manager$421 Def01BB
+S A$collision_manager$403 Def01A9
+S A$collision_manager$340 Def013A
+S A$collision_manager$331 Def0124
+S A$collision_manager$322 Def010C
+S A$collision_manager$313 Def00FF
+S A$collision_manager$304 Def00F7
+S A$collision_manager$250 Def00C8
+S A$collision_manager$214 Def009B
+S A$collision_manager$205 Def008C
+S A$collision_manager$160 Def005D
+S A$collision_manager$142 Def0041
+S C$collision_manager.c$173$2$96 Def02CA
+S C$collision_manager.c$155$1$88 Def0277
+S G$engine_collision_manager_tile_collision$0$0 Def01C8
+S A$collision_manager$710 Def02E6
+S A$collision_manager$620 Def028C
+S A$collision_manager$611 Def027D
+S A$collision_manager$530 Def021F
+S A$collision_manager$521 Def0214
+S A$collision_manager$422 Def01BD
+S A$collision_manager$413 Def01B4
+S A$collision_manager$350 Def014C
+S A$collision_manager$341 Def013D
+S A$collision_manager$332 Def0125
+S A$collision_manager$323 Def010F
+S A$collision_manager$314 Def0100
+S A$collision_manager$305 Def00F8
+S A$collision_manager$206 Def008F
+S A$collision_manager$161 Def005E
+S C$collision_manager.c$183$1$88 Def02E2
+S C$collision_manager.c$163$3$97 Def02A3
+S A$collision_manager$720 Def02F0
+S A$collision_manager$702 Def02E2
+S A$collision_manager$630 Def0299
+S A$collision_manager$621 Def028D
+S A$collision_manager$612 Def0280
+S A$collision_manager$522 Def0215
+S A$collision_manager$504 Def01FA
+S A$collision_manager$360 Def0160
+S A$collision_manager$351 Def014F
+S A$collision_manager$333 Def0126
+S A$collision_manager$324 Def0113
+S A$collision_manager$315 Def0102
+S A$collision_manager$306 Def00F9
+S A$collision_manager$207 Def0092
+S A$collision_manager$162 Def005F
+S A$collision_manager$135 Def0035
+S A$collision_manager$108 Def0028
+S C$collision_manager.c$139$1$88 Def0242
+S A$collision_manager$730 Def02FB
+S A$collision_manager$721 Def02F1
+S A$collision_manager$703 Def02E5
+S A$collision_manager$640 Def02A6
+S A$collision_manager$631 Def029A
+S A$collision_manager$622 Def028E
+S A$collision_manager$613 Def0281
+S A$collision_manager$541 Def0227
+S A$collision_manager$523 Def0216
+S A$collision_manager$514 Def0207
+S A$collision_manager$505 Def01FD
+S A$collision_manager$460 Def01D1
+S A$collision_manager$361 Def0162
+S A$collision_manager$352 Def0151
+S A$collision_manager$343 Def013F
+S A$collision_manager$334 Def0127
+S A$collision_manager$325 Def0116
+S A$collision_manager$316 Def0105
+S A$collision_manager$307 Def00FA
+S A$collision_manager$262 Def00D1
+S A$collision_manager$235 Def00B2
+S A$collision_manager$226 Def00A4
+S A$collision_manager$190 Def0079
+S A$collision_manager$181 Def0071
+S A$collision_manager$172 Def0068
+S A$collision_manager$163 Def0060
+S A$collision_manager$154 Def0054
+S A$collision_manager$136 Def0038
+S A$collision_manager$118 Def0029
+S C$collision_manager.c$158$2$96 Def027D
+S C$collision_manager.c$149$1$88 Def0252
+S A$collision_manager$740 Def0309
+S A$collision_manager$731 Def02FD
+S A$collision_manager$722 Def02F3
+S A$collision_manager$650 Def02B5
+S A$collision_manager$641 Def02A7
+S A$collision_manager$632 Def029C
+S A$collision_manager$623 Def028F
+S A$collision_manager$614 Def0282
+S A$collision_manager$605 Def0277
+S A$collision_manager$551 Def0234
+S A$collision_manager$542 Def022A
+S A$collision_manager$524 Def0217
+S A$collision_manager$515 Def020A
+S A$collision_manager$506 Def01FE
+S A$collision_manager$470 Def01DF
+S A$collision_manager$434 Def01C7
+S A$collision_manager$407 Def01AC
+S A$collision_manager$380 Def0181
+S A$collision_manager$362 Def0163
+S A$collision_manager$353 Def0154
+S A$collision_manager$335 Def012A
+S A$collision_manager$326 Def0118
+S A$collision_manager$317 Def0106
+S A$collision_manager$308 Def00FD
+S A$collision_manager$290 Def00E7
+S A$collision_manager$272 Def00D2
+S A$collision_manager$245 Def00BA
+S A$collision_manager$236 Def00B5
+S A$collision_manager$227 Def00A7
+S A$collision_manager$191 Def007A
+S A$collision_manager$182 Def0072
+S A$collision_manager$173 Def006B
+S A$collision_manager$164 Def0061
+S A$collision_manager$155 Def0057
+S A$collision_manager$146 Def0044
+S A$collision_manager$137 Def003B
+S A$collision_manager$119 Def002C
+S C$collision_manager.c$31$1$74 Def0031
+S A$collision_manager$750 Def0316
+S A$collision_manager$741 Def030A
+S A$collision_manager$732 Def0300
+S A$collision_manager$723 Def02F6
+S A$collision_manager$714 Def02E9
+S A$collision_manager$651 Def02B6
+S A$collision_manager$633 Def029F
+S A$collision_manager$624 Def0292
+S A$collision_manager$615 Def0284
+S A$collision_manager$606 Def027A
+S A$collision_manager$570 Def0249
+S A$collision_manager$552 Def0237
+S A$collision_manager$543 Def022B
+S A$collision_manager$534 Def0220
+S A$collision_manager$525 Def0218
+S A$collision_manager$516 Def020B
+S A$collision_manager$507 Def0200
+S A$collision_manager$444 Def01C8
+S A$collision_manager$408 Def01AF
+S A$collision_manager$381 Def0182
+S A$collision_manager$372 Def0172
+S A$collision_manager$363 Def0166
+S A$collision_manager$354 Def0157
+S A$collision_manager$336 Def012E
+S A$collision_manager$327 Def011B
+S A$collision_manager$309 Def00FE
+S A$collision_manager$291 Def00E8
+S A$collision_manager$273 Def00D5
+S A$collision_manager$255 Def00CA
+S A$collision_manager$246 Def00BD
+S A$collision_manager$228 Def00AA
+S A$collision_manager$219 Def009D
+S A$collision_manager$183 Def0073
+S A$collision_manager$174 Def006C
+S A$collision_manager$165 Def0062
+S A$collision_manager$156 Def0059
+S A$collision_manager$147 Def0048
+S A$collision_manager$138 Def003C
+S C$collision_manager.c$165$4$98 Def02A9
+S C$collision_manager.c$32$1$74 Def0031
+S C$collision_manager.c$24$1$73 Def0000
+S A$collision_manager$751 Def0317
+S A$collision_manager$742 Def030D
+S A$collision_manager$733 Def0302
+S A$collision_manager$724 Def02F7
+S A$collision_manager$715 Def02EA
+S A$collision_manager$670 Def02CD
+S A$collision_manager$652 Def02B7
+S A$collision_manager$634 Def02A0
+S A$collision_manager$616 Def0287
+S A$collision_manager$607 Def027B
+S A$collision_manager$580 Def0252
+S A$collision_manager$553 Def023A
+S A$collision_manager$544 Def022E
+S A$collision_manager$535 Def0223
+S A$collision_manager$526 Def0219
+S A$collision_manager$517 Def020E
+S A$collision_manager$508 Def0203
+S A$collision_manager$472 Def01E0
+S A$collision_manager$445 Def01CB
+S A$collision_manager$427 Def01C0
+S A$collision_manager$418 Def01B6
+S A$collision_manager$409 Def01B1
+S A$collision_manager$382 Def0185
+S A$collision_manager$373 Def0175
+S A$collision_manager$364 Def0167
+S A$collision_manager$355 Def0159
+S A$collision_manager$337 Def0131
+S A$collision_manager$328 Def011E
+S A$collision_manager$292 Def00E9
+S A$collision_manager$283 Def00DD
+S A$collision_manager$274 Def00D8
+S A$collision_manager$256 Def00CD
+S A$collision_manager$247 Def00C0
+S A$collision_manager$229 Def00AC
+S A$collision_manager$184 Def0076
+S A$collision_manager$175 Def006D
+S A$collision_manager$166 Def0065
+S A$collision_manager$157 Def005A
+S A$collision_manager$148 Def004C
+S A$collision_manager$139 Def003D
+S C$collision_manager.c$25$1$73 Def0000
+S A$collision_manager$770 Def032E
+S A$collision_manager$752 Def0319
+S A$collision_manager$743 Def030E
+S A$collision_manager$725 Def02F8
+S A$collision_manager$716 Def02EB
+S A$collision_manager$680 Def02D9
+S A$collision_manager$671 Def02CE
+S A$collision_manager$653 Def02B8
+S A$collision_manager$635 Def02A1
+S A$collision_manager$617 Def0288
+S A$collision_manager$590 Def026A
+S A$collision_manager$581 Def0255
+S A$collision_manager$545 Def022F
+S A$collision_manager$536 Def0224
+S A$collision_manager$527 Def021A
+S A$collision_manager$518 Def020F
+S A$collision_manager$509 Def0204
+S A$collision_manager$482 Def01E3
+S A$collision_manager$464 Def01D5
+S A$collision_manager$446 Def01CC
+S A$collision_manager$428 Def01C3
+S A$collision_manager$419 Def01B7
+S A$collision_manager$392 Def0192
+S A$collision_manager$383 Def0186
+S A$collision_manager$374 Def0176
+S A$collision_manager$365 Def016A
+S A$collision_manager$356 Def015C
+S A$collision_manager$347 Def0142
+S A$collision_manager$338 Def0134
+S A$collision_manager$329 Def0120
+S A$collision_manager$293 Def00EC
+S A$collision_manager$275 Def00D9
+S A$collision_manager$257 Def00CF
+S A$collision_manager$248 Def00C3
+S A$collision_manager$176 Def006E
+S A$collision_manager$167 Def0066
+S A$collision_manager$158 Def005B
+S A$collision_manager$149 Def0050
+S XG$engine_collision_manager_reset_death$0$0 Def0341
+S C$collision_manager.c$80$1$82 Def00DD
+S C$collision_manager.c$34$1$74 Def0031
+S C$collision_manager.c$26$1$73 Def0017
+S G$engine_collision_manager_load$0$0 Def0000
+S A$collision_manager$780 Def033C
+S A$collision_manager$771 Def032F
+S A$collision_manager$762 Def0323
+S A$collision_manager$753 Def031A
+S A$collision_manager$744 Def030F
+S A$collision_manager$717 Def02EC
+S A$collision_manager$654 Def02BA
+S A$collision_manager$645 Def02A9
+S A$collision_manager$618 Def0289
+S A$collision_manager$591 Def026C
+S A$collision_manager$582 Def0257
+S A$collision_manager$564 Def0242
+S A$collision_manager$546 Def0230
+S A$collision_manager$537 Def0225
+S A$collision_manager$528 Def021B
+S A$collision_manager$519 Def0212
+S A$collision_manager$492 Def01ED
+S A$collision_manager$483 Def01E6
+S A$collision_manager$465 Def01D8
+S A$collision_manager$456 Def01CD
+S A$collision_manager$429 Def01C5
+S A$collision_manager$393 Def0196
+S A$collision_manager$384 Def0189
+S A$collision_manager$375 Def0178
+S A$collision_manager$366 Def016D
+S A$collision_manager$357 Def015D
+S A$collision_manager$348 Def0145
+S A$collision_manager$339 Def0137
+S A$collision_manager$294 Def00ED
+S A$collision_manager$249 Def00C6
+S A$collision_manager$177 Def006F
+S A$collision_manager$168 Def0067
+S A$collision_manager$159 Def005C
+S XG$engine_collision_manager_enemy_collision$0$0 Def00D1
+S C$collision_manager.c$62$4$80 Def009D
+S C$collision_manager.c$27$1$73 Def0028
+S C$collision_manager.c$22$0$0 Def0000
+S A$collision_manager$781 Def033D
+S A$collision_manager$772 Def0332
+S A$collision_manager$763 Def0324
+S A$collision_manager$754 Def031C
+S A$collision_manager$745 Def0310
+S A$collision_manager$718 Def02ED
+S A$collision_manager$664 Def02C6
+S A$collision_manager$655 Def02BD
+S A$collision_manager$646 Def02AC
+S A$collision_manager$628 Def0293
+S A$collision_manager$619 Def028B
+S A$collision_manager$583 Def0259
+S A$collision_manager$574 Def024C
+S A$collision_manager$565 Def0245
+S A$collision_manager$547 Def0233
+S A$collision_manager$529 Def021E
+S A$collision_manager$493 Def01F1
+S A$collision_manager$484 Def01E8
+S A$collision_manager$466 Def01D9
+S A$collision_manager$394 Def0199
+S A$collision_manager$385 Def018A
+S A$collision_manager$376 Def017B
+S A$collision_manager$358 Def015E
+S A$collision_manager$349 Def0148
+S A$collision_manager$295 Def00F0
+S A$collision_manager$196 Def007D
+S G$engine_collision_manager_boss_collision$0$0 Def00D2
+S C$collision_manager.c$72$1$74 Def00CA
+S C$collision_manager.c$36$1$74 Def0035
+S A$collision_manager$773 Def0333
+S A$collision_manager$764 Def0325
+S A$collision_manager$755 Def031E
+S A$collision_manager$746 Def0311
+S A$collision_manager$737 Def0304
+S A$collision_manager$719 Def02EE
+S A$collision_manager$692 Def02E1
+S A$collision_manager$656 Def02BF
+S A$collision_manager$647 Def02AF
+S A$collision_manager$629 Def0296
+S A$collision_manager$584 Def025C
+S A$collision_manager$575 Def0250
+S A$collision_manager$566 Def0247
+S A$collision_manager$467 Def01DB
+S A$collision_manager$395 Def019B
+S A$collision_manager$386 Def018D
+S A$collision_manager$377 Def017C
+S A$collision_manager$368 Def016F
+S A$collision_manager$359 Def015F
+S A$collision_manager$287 Def00E1
+S A$collision_manager$197 Def0080
+S C$collision_manager.c$168$5$99 Def02C6
+S C$collision_manager.c$73$1$74 Def00D1
+S C$collision_manager.c$44$2$75 Def00BA
+S C$collision_manager.c$29$1$73 Def0029
+S A$collision_manager$783 Def033E
+S A$collision_manager$774 Def0334
+S A$collision_manager$765 Def0326
+S A$collision_manager$756 Def031F
+S A$collision_manager$747 Def0312
+S A$collision_manager$738 Def0307
+S A$collision_manager$729 Def02FA
+S A$collision_manager$675 Def02D0
+S A$collision_manager$657 Def02C1
+S A$collision_manager$648 Def02B0
+S A$collision_manager$639 Def02A3
+S A$collision_manager$585 Def025E
+S A$collision_manager$558 Def023C
+S A$collision_manager$468 Def01DD
+S A$collision_manager$396 Def019C
+S A$collision_manager$378 Def017D
+S A$collision_manager$288 Def00E5
+S A$collision_manager$279 Def00DA
+S A$collision_manager$198 Def0083
+S A$collision_manager$189 Def0078
+S A$collision_manager$784 Def033F
+S A$collision_manager$775 Def0335
+S A$collision_manager$766 Def0329
+S A$collision_manager$757 Def0321
+S A$collision_manager$748 Def0313
+S A$collision_manager$739 Def0308
+S A$collision_manager$685 Def02DA
+S A$collision_manager$676 Def02D3
+S A$collision_manager$658 Def02C2
+S A$collision_manager$649 Def02B2
+S A$collision_manager$586 Def0260
+S A$collision_manager$559 Def0240
+S A$collision_manager$397 Def019F
+S A$collision_manager$388 Def018F
+S A$collision_manager$379 Def0180
+S A$collision_manager$289 Def00E6
+S A$collision_manager$199 Def0084
+S C$collision_manager.c$83$2$83 Def01B6
+S C$collision_manager.c$75$1$74 Def00D2
 S _engine_collision_manager_tile_collision Def01C8
+S A$collision_manager$776 Def0336
+S A$collision_manager$767 Def032A
+S A$collision_manager$749 Def0315
+S A$collision_manager$686 Def02DD
+S A$collision_manager$677 Def02D4
+S A$collision_manager$659 Def02C4
+S A$collision_manager$596 Def026E
+S A$collision_manager$587 Def0263
+S A$collision_manager$488 Def01EA
+S A$collision_manager$398 Def01A0
+S C$collision_manager.c$91$3$84 Def0109
+S C$collision_manager.c$77$1$82 Def00DA
+S A$collision_manager$777 Def0337
+S A$collision_manager$768 Def032C
+S A$collision_manager$687 Def02DF
+S A$collision_manager$678 Def02D5
+S A$collision_manager$669 Def02CA
+S A$collision_manager$597 Def0271
+S A$collision_manager$588 Def0265
+S A$collision_manager$498 Def01F4
+S A$collision_manager$399 Def01A3
+S C$collision_manager.c$92$3$84 Def0142
+S C$collision_manager.c$67$4$81 Def00B2
+S C$collision_manager.c$46$3$76 Def0054
+S A$collision_manager$778 Def0338
+S A$collision_manager$769 Def032D
+S A$collision_manager$679 Def02D6
+S A$collision_manager$598 Def0272
+S A$collision_manager$589 Def0267
+S A$collision_manager$499 Def01F7
+S C$collision_manager.c$93$3$84 Def0172
+S C$collision_manager.c$68$4$81 Def00B8
+S C$collision_manager.c$65$3$76 Def00A4
+S C$collision_manager.c$56$3$76 Def007D
+S C$collision_manager.c$53$4$78 Def0078
+S C$collision_manager.c$47$3$76 Def0068
+S A$collision_manager$779 Def0339
+S A$collision_manager$599 Def0273
+S C$collision_manager.c$94$3$84 Def0192
+S C$collision_manager.c$85$3$84 Def00F2
+S A$collision_manager$789 Def0341
+S A$collision_manager$80 Def0003
+S C$collision_manager.c$86$3$84 Def00FF
+S A$collision_manager$90 Def0010
+S A$collision_manager$81 Def0004
+S A$collision_manager$91 Def0014
+S A$collision_manager$82 Def0005
+S C$collision_manager.c$49$4$77 Def0071
 S _engine_collision_manager_load Def0000
+S A$collision_manager$83 Def0006
+S A$collision_manager$84 Def0007
+S C$collision_manager.c$58$4$79 Def0094
 S _engine_collision_manager_boss_collision Def00D2
+S A$collision_manager$85 Def0009
+S C$collision_manager.c$97$4$86 Def01AC
+S A$collision_manager$95 Def0017
+S A$collision_manager$86 Def000A
+S C$collision_manager.c$98$4$86 Def01B4
+S A$collision_manager$96 Def0018
+S A$collision_manager$87 Def000B
+S XG$engine_collision_manager_tile_collision$0$0 Def02E1
+S A$collision_manager$97 Def0019
+S A$collision_manager$88 Def000E
+S A$collision_manager$79 Def0000
 A _DATA size 2 flags 0 addr 0
+S Fcollision_manager$coll_boss_distanceX$0$0 Def0000
+S Fcollision_manager$coll_boss_distanceY$0$0 Def0001
 A _INITIALIZED size 2 flags 0 addr 0
+S Fcollision_manager$coll_enemy_distance$0$0 Def0000
 A _DABS size 0 flags 8 addr 0
 A _HOME size 0 flags 0 addr 0
 A _GSINIT size 0 flags 0 addr 0
 A _GSFINAL size 0 flags 0 addr 0
 A _INITIALIZER size 2 flags 0 addr 0
+S Fcollision_manager$__xinit_coll_enemy_distance$0$0 Def0000
 A _CABS size 0 flags 8 addr 0
 T 00 00
 R 00 00 01 00
@@ -53,81 +569,81 @@ T 1C 00 33 CD 00 00 F1 FD 21 01 00 FD 75 00 C9
 R 00 00 00 00 02 04 03 00 00 09 01 00
 T 29 00
 R 00 00 00 00
-T 29 00 CD 00 00 21 F7 FF 39 F9 DD 36 F8 03 01
+T 29 00 CD 00 00 21 F7 FF 39 F9 DD 36 F7 03 01
 R 00 00 00 00 02 03 0D 00
 T 36 00 00 00 21 06 00 5E 6B 26 00 09 7E DD 77 F9
 R 00 00 00 00 00 02 02 00 02 05 08 00
-T 44 00 DD 36 FC 00 DD 36 FD 00 00 DD 36 FE 00 00
+T 44 00 DD 36 FD 00 DD 36 FA 00 00 DD 36 FB 00 00
 R 00 00 00 00 0B 09 02 00 8B 0E 02 00
-T 50 00 DD 36 F7 00
+T 50 00 DD 36 F8 00
 R 00 00 00 00
 T 54 00
 R 00 00 00 00
-T 54 00 DD 4E F7 06 00 69 60 29 29 09 29 29 29 09
+T 54 00 DD 4E F8 06 00 69 60 29 29 09 29 29 29 09
 R 00 00 00 00
 T 62 00 11 00 00 19 4D 44 21 00 00 5E 0A 57 93 30
 R 00 00 00 00 02 03 04 00 02 09 02 00
-T 70 00 07 7B 92 DD 77 FB 18 05
+T 70 00 07 7B 92 DD 77 FF 18 05
 R 00 00 00 00
 T 78 00
 R 00 00 00 00
-T 78 00 7A 93 DD 77 FB
+T 78 00 7A 93 DD 77 FF
 R 00 00 00 00
 T 7D 00
 R 00 00 00 00
-T 7D 00 DD 6E FD DD 66 FE 23 7E DD 77 FA 69 60 23
+T 7D 00 DD 6E FA DD 66 FB 23 7E DD 77 FC 69 60 23
 R 00 00 00 00
-T 8B 00 7E DD 77 FF DD 96 FA 30 09 DD 7E FA DD 96
+T 8B 00 7E DD 77 FE DD 96 FC 30 09 DD 7E FC DD 96
 R 00 00 00 00
-T 99 00 FF 4F 18 07
+T 99 00 FE 4F 18 07
 R 00 00 00 00
 T 9D 00
 R 00 00 00 00
-T 9D 00 DD 7E FF DD 96 FA 4F
+T 9D 00 DD 7E FE DD 96 FC 4F
 R 00 00 00 00
 T A4 00
 R 00 00 00 00
-T A4 00 DD 7E F9 DD 96 FB 38 0E DD 7E F9 91 38 08
+T A4 00 DD 7E F9 DD 96 FF 38 0E DD 7E F9 91 38 08
 R 00 00 00 00
-T B2 00 DD 7E FC DD 77 F8 18 10
+T B2 00 DD 7E FD DD 77 F7 18 10
 R 00 00 00 00
 T BA 00
 R 00 00 00 00
-T BA 00 DD 34 F7 DD 7E F7 DD 77 FC DD 7E F7 D6 03
+T BA 00 DD 34 F8 DD 7E F8 DD 77 FD DD 7E F8 D6 03
 R 00 00 00 00
 T C8 00 38 8A
 R 00 00 00 00
 T CA 00
 R 00 00 00 00
-T CA 00 DD 6E F8 DD F9 DD E1 C9
+T CA 00 DD 6E F7 DD F9 DD E1 C9
 R 00 00 00 00
 T D2 00
 R 00 00 00 00
-T D2 00 CD 00 00 21 F4 FF 39 F9 01 00 00 DD 36 F8
+T D2 00 CD 00 00 21 F4 FF 39 F9 01 00 00 DD 36 F7
 R 00 00 00 00 02 03 0D 00 02 0B 02 00
-T E0 00 03 DD 36 F9 00 69 60 23 7E DD 77 FA 0A DD
+T E0 00 03 DD 36 F4 00 69 60 23 7E DD 77 F5 0A DD
 R 00 00 00 00
-T EE 00 77 FD 0E 00
+T EE 00 77 F6 0E 00
 R 00 00 00 00
 T F2 00
 R 00 00 00 00
 T F2 00 69 26 00 29 29 29 29 29 11 00 00 19 EB D5
 R 00 00 00 00 02 0B 0A 00
-T 00 01 FD E1 FD 7E 19 B7 CA B6 01 DD 7E FD DD 77
+T 00 01 FD E1 FD 7E 19 B7 CA B6 01 DD 7E F6 DD 77
 R 00 00 00 00 00 09 00 00
-T 0E 01 F6 DD 36 F7 00 DD 7E F6 C6 10 DD 77 FB DD
+T 0E 01 FC DD 36 FD 00 DD 7E FC C6 10 DD 77 F8 DD
 R 00 00 00 00
-T 1C 01 7E F7 CE 00 DD 77 FC 6B 62 23 46 DD 70 F4
+T 1C 01 7E FD CE 00 DD 77 F9 6B 62 23 46 DD 70 FA
 R 00 00 00 00
-T 2A 01 DD 36 F5 00 DD 7E F4 DD 96 FB DD 7E F5 DD
+T 2A 01 DD 36 FB 00 DD 7E FA DD 96 F8 DD 7E FB DD
 R 00 00 00 00
-T 38 01 9E FC E2 3F 01 EE 80
+T 38 01 9E F9 E2 3F 01 EE 80
 R 00 00 00 00 00 05 00 00
 T 3F 01
 R 00 00 00 00
-T 3F 01 F2 B6 01 DD 7E FA DD 77 FB DD 36 FC 00 DD
+T 3F 01 F2 B6 01 DD 7E F5 DD 77 F8 DD 36 F9 00 DD
 R 00 00 00 00 00 03 00 00
-T 4D 01 7E FB C6 10 DD 77 FE DD 7E FC CE 00 DD 77
+T 4D 01 7E F8 C6 10 DD 77 FE DD 7E F9 CE 00 DD 77
 R 00 00 00 00
 T 5B 01 FF EB 23 23 5E 16 00 7B DD 96 FE 7A DD 9E
 R 00 00 00 00
@@ -135,9 +651,9 @@ T 69 01 FF E2 6F 01 EE 80
 R 00 00 00 00 00 04 00 00
 T 6F 01
 R 00 00 00 00
-T 6F 01 F2 B6 01 21 00 00 46 26 00 DD 7E F4 80 6F
+T 6F 01 F2 B6 01 21 00 00 46 26 00 DD 7E FA 80 6F
 R 00 00 00 00 00 03 00 00 00 06 01 00
-T 7D 01 DD 7E F5 8C 67 DD 7E F6 95 DD 7E F7 9C E2
+T 7D 01 DD 7E FB 8C 67 DD 7E FC 95 DD 7E FD 9C E2
 R 00 00 00 00
 T 8B 01 8F 01 EE 80
 R 00 00 00 00 00 02 00 00
@@ -145,19 +661,19 @@ T 8F 01
 R 00 00 00 00
 T 8F 01 F2 B6 01 FD 21 01 00 FD 6E 00 26 00 19 DD
 R 00 00 00 00 00 03 00 00 00 07 01 00
-T 9D 01 7E FB 95 DD 7E FC 9C E2 A9 01 EE 80
+T 9D 01 7E F8 95 DD 7E F9 9C E2 A9 01 EE 80
 R 00 00 00 00 00 0A 00 00
 T A9 01
 R 00 00 00 00
-T A9 01 F2 B6 01 DD 7E F9 C6 05 DD 77 F8 18 0A
+T A9 01 F2 B6 01 DD 7E F4 C6 05 DD 77 F7 18 0A
 R 00 00 00 00 00 03 00 00
 T B6 01
 R 00 00 00 00
-T B6 01 0C DD 71 F9 79 D6 02 DA F2 00
+T B6 01 0C DD 71 F4 79 D6 02 DA F2 00
 R 00 00 00 00 00 0A 00 00
 T C0 01
 R 00 00 00 00
-T C0 01 DD 6E F8 DD F9 DD E1 C9
+T C0 01 DD 6E F7 DD F9 DD E1 C9
 R 00 00 00 00
 T C8 01
 R 00 00 00 00
@@ -171,13 +687,13 @@ T DF 01 AF
 R 00 00 00 00
 T E0 01
 R 00 00 00 00
-T E0 01 DD 77 FE DD 7E 04 D6 02 20 0A CD 00 00 DD
+T E0 01 DD 77 FF DD 7E 04 D6 02 20 0A CD 00 00 DD
 R 00 00 00 00 02 0D 06 00
 T EE 01 36 FD 02 C3 77 02
 R 00 00 00 00 00 06 00 00
 T F4 01
 R 00 00 00 00
-T F4 01 DD 7E FE B7 28 48 3A 01 00 B7 20 3C 21
+T F4 01 DD 7E FF B7 28 48 3A 01 00 B7 20 3C 21
 R 00 00 00 00 02 09 08 00
 T 01 02 04 00 4E 0D 20 35 21 11 00 4E 21 03 00 46
 R 00 00 00 00 02 02 08 00 02 09 02 00 02 0D 02 00
@@ -215,11 +731,11 @@ T 77 02 DD 7E FC B7 28 5D 21 03 00 46 05 CB 20 21
 R 00 00 00 00 02 09 02 00
 T 85 02 02 00 56 15 CB 22 14 14 4A C5 CD 00 00 F1
 R 00 00 00 00 02 02 02 00 02 0D 01 00
-T 93 02 3A 01 00 DD 77 FF B7 20 2E 21 04 00 4E 0D
+T 93 02 3A 01 00 DD 77 FE B7 20 2E 21 04 00 4E 0D
 R 00 00 00 00 02 03 08 00 02 0C 08 00
-T A1 02 20 27 DD 7E FE B7 28 21 3A 02 00 DD 77 FF
+T A1 02 20 27 DD 7E FF B7 28 21 3A 02 00 DD 77 FE
 R 00 00 00 00 02 0B 02 00
-T AF 02 3D 28 14 21 03 00 4E 79 3D 28 0C DD 7E FF
+T AF 02 3D 28 14 21 03 00 4E 79 3D 28 0C DD 7E FE
 R 00 00 00 00 02 06 02 00
 T BD 02 D6 0C 28 05 79 D6 0C 20 04
 R 00 00 00 00

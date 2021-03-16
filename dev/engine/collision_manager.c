@@ -1,10 +1,8 @@
 #include "collision_manager.h"
-//#include "audio_manager.h"
 #include "board_manager.h"
 #include "boss_manager.h"
 #include "enemy_manager.h"
 #include "enum_manager.h"
-//#include "font_manager.h"
 #include "function_manager.h"
 #include "gamer_manager.h"
 #include "level_manager.h"
@@ -36,10 +34,6 @@ unsigned char engine_collision_manager_enemy_collision()
 	unsigned char distance = coll_enemy_distance[ st->state_object_difficulty ];
 	unsigned char enemy;
 	unsigned char dx, dy;
-
-	// TODO delete - used for temp debugging
-	//engine_font_manager_draw_data( go->posnX, 2, 0 );
-	//engine_font_manager_draw_data( go->posnY, 2, 1 );
 
 	for( enemy = 0; enemy < MAX_ENEMIES; enemy++ )
 	{
@@ -107,7 +101,7 @@ unsigned char engine_collision_manager_tile_collision( unsigned char tile_type )
 	struct_gamer_object *go = &global_gamer_object;
 	struct_state_object *st = &global_state_object;
 	unsigned char gamer_collision = coll_type_empty;
-	unsigned char erase = 1;			// TODO - use better enum
+	unsigned char erase = 1;
 
 	// Check gamer collision with candy.
 	if( tile_type_candy == tile_type )
@@ -138,9 +132,6 @@ unsigned char engine_collision_manager_tile_collision( unsigned char tile_type )
 	// Check gamer collision with one up.
 	else if( tile_type_oneup == tile_type )
 	{
-		// TODO sound effect...
-		//engine_score_manager_update_lives( 1 );
-		//engine_audio_manager_sfx_play( sfx_type_power );
 		engine_score_manager_update_oneup();
 		gamer_collision = coll_type_oneup;
 	}
@@ -148,7 +139,6 @@ unsigned char engine_collision_manager_tile_collision( unsigned char tile_type )
 	// Check gamer collision with bonus.
 	else if( tile_type_bonusA == tile_type || tile_type_bonusB == tile_type || tile_type_bonusC == tile_type || tile_type_bonusD == tile_type )
 	{
-		// TODO sound effect...??
 		engine_score_manager_update_bonus( tile_type );
 	}
 

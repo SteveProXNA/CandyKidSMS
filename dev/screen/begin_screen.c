@@ -31,16 +31,9 @@ void screen_begin_screen_load()
 	engine_board_manager_border( border_type_main );
 	engine_tile_manager_main_title( 2, 2 );
 
-
-	//distance = menu_type_single;
 	distance = menu_type_double;
 	engine_option_manager_text_kid( distance );
 	engine_option_manager_text_enemy();
-
-	// Title screen
-	//engine_option_manager_draw_bonus();
-	//engine_option_manager_draw_candy();
-
 	devkit_SMS_displayOn();
 
 	// Reset actors stance.
@@ -51,6 +44,5 @@ void screen_begin_screen_load()
 void screen_begin_screen_update( unsigned char *screen_type )
 {
 	engine_option_manager_draw_actor( distance );
-	//*screen_type = screen_type_begin;
 	*screen_type = screen_type_title;
 }

@@ -10,15 +10,13 @@ S _engine_boss_manager_draw Ref0000
 S _engine_gamer_manager_reset Ref0000
 A _CODE size 13 flags 0 addr 0
 S G$screen_fight_screen_update$0$0 Def0006
-S C$fight_screen.c$10$1$35 Def0000
-S C$fight_screen.c$11$1$35 Def0003
-S C$fight_screen.c$12$1$35 Def0003
+S C$fight_screen.c$10$1$17 Def0003
+S C$fight_screen.c$12$1$17 Def0006
 S _screen_fight_screen_update Def0006
-S C$fight_screen.c$21$1$37 Def000C
-S C$fight_screen.c$14$1$35 Def0006
-S C$fight_screen.c$22$1$37 Def0012
-S C$fight_screen.c$17$1$37 Def0006
-S C$fight_screen.c$18$1$37 Def0009
+S C$fight_screen.c$15$1$19 Def0006
+S C$fight_screen.c$16$1$19 Def0009
+S C$fight_screen.c$18$1$19 Def000C
+S C$fight_screen.c$19$1$19 Def0012
 S XG$screen_fight_screen_update$0$0 Def0012
 S A$fight_screen$60 Def0000
 S G$screen_fight_screen_load$0$0 Def0000
@@ -27,11 +25,13 @@ S A$fight_screen$81 Def0006
 S A$fight_screen$91 Def000E
 S A$fight_screen$92 Def000F
 S A$fight_screen$93 Def0010
+S C$fight_screen.c$8$1$17 Def0000
 S A$fight_screen$85 Def0009
+S C$fight_screen.c$9$1$17 Def0003
 S A$fight_screen$68 Def0003
 S A$fight_screen$98 Def0012
 S A$fight_screen$89 Def000C
-S C$fight_screen.c$8$0$0 Def0000
+S C$fight_screen.c$6$0$0 Def0000
 S _screen_fight_screen_load Def0000
 S XG$screen_fight_screen_load$0$0 Def0003
 A _DATA size 0 flags 0 addr 0

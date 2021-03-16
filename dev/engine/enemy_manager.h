@@ -26,13 +26,9 @@ void engine_enemy_manager_frame( unsigned char enemy );
 void engine_enemy_manager_image( unsigned char enemy );
 void engine_enemy_manager_images( unsigned char image_pro, unsigned char image_adi, unsigned char image_suz );
 
-// TODO delete!!
-void engine_enemy_manager_debug();
-
 unsigned char engine_enemy_manager_scatter_direction( unsigned char enemy );
 unsigned char engine_enemy_manager_gohome_direction( unsigned char enemy );
 unsigned char engine_enemy_manager_attack_direction( unsigned char enemy, unsigned char targetX, unsigned char targetY);
-//unsigned char engine_enemy_manager_what_direction( unsigned char enemy, unsigned char targetX, unsigned char targetY );
 unsigned char engine_enemy_manager_input_boost( unsigned char enemy );
 
 #endif//_ENEMY_MANAGER_H_

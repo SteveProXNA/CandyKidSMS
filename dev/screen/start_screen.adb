@@ -8,9 +8,9 @@ S:Lstart_screen.screen_start_screen_update$st$1$89({2}DG,STtag_struct_state_obje
 S:Lstart_screen.screen_start_screen_update$ho$1$89({2}DG,STtag_struct_hack_object:S),R,0,0,[]
 S:Lstart_screen.screen_start_screen_update$input$1$89({2}DA2d,SC:U),B,1,-8
 S:Lstart_screen.screen_start_screen_update$delay$1$89({1}SC:U),R,0,0,[l]
-S:Lstart_screen.screen_start_screen_update$sloc0$1$0({2}DD,SC:U),B,1,-2
-S:Lstart_screen.screen_start_screen_update$sloc1$1$0({2}DD,SC:U),B,1,-6
-S:Lstart_screen.screen_start_screen_update$sloc2$1$0({2}DG,SC:U),B,1,-4
+S:Lstart_screen.screen_start_screen_update$sloc0$1$0({2}DD,SC:U),B,1,-4
+S:Lstart_screen.screen_start_screen_update$sloc1$1$0({2}DD,SC:U),B,1,-2
+S:Lstart_screen.screen_start_screen_update$sloc2$1$0({2}DG,SC:U),B,1,-6
 F:Fstart_screen$display_cursor$0$0({2}DF,SV:S),Z,0,0,0,0,0
 T:Fstart_screen$tag_struct_hack_object[({0}S:S$hack_object_delay_test$0$0({1}SC:U),Z,0,0)({1}S:S$hack_object_mydebugger$0$0({1}SC:U),Z,0,0)({2}S:S$hack_object_invincibie$0$0({1}SC:U),Z,0,0)({3}S:S$hack_object_full_boost$0$0({1}SC:U),Z,0,0)({4}S:S$hack_object_trees_type$0$0({1}SC:U),Z,0,0)({5}S:S$hack_object_exits_type$0$0({1}SC:U),Z,0,0)({6}S:S$hack_object_difficulty$0$0({1}SC:U),Z,0,0)({7}S:S$hack_object_pace_speed$0$0({1}SC:U),Z,0,0)({8}S:S$hack_object_world_data$0$0({1}SC:U),Z,0,0)({9}S:S$hack_object_round_data$0$0({1}SC:U),Z,0,0)({10}S:S$hack_object_music_data$0$0({1}SC:U),Z,0,0)({11}S:S$hack_object_sound_data$0$0({1}SC:U),Z,0,0)({12}S:S$hack_object_enemy_move$0$0({3}DA3d,SC:U),Z,0,0)]
 T:Fstart_screen$tag_struct_frame_object[({0}S:S$frame_count$0$0({2}SI:U),Z,0,0)]
@@ -62,7 +62,6 @@ S:G$engine_enemy_manager_reset_mode$0$0({2}DF,SV:S),C,0,0
 S:G$engine_enemy_manager_frame$0$0({2}DF,SV:S),C,0,0
 S:G$engine_enemy_manager_image$0$0({2}DF,SV:S),C,0,0
 S:G$engine_enemy_manager_images$0$0({2}DF,SV:S),C,0,0
-S:G$engine_enemy_manager_debug$0$0({2}DF,SV:S),C,0,0
 S:G$engine_enemy_manager_scatter_direction$0$0({2}DF,SC:U),C,0,0
 S:G$engine_enemy_manager_gohome_direction$0$0({2}DF,SC:U),C,0,0
 S:G$engine_enemy_manager_attack_direction$0$0({2}DF,SC:U),C,0,0

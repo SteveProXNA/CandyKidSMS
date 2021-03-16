@@ -38,15 +38,22 @@ S _engine_boss_manager_move Ref0000
 S __modsint Ref0000
 S _engine_delay_manager_load Ref0000
 A _CODE size 37A flags 0 addr 0
-S C$dead_screen.c$279$6$133 Def02D5
-S C$dead_screen.c$94$1$100 Def0073
-S C$dead_screen.c$58$1$100 Def002A
-S C$dead_screen.c$49$1$100 Def0006
-S C$dead_screen.c$269$4$128 Def0298
+S C$dead_screen.c$279$1$138 Def036C
+S C$dead_screen.c$49$1$100 Def0032
+S C$dead_screen.c$188$4$128 Def0252
 S G$screen_dead_screen_update$0$0 Def0073
-S C$dead_screen.c$89$1$100 Def005B
+S C$dead_screen.c$59$1$100 Def005B
+S C$dead_screen.c$56$2$102 Def004D
+S C$dead_screen.c$81$2$105 Def0081
+S C$dead_screen.c$199$4$128 Def026B
+S C$dead_screen.c$66$1$104 Def007B
+S C$dead_screen.c$90$2$107 Def0090
+S C$dead_screen.c$95$1$104 Def0099
+S C$dead_screen.c$96$1$104 Def00AD
 S Fdead_screen$reset_death$0$0 Def0336
-S C$dead_screen.c$97$1$104 Def007B
+S C$dead_screen.c$88$1$104 Def00DF
+S C$dead_screen.c$85$2$106 Def0086
+S C$dead_screen.c$79$1$104 Def007B
 S A$dead_screen$110 Def000D
 S A$dead_screen$120 Def0016
 S A$dead_screen$301 Def00BE
@@ -81,6 +88,7 @@ S A$dead_screen$151 Def0032
 S A$dead_screen$142 Def002A
 S A$dead_screen$124 Def0018
 S A$dead_screen$115 Def0011
+S C$dead_screen.c$98$2$108 Def00B1
 S _screen_dead_screen_update Def0073
 S A$dead_screen$800 Def0325
 S A$dead_screen$710 Def02D3
@@ -315,6 +323,7 @@ S A$dead_screen$194 Def0062
 S A$dead_screen$185 Def0057
 S A$dead_screen$167 Def0046
 S A$dead_screen$158 Def003B
+S C$dead_screen.c$30$0$0 Def0000
 S A$dead_screen$870 Def0358
 S A$dead_screen$852 Def0346
 S A$dead_screen$807 Def032F
@@ -456,7 +465,6 @@ S A$dead_screen$478 Def01A0
 S A$dead_screen$469 Def0193
 S A$dead_screen$397 Def0119
 S XG$screen_dead_screen_update$0$0 Def0335
-S C$dead_screen.c$35$0$0 Def0000
 S A$dead_screen$893 Def036E
 S A$dead_screen$866 Def0354
 S A$dead_screen$857 Def034D
@@ -513,101 +521,93 @@ S G$screen_dead_screen_load$0$0 Def0000
 S A$dead_screen$799 Def0324
 S XFdead_screen$reset_death$0$0 Def0377
 S A$dead_screen$99 Def0000
-S C$dead_screen.c$110$1$104 Def007B
-S C$dead_screen.c$300$1$104 Def0306
+S C$dead_screen.c$111$2$110 Def00D4
+S C$dead_screen.c$112$2$110 Def00D7
+S C$dead_screen.c$120$3$111 Def00F7
 S _screen_dead_screen_load Def0000
-S C$dead_screen.c$310$1$104 Def0320
-S C$dead_screen.c$311$1$104 Def0329
-S C$dead_screen.c$312$1$104 Def0335
-S C$dead_screen.c$161$2$110 Def00D4
-S C$dead_screen.c$150$1$104 Def00A1
-S C$dead_screen.c$112$2$105 Def0081
-S C$dead_screen.c$221$5$120 Def01BF
-S C$dead_screen.c$162$2$110 Def00D7
-S C$dead_screen.c$314$1$104 Def0336
-S C$dead_screen.c$251$1$104 Def024E
-S C$dead_screen.c$201$3$116 Def0240
-S C$dead_screen.c$206$1$104 Def0150
-S C$dead_screen.c$170$3$111 Def00F7
-S C$dead_screen.c$121$2$107 Def0090
-S C$dead_screen.c$231$5$122 Def01F9
-S C$dead_screen.c$201$4$117 Def011C
-S C$dead_screen.c$131$2$108 Def00B1
-S C$dead_screen.c$302$2$136 Def030C
-S C$dead_screen.c$164$3$111 Def00DB
-S C$dead_screen.c$150$2$108 Def00BE
-S C$dead_screen.c$128$1$104 Def0099
-S C$dead_screen.c$119$1$104 Def00DF
-S C$dead_screen.c$116$2$106 Def0086
-S C$dead_screen.c$320$1$138 Def0336
-S C$dead_screen.c$303$2$136 Def030F
-S C$dead_screen.c$225$5$121 Def01DC
-S C$dead_screen.c$212$4$117 Def0190
-S C$dead_screen.c$203$4$117 Def0120
-S C$dead_screen.c$165$1$104 Def00DF
-S C$dead_screen.c$151$2$108 Def00C8
-S C$dead_screen.c$129$1$104 Def00AD
-S C$dead_screen.c$243$5$122 Def0231
-S C$dead_screen.c$172$4$113 Def00FE
-S C$dead_screen.c$352$2$143 Def0377
-S C$dead_screen.c$344$2$142 Def0369
-S C$dead_screen.c$271$5$131 Def02AC
-S C$dead_screen.c$233$6$123 Def0203
-S C$dead_screen.c$223$4$117 Def01C8
-S C$dead_screen.c$191$4$113 Def0108
-S C$dead_screen.c$158$1$104 Def00CB
-S C$dead_screen.c$133$3$109 Def00B8
-S C$dead_screen.c$350$1$138 Def0374
-S C$dead_screen.c$328$3$140 Def0352
-S C$dead_screen.c$234$6$123 Def0207
-S C$dead_screen.c$192$4$113 Def0112
-S C$dead_screen.c$159$1$104 Def00CE
-S C$dead_screen.c$134$3$109 Def00BB
+S C$dead_screen.c$104$1$104 Def00A1
+S C$dead_screen.c$114$3$111 Def00DB
+S C$dead_screen.c$202$5$130 Def028D
+S C$dead_screen.c$115$1$104 Def00DF
+S C$dead_screen.c$143$1$104 Def0150
+S C$dead_screen.c$122$4$113 Def00FE
+S C$dead_screen.c$100$3$109 Def00B8
+S C$dead_screen.c$108$1$104 Def00CB
+S C$dead_screen.c$101$3$109 Def00BB
+S C$dead_screen.c$235$1$104 Def0306
+S C$dead_screen.c$212$5$132 Def02CB
+S C$dead_screen.c$136$1$104 Def0115
+S C$dead_screen.c$109$1$104 Def00CE
+S C$dead_screen.c$104$2$108 Def00BE
+S C$dead_screen.c$245$1$104 Def0320
+S C$dead_screen.c$222$5$132 Def02F4
+S C$dead_screen.c$117$4$112 Def00F0
+S C$dead_screen.c$105$2$108 Def00C8
+S C$dead_screen.c$246$1$104 Def0329
+S C$dead_screen.c$206$5$131 Def02AC
+S C$dead_screen.c$162$5$121 Def01DC
+S C$dead_screen.c$140$4$117 Def0120
+S C$dead_screen.c$124$5$114 Def0102
+S C$dead_screen.c$263$3$140 Def0352
+S C$dead_screen.c$247$1$104 Def0335
+S C$dead_screen.c$125$5$114 Def0105
+S C$dead_screen.c$240$3$137 Def0313
+S C$dead_screen.c$214$6$133 Def02D5
+S C$dead_screen.c$170$6$123 Def0203
+S C$dead_screen.c$160$4$117 Def01C8
+S C$dead_screen.c$128$4$113 Def0108
+S C$dead_screen.c$251$1$138 Def0336
+S C$dead_screen.c$249$1$104 Def0336
+S C$dead_screen.c$241$3$137 Def031B
+S C$dead_screen.c$215$6$133 Def02D9
+S C$dead_screen.c$204$4$128 Def0298
+S C$dead_screen.c$186$1$104 Def024E
+S C$dead_screen.c$171$6$123 Def0207
+S C$dead_screen.c$129$4$113 Def0112
 S XG$screen_dead_screen_load$0$0 Def0072
-S C$dead_screen.c$342$1$138 Def035D
-S C$dead_screen.c$324$1$138 Def0340
-S C$dead_screen.c$305$3$137 Def0313
-S C$dead_screen.c$167$4$112 Def00F0
-S C$dead_screen.c$40$1$100 Def0000
-S C$dead_screen.c$316$1$138 Def0336
-S C$dead_screen.c$306$3$137 Def031B
-S C$dead_screen.c$253$3$127 Def02FF
-S C$dead_screen.c$280$6$133 Def02D9
-S C$dead_screen.c$174$5$114 Def0102
-S C$dead_screen.c$326$1$138 Def033D
-S C$dead_screen.c$267$5$130 Def028D
-S C$dead_screen.c$218$4$117 Def019B
-S C$dead_screen.c$175$5$114 Def0105
-S C$dead_screen.c$60$1$100 Def0032
-S C$dead_screen.c$354$1$138 Def0377
-S C$dead_screen.c$253$4$128 Def0252
-S C$dead_screen.c$228$4$117 Def01E5
-S C$dead_screen.c$208$5$118 Def0187
-S C$dead_screen.c$199$1$104 Def0115
-S C$dead_screen.c$52$1$100 Def000E
-S C$dead_screen.c$43$1$100 Def0003
-S C$dead_screen.c$326$2$139 Def0344
-S C$dead_screen.c$290$6$135 Def02F8
-S C$dead_screen.c$246$6$125 Def0235
-S C$dead_screen.c$62$1$100 Def0037
-S C$dead_screen.c$53$1$100 Def0013
-S C$dead_screen.c$277$5$132 Def02CB
-S C$dead_screen.c$264$4$128 Def026B
-S C$dead_screen.c$255$4$128 Def0254
-S C$dead_screen.c$239$6$124 Def0227
-S C$dead_screen.c$90$1$100 Def0069
-S C$dead_screen.c$54$1$100 Def0018
-S C$dead_screen.c$287$5$132 Def02F4
-S C$dead_screen.c$284$6$134 Def02EA
-S C$dead_screen.c$274$4$128 Def02B7
-S C$dead_screen.c$70$2$102 Def004D
-S C$dead_screen.c$55$1$100 Def001D
-S C$dead_screen.c$37$1$100 Def0000
-S C$dead_screen.c$349$1$138 Def036C
-S C$dead_screen.c$92$1$100 Def0072
-S C$dead_screen.c$258$4$128 Def0261
-S C$dead_screen.c$64$2$101 Def003D
-S C$dead_screen.c$57$1$100 Def0022
+S C$dead_screen.c$282$2$143 Def0377
+S C$dead_screen.c$274$2$142 Def0369
+S C$dead_screen.c$261$1$138 Def033D
+S C$dead_screen.c$158$5$120 Def01BF
+S C$dead_screen.c$40$1$100 Def0006
+S C$dead_screen.c$280$1$138 Def0374
+S C$dead_screen.c$138$3$116 Def0240
+S C$dead_screen.c$50$1$100 Def0037
+S C$dead_screen.c$41$1$100 Def000E
+S C$dead_screen.c$32$1$100 Def0000
+S C$dead_screen.c$272$1$138 Def035D
+S C$dead_screen.c$261$2$139 Def0344
+S C$dead_screen.c$237$2$136 Def030C
+S C$dead_screen.c$225$6$135 Def02F8
+S C$dead_screen.c$181$6$125 Def0235
+S C$dead_screen.c$155$4$117 Def019B
+S C$dead_screen.c$60$1$100 Def0069
+S C$dead_screen.c$42$1$100 Def0013
+S C$dead_screen.c$255$1$138 Def0336
+S C$dead_screen.c$238$2$136 Def030F
+S C$dead_screen.c$190$4$128 Def0254
+S C$dead_screen.c$168$5$122 Def01F9
+S C$dead_screen.c$165$4$117 Def01E5
+S C$dead_screen.c$145$5$118 Def0187
+S C$dead_screen.c$138$4$117 Def011C
+S C$dead_screen.c$61$1$100 Def0072
+S C$dead_screen.c$43$1$100 Def0018
+S C$dead_screen.c$219$6$134 Def02EA
+S C$dead_screen.c$209$4$128 Def02B7
+S C$dead_screen.c$178$5$122 Def0231
+S C$dead_screen.c$175$6$124 Def0227
+S C$dead_screen.c$44$1$100 Def001D
+S C$dead_screen.c$35$1$100 Def0000
+S C$dead_screen.c$284$1$138 Def0377
+S C$dead_screen.c$149$4$117 Def0190
+S C$dead_screen.c$63$1$100 Def0073
+S C$dead_screen.c$52$2$101 Def003D
+S C$dead_screen.c$193$4$128 Def0261
+S C$dead_screen.c$46$1$100 Def0022
+S C$dead_screen.c$259$1$138 Def0340
+S C$dead_screen.c$47$1$100 Def002A
+S C$dead_screen.c$38$1$100 Def0003
+S C$dead_screen.c$188$3$127 Def02FF
 A _DATA size 4 flags 0 addr 0
 S Fdead_screen$event_stage$0$0 Def0001
 S Fdead_screen$flash_count$0$0 Def0002
@@ -694,15 +694,15 @@ T 96 00 00 00 33
 R 00 00 00 00 02 02 16 00
 T 99 00
 R 00 00 00 00
-T 99 00 3E 20 F5 33 CD 00 00 33 DD 7E 04 DD 77 FC
+T 99 00 3E 20 F5 33 CD 00 00 33 DD 7E 04 DD 77 FA
 R 00 00 00 00 02 07 12 00
-T A7 00 DD 7E 05 DD 77 FD 7D B7 28 1A 3A 0D 00 D6
+T A7 00 DD 7E 05 DD 77 FB 7D B7 28 1A 3A 0D 00 D6
 R 00 00 00 00 02 0D 15 00
 T B5 00 0C 28 06 CD 36 03 CD 00 00
 R 00 00 00 00 00 06 00 00 02 09 1A 00
 T BE 00
 R 00 00 00 00
-T BE 00 3A 0D 00 DD 6E FC DD 66 FD 77 C3 31 03
+T BE 00 3A 0D 00 DD 6E FA DD 66 FB 77 C3 31 03
 R 00 00 00 00 02 03 15 00 00 0D 00 00
 T CB 00
 R 00 00 00 00
@@ -728,7 +728,7 @@ T 05 01 CD 00 00
 R 00 00 00 00 02 03 1A 00
 T 08 01
 R 00 00 00 00
-T 08 01 3A 0D 00 DD 6E FC DD 66 FD 77 C3 31 03
+T 08 01 3A 0D 00 DD 6E FA DD 66 FB 77 C3 31 03
 R 00 00 00 00 02 03 15 00 00 0D 00 00
 T 15 01
 R 00 00 00 00
@@ -738,49 +738,49 @@ T 20 01
 R 00 00 00 00
 T 20 01 DD 4E F7 06 00 69 60 29 29 09 29 29 29 09
 R 00 00 00 00
-T 2E 01 DD 75 FE DD 74 FF 3E 00 00 DD 86 FE DD 77
+T 2E 01 DD 75 FC DD 74 FD 3E 00 00 DD 86 FC DD 77
 R 00 00 00 00 0B 09 07 00
-T 3B 01 FE 3E 00 00 DD 8E FF DD 77 FF DD 7E FE DD
+T 3B 01 FC 3E 00 00 DD 8E FD DD 77 FD DD 7E FC DD
 R 00 00 00 00 8B 04 07 00
-T 48 01 77 F8 DD 7E FF DD 77 F9 DD 7E F8 C6 17 DD
+T 48 01 77 F8 DD 7E FD DD 77 F9 DD 7E F8 C6 17 DD
 R 00 00 00 00
-T 56 01 77 FE DD 7E F9 CE 00 DD 77 FF DD 6E FE DD
+T 56 01 77 FC DD 7E F9 CE 00 DD 77 FD DD 6E FC DD
 R 00 00 00 00
-T 64 01 66 FF 4E DD 7E F8 C6 1B DD 77 FA DD 7E F9
+T 64 01 66 FD 4E DD 7E F8 C6 1B DD 77 FE DD 7E F9
 R 00 00 00 00
-T 72 01 CE 00 DD 77 FB 79 B7 28 15 DD 6E FA DD 66
+T 72 01 CE 00 DD 77 FF 79 B7 28 15 DD 6E FE DD 66
 R 00 00 00 00
-T 80 01 FB 4E 79 D6 02 28 09 DD 7E F7 F5 33 CD
+T 80 01 FF 4E 79 D6 02 28 09 DD 7E F7 F5 33 CD
 R 00 00 00 00
 T 8D 01 00 00 33
 R 00 00 00 00 02 02 09 00
 T 90 01
 R 00 00 00 00
-T 90 01 DD 6E FE DD 66 FF 7E B7 CA 40 02 DD 7E F8
+T 90 01 DD 6E FC DD 66 FD 7E B7 CA 40 02 DD 7E F8
 R 00 00 00 00 00 0B 00 00
-T 9E 01 C6 1D DD 77 FE DD 7E F9 CE 00 DD 77 FF DD
+T 9E 01 C6 1D DD 77 FC DD 7E F9 CE 00 DD 77 FD DD
 R 00 00 00 00
-T AC 01 6E FE DD 66 FF 7E B7 28 13 DD 6E FA DD 66
+T AC 01 6E FC DD 66 FD 7E B7 28 13 DD 6E FE DD 66
 R 00 00 00 00
-T BA 01 FB 4E 0D 20 09 DD 7E F7 F5 33 CD 00 00 33
+T BA 01 FF 4E 0D 20 09 DD 7E F7 F5 33 CD 00 00 33
 R 00 00 00 00 02 0D 17 00
 T C8 01
 R 00 00 00 00
-T C8 01 DD 6E FE DD 66 FF 7E B7 28 13 DD 6E FA DD
+T C8 01 DD 6E FC DD 66 FD 7E B7 28 13 DD 6E FE DD
 R 00 00 00 00
-T D6 01 66 FB 7E B7 20 09 DD 7E F7 F5 33 CD 00 00
+T D6 01 66 FF 7E B7 20 09 DD 7E F7 F5 33 CD 00 00
 R 00 00 00 00 02 0E 1B 00
 T E4 01 33
 R 00 00 00 00
 T E5 01
 R 00 00 00 00
-T E5 01 DD 6E FE DD 66 FF 7E B7 20 51 DD 6E FA DD
+T E5 01 DD 6E FC DD 66 FD 7E B7 20 51 DD 6E FE DD
 R 00 00 00 00
-T F3 01 66 FB 7E B7 20 47 FD 21 03 00 FD 7E 00 3D
+T F3 01 66 FF 7E B7 20 47 FD 21 03 00 FD 7E 00 3D
 R 00 00 00 00 00 0A 01 00
-T 01 02 20 24 FD 36 00 00 DD 7E F8 DD 77 FA DD 7E
+T 01 02 20 24 FD 36 00 00 DD 7E F8 DD 77 FE DD 7E
 R 00 00 00 00
-T 0F 02 F9 DD 77 FB DD 6E FA DD 66 FB 11 1C 00 19
+T 0F 02 F9 DD 77 FF DD 6E FE DD 66 FF 11 1C 00 19
 R 00 00 00 00
 T 1D 02 46 C5 33 CD 00 00 33 45 18 0A
 R 00 00 00 00 02 06 08 00
@@ -808,25 +808,25 @@ T 54 02 69 26 00 29 29 29 29 29 11 00 00 19 EB D5
 R 00 00 00 00 02 0B 19 00
 T 62 02 FD E1 FD 7E 18 B7 CA FF 02 21 1E 00 19 DD
 R 00 00 00 00 00 09 00 00
-T 70 02 75 FA DD 74 FB 46 21 1C 00 19 DD 75 FE DD
+T 70 02 75 FE DD 74 FF 46 21 1C 00 19 DD 75 FC DD
 R 00 00 00 00
-T 7E 02 74 FF 78 B7 28 14 DD 6E FE DD 66 FF 46 10
+T 7E 02 74 FD 78 B7 28 14 DD 6E FC DD 66 FD 46 10
 R 00 00 00 00
 T 8C 02 0B C5 D5 79 F5 33 CD 00 00 33 D1 C1
 R 00 00 00 00 02 09 02 00
 T 98 02
 R 00 00 00 00
-T 98 02 DD 6E FA DD 66 FB 7E B7 28 15 DD 6E FE DD
+T 98 02 DD 6E FE DD 66 FF 7E B7 28 15 DD 6E FC DD
 R 00 00 00 00
-T A6 02 66 FF 7E B7 20 0B C5 D5 79 F5 33 CD 00 00
+T A6 02 66 FD 7E B7 20 0B C5 D5 79 F5 33 CD 00 00
 R 00 00 00 00 02 0E 03 00
 T B4 02 33 D1 C1
 R 00 00 00 00
 T B7 02
 R 00 00 00 00
-T B7 02 DD 6E FA DD 66 FB 7E B7 20 3E DD 6E FE DD
+T B7 02 DD 6E FE DD 66 FF 7E B7 20 3E DD 6E FC DD
 R 00 00 00 00
-T C5 02 66 FF 7E B7 20 34 FD 21 03 00 FD 7E 00 3D
+T C5 02 66 FD 7E B7 20 34 FD 21 03 00 FD 7E 00 3D
 R 00 00 00 00 00 0A 01 00
 T D3 02 20 15 FD 36 00 00 D5 FD E1 FD 46 1D C5 C5
 R 00 00 00 00
@@ -852,9 +852,9 @@ T 14 03 14 00 E5 CD 00 00 F1 21 01 00 36 01
 R 00 00 00 00 02 06 21 00 00 0A 01 00
 T 20 03
 R 00 00 00 00
-T 20 03 3A 00 00 F5 33 CD 00 00 33 DD 6E FC DD 66
+T 20 03 3A 00 00 F5 33 CD 00 00 33 DD 6E FA DD 66
 R 00 00 00 00 00 03 01 00 02 08 16 00
-T 2E 03 FD 36 0B
+T 2E 03 FB 36 0B
 R 00 00 00 00
 T 31 03
 R 00 00 00 00

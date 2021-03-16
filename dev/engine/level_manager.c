@@ -21,7 +21,6 @@ struct_level_object global_level_object;
 
 // Private helper methods.
 static void load_level( const unsigned char *data, const unsigned char size, const unsigned char bank, unsigned char mult );
-//static void draw_level( unsigned char beg_row, unsigned char end_row, unsigned char beg_col, unsigned char end_col );
 static void draw_tiles( unsigned char x, unsigned char y );
 static unsigned char test_direction( unsigned char x, unsigned char y, unsigned char input_direction );
 
@@ -111,25 +110,6 @@ void engine_level_manager_load_extra( unsigned char quantity, unsigned char tile
 			row = rand() % MAX_ROWS;
 			col = rand() % MAX_COLS;
 
-			// TODO delete testing...
-			//if( 0 == loops )
-			//{
-			//	row = 4;
-			//	col = 4;
-			//}
-
-			// TODO remove
-			//row = 0;
-			//col = 0;
-
-			// TODO calculate rectangle around boss home so no candy drawn there!
-		//	//// Ensure no 
-		//	//if( !( col == board_object_homeX[ 0 ] - 2 && row == board_object_homeY[ 0 ] - 2 ) &&
-		//	//	!( col == board_object_homeX[ 1 ] - 2 && row == board_object_homeY[ 1 ] - 2 ) &&
-		//	//	!( col == board_object_homeX[ 2 ] - 2 && row == board_object_homeY[ 2 ] - 2 ) &&
-		//	//	!( col == board_object_homeX[ 3 ] - 2 && row == board_object_homeY[ 3 ] - 2 ) )
-		//	//{
-
 			index = ( row + 2 ) * MAZE_COLS + ( col + 2 );
 			tiles = level_object_tiles_array[ index ];
 			if( tile_type_blank == tiles )
@@ -145,11 +125,6 @@ void engine_level_manager_load_extra( unsigned char quantity, unsigned char tile
 		}
 		
 	}
-
-	//col = 0;
-	//loops = 0;
-	//index = ( row + 2 ) * MAZE_COLS + ( col + 2 );
-	//level_object_tiles_array[ index ] = tile_type_oneup;
 }
 
 void engine_level_manager_directions()
@@ -174,95 +149,6 @@ void engine_level_manager_directions()
 		}
 	}
 }
-
-// TODO delete
-//void engine_level_manager_update_level( const unsigned char round, unsigned char *actor_mover, unsigned char *actor_tileZ )
-//{
-//	struct_level_object *lo = &global_level_object;
-//	struct_state_object *st = &global_state_object;
-//	unsigned char actor;
-//	unsigned char mover;
-//	unsigned char index;
-//	unsigned char tileX;
-//	unsigned char tileY;
-//	unsigned char tiles;
-//	unsigned char tile_type;
-//	unsigned char upper_nibble;
-//	unsigned char lower_nibble;
-//
-//	// Count all available home tiles: Kid, Pro, Adi, Suz
-//	// Kid always moves so means that will be at least 1x.
-//	tiles = 0;
-//	for( actor = 0; actor < MAX_ACTORS; actor++ )
-//	{
-//		mover = actor_mover[ actor ];
-//		if( mover )
-//		{
-//			tiles++;
-//			continue;
-//		}
-//
-//		// Enemy is idle this level so blank out tile.
-//		index = actor_tileZ[ actor ];
-//		engine_function_manager_convertZtoXY( MAZE_ROWS, index, &tileX, &tileY );
-//		tile_type = engine_level_manager_get_tile_type( tileX, tileY, direction_type_none, offset_type_none );
-//
-//		if( tile_type_bonusA == tile_type || tile_type_bonusB == tile_type || tile_type_bonusC == tile_type || tile_type_bonusD == tile_type )
-//		{
-//			lo->level_object_bonus_count--;
-//		}
-//		if( tile_type_candy == tile_type )
-//		{
-//			lo->level_object_candy_count--;
-//		}
-//
-//		tile_type = engine_level_manager_get_next_tile( tileX, tileY, direction_type_none, offset_type_none );
-//		engine_function_manager_convertByteToNibbles( tile_type, &upper_nibble, &lower_nibble );
-//		lower_nibble = tile_type_blank;
-//		engine_function_manager_convertNibblesToByte( upper_nibble, lower_nibble, &tile_type );
-//		level_object_tiles_array[ index ] = tile_type;
-//	}
-//
-//	// Every fifth level award freeman tile if not invincible.
-//	if( st->state_object_localcheat )
-//	{
-//		return;
-//	}
-//	if( 0 != ( round + 1 ) % 5 )
-//	{
-//		return;
-//	}
-//
-//	// However, flip coin if can have free man candy on difficult hard.
-//	if( diff_type_hard == st->state_object_difficulty )
-//	{
-//		
-//		if( 0 != rand() % 2 )
-//		{
-//			return;
-//		}
-//	}
-//
-//	mover = rand() % tiles;
-//	index = actor_tileZ[ mover ];
-//	engine_function_manager_convertZtoXY( MAZE_ROWS, index, &tileX, &tileY );
-//	tile_type = engine_level_manager_get_tile_type( tileX, tileY, direction_type_none, offset_type_none );
-//
-//	if( tile_type_bonusA == tile_type || tile_type_bonusB == tile_type || tile_type_bonusC == tile_type || tile_type_bonusD == tile_type )
-//	{
-//		lo->level_object_bonus_count--;
-//	}
-//	if( tile_type_candy == tile_type )
-//	{
-//		lo->level_object_candy_count--;
-//	}
-//
-//	tile_type = engine_level_manager_get_next_tile( tileX, tileY, direction_type_none, offset_type_none );
-//	engine_function_manager_convertByteToNibbles( tile_type, &upper_nibble, &lower_nibble );
-//	lower_nibble = tile_type_oneup;
-//	engine_function_manager_convertNibblesToByte( upper_nibble, lower_nibble, &tile_type );
-//	level_object_tiles_array[ index ] = tile_type;
-//}
 
 void engine_level_manager_draw_level()
 {
@@ -291,7 +177,6 @@ void engine_level_manager_draw_middle()
 		}
 	}
 }
-
 
 
 void engine_level_manager_beat_level( const unsigned char *data, const unsigned char size, const unsigned char bank )
@@ -449,8 +334,6 @@ static void load_level( const unsigned char *data, const unsigned char size, con
 	unsigned char index;
 	unsigned char tile_type;
 	unsigned char coll_type;
-	//unsigned char test_type;
-	//unsigned char direction;
 
 	unsigned char load_cols;
 	unsigned char draw_cols;
@@ -494,25 +377,6 @@ static void load_level( const unsigned char *data, const unsigned char size, con
 			o++;
 		}
 	}
-
-	// Set each tile directions available.
-	//for( row = 0; row < MAX_ROWS; row++ )
-	//{
-	//	for( col = 0; col < MAX_COLS; col++ )
-	//	{
-	//	//	if( 3 == row && 1 == col )
-	//	//	{
-	//	//		index = 0;
-	//	//	}
-	//		direction = engine_level_manager_test_direction( ( row + 2 ), ( col + 2 ) );
-
-	//		index = ( row + 2 ) * MAZE_COLS + ( col + 2 );
-	//		test_type = level_object_tiles_array[ index ];
-
-	//		engine_function_manager_convertNibblesToByte( direction, test_type, &test_type );
-	//		level_object_tiles_array[ index ] = test_type;
-	//	}
-	//}
 }
 
 static void draw_tiles( unsigned char x, unsigned char y )

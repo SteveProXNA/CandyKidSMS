@@ -26,8 +26,8 @@ F:G$engine_option_manager_text_start$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Loption_manager.engine_option_manager_text_start$mode$1$85({1}SC:U),B,1,4
 F:G$engine_option_manager_draw_bonus$0$0({2}DF,SV:S),Z,0,2,0,0,0
 S:Loption_manager.engine_option_manager_draw_bonus$index$1$87({2}SI:U),B,1,4
-S:Loption_manager.engine_option_manager_draw_bonus$value_data$1$88({1}SC:U),B,1,-2
-S:Loption_manager.engine_option_manager_draw_bonus$x$1$88({1}SC:U),B,1,-1
+S:Loption_manager.engine_option_manager_draw_bonus$value_data$1$88({1}SC:U),B,1,-1
+S:Loption_manager.engine_option_manager_draw_bonus$x$1$88({1}SC:U),B,1,-2
 F:G$engine_option_manager_draw_candy$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Loption_manager.engine_option_manager_draw_candy$index$1$89({2}SI:U),B,1,4
 S:Loption_manager.engine_option_manager_draw_candy$x$1$90({1}SC:U),R,0,0,[b]
@@ -83,7 +83,6 @@ S:G$engine_enemy_manager_reset_mode$0$0({2}DF,SV:S),C,0,0
 S:G$engine_enemy_manager_frame$0$0({2}DF,SV:S),C,0,0
 S:G$engine_enemy_manager_image$0$0({2}DF,SV:S),C,0,0
 S:G$engine_enemy_manager_images$0$0({2}DF,SV:S),C,0,0
-S:G$engine_enemy_manager_debug$0$0({2}DF,SV:S),C,0,0
 S:G$engine_enemy_manager_scatter_direction$0$0({2}DF,SC:U),C,0,0
 S:G$engine_enemy_manager_gohome_direction$0$0({2}DF,SC:U),C,0,0
 S:G$engine_enemy_manager_attack_direction$0$0({2}DF,SC:U),C,0,0

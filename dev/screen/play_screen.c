@@ -11,11 +11,8 @@
 #include "..\engine\input_manager.h"
 #include "..\engine\level_manager.h"
 #include "..\engine\memo_manager.h"
-//#include "..\engine\move_manager.h"
 #include "..\engine\score_manager.h"
-//#include "..\engine\sprite_manager.h"
 #include "..\engine\state_manager.h"
-//#include "..\engine\tile_manager.h"
 #include "..\engine\timer_manager.h"
 #include "..\devkit\_sms_manager.h"
 
@@ -25,11 +22,6 @@
 #pragma disable_warning 110
 #endif
 
-//#define QUIT_SCREEN_DELAY		75
-
-// PLAY screen - is the main command add + execute driver
-//static unsigned char first_time;
-//static unsigned char frame_spot;
 static unsigned char nextr_direction;
 
 void screen_play_screen_load()
@@ -43,10 +35,6 @@ void screen_play_screen_load()
 //	engine_command_manager_load();
 	engine_frame_manager_load();
 
-	//engine_frame_manager_draw();
-	//engine_delay_manager_draw();
-
-	//engine_font_manager_draw_text( "SCATTR", 26, 21 );
 	if( ho->hack_object_mydebugger )
 	{
 		eo = &global_enemy_objects[ actor_type_pro ];	engine_memo_manager_debugging( actor_type_pro, eo->action );
@@ -54,14 +42,7 @@ void screen_play_screen_load()
 		eo = &global_enemy_objects[ actor_type_suz ];	engine_memo_manager_debugging( actor_type_suz, eo->action );
 	}
 
-	//first_time = 1;
-	//frame_spot = 0;
-
-	//power1 = state_object_invincibie;
-	//power2 = state_object_localcheat;
-	//invincible = st->state_object_invincibie || st->state_object_localcheat;
 	nextr_direction = direction_type_none;
-
 	engine_reset_manager_load( QUIT_SCREEN_DELAY );
 }
 
@@ -72,7 +53,6 @@ void screen_play_screen_update( unsigned char *screen_type )
 	struct_state_object *st = &global_state_object;
 	struct_level_object *lo = &global_level_object;
 	struct_enemy_object *eo;
-	//unsigned char process_boost = 0;
 	unsigned char gamer_boost = 0;
 	unsigned char enemy_boost = 0;
 	unsigned char gamer_direction = direction_type_none;
@@ -82,7 +62,6 @@ void screen_play_screen_update( unsigned char *screen_type )
 	unsigned char gamer_tile_type = tile_type_blank;
 	unsigned char candy_count = 0;
 
-	//unsigned char proceed;
 	unsigned char input;
 	unsigned char enemy;
 	unsigned char check;
@@ -92,21 +71,6 @@ void screen_play_screen_update( unsigned char *screen_type )
 	// Draw sprites first.
 	engine_enemy_manager_draw();
 	engine_gamer_manager_draw();
-
-	//engine_frame_manager_draw();
-	//engine_delay_manager_draw();
-	//if( !first_time )
-	//{
-	//	proceed = engine_delay_manager_update();
-	//	if( !proceed )
-	//	{
-	//		*screen_type = screen_type_play;
-	//		return;
-	//	}
-
-	//	engine_frame_manager_update();
-	//	first_time = 1;
-	//}
 
 	// Continue...
 	frame = fo->frame_count;
@@ -164,14 +128,6 @@ void screen_play_screen_update( unsigned char *screen_type )
 				st->state_object_actor_kill = actor_type_tree;
 			}
 		}
-
-		// IMPORTANT - commenting this out 19/03/2020 as surely doesn't make difference??
-		//input_direction = engine_input_manager_direction();
-		//if( direction_type_none != input_direction && gamer_direction != input_direction )
-		//{
-		//	nextr_direction = gamer_direction;
-		//	//engine_font_manager_draw_data( nextr_direction, 30, 20 );		// stevepro pre-empt direction
-		//}
 
 		engine_gamer_manager_stop();
 	}
@@ -238,13 +194,11 @@ void screen_play_screen_update( unsigned char *screen_type )
 		// For continuity we want to check if actor can move immediately after stopping.
 		if( direction_type_none == eo->direction && lifecycle_type_idle == eo->lifecycle )
 		{
-			//engine_font_manager_draw_data( eo->action, 30, 21 );
 			if( enemymove_type_wait == eo->action )
 			{
 				if( frame >= eo->waiter )
 				{
 					engine_enemy_manager_reset_mode( enemy, enemymove_type_tour );
-					//engine_enemy_manager_reset_mode( enemy, enemymove_type_kill );		// adriana - remove in final build - just used for testing!!
 				}
 			}
 
@@ -277,8 +231,6 @@ void screen_play_screen_update( unsigned char *screen_type )
 
 	// Execute all commands for this frame.
 	//engine_command_manager_execute( frame );
-	//first_time = 0;
-
 
 
 	// Check candy collision before sprite collision as we want to test if all candy eaten = level complete.

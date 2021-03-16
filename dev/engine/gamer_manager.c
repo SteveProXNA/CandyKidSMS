@@ -262,11 +262,6 @@ void engine_gamer_manager_stop()
 	go->frame = frame_type_stance;
 	calcd_frame();
 
-	// TODO delete
-	//engine_font_manager_draw_data( go->tileX, 13, 6 );
-	//engine_font_manager_draw_data( go->tileY, 13, 7 );
-	// TODO delete
-
 	// Check if in exit then move in previous direction [and wrap game board as necessary].
 	if( go->tileX <= 1 || go->tileY <= 1 || go->tileX >= ( MAZE_COLS - 2 ) || go->tileY >= ( MAZE_ROWS - 2 ) )
 	{

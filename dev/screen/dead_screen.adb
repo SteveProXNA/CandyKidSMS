@@ -16,9 +16,9 @@ S:Ldead_screen.screen_dead_screen_update$enemy$1$104({1}SC:U),B,1,-9
 S:Ldead_screen.screen_dead_screen_update$bossX$1$104({1}SC:U),R,0,0,[c]
 S:Ldead_screen.screen_dead_screen_update$delay$1$104({1}SC:U),R,0,0,[l]
 S:Ldead_screen.screen_dead_screen_update$frame$1$104({2}SI:U),R,0,0,[]
-S:Ldead_screen.screen_dead_screen_update$sloc0$1$0({2}DG,SC:U),B,1,-4
-S:Ldead_screen.screen_dead_screen_update$sloc1$1$0({2}SI:U),B,1,-2
-S:Ldead_screen.screen_dead_screen_update$sloc2$1$0({2}DG,SC:U),B,1,-6
+S:Ldead_screen.screen_dead_screen_update$sloc0$1$0({2}DG,SC:U),B,1,-6
+S:Ldead_screen.screen_dead_screen_update$sloc1$1$0({2}SI:U),B,1,-4
+S:Ldead_screen.screen_dead_screen_update$sloc2$1$0({2}DG,SC:U),B,1,-2
 F:Fdead_screen$reset_death$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Ldead_screen.reset_death$st$1$138({2}DG,STtag_struct_state_object:S),R,0,0,[]
 S:Ldead_screen.reset_death$boost$1$138({1}SC:U),R,0,0,[l]
@@ -90,7 +90,6 @@ S:G$engine_enemy_manager_reset_mode$0$0({2}DF,SV:S),C,0,0
 S:G$engine_enemy_manager_frame$0$0({2}DF,SV:S),C,0,0
 S:G$engine_enemy_manager_image$0$0({2}DF,SV:S),C,0,0
 S:G$engine_enemy_manager_images$0$0({2}DF,SV:S),C,0,0
-S:G$engine_enemy_manager_debug$0$0({2}DF,SV:S),C,0,0
 S:G$engine_enemy_manager_scatter_direction$0$0({2}DF,SC:U),C,0,0
 S:G$engine_enemy_manager_gohome_direction$0$0({2}DF,SC:U),C,0,0
 S:G$engine_enemy_manager_attack_direction$0$0({2}DF,SC:U),C,0,0

@@ -17,9 +17,6 @@ const unsigned char board_object_posnY[] =
 // Order:									  Pro,  Adi,  Suz,  Kid.
 const unsigned char board_object_homeX[] = { 0x0A, 0x03, 0x0A, 0x03 };
 const unsigned char board_object_homeY[] = { 0x0A, 0x0A, 0x03, 0x03 };
-//const unsigned char board_object_homeX[] = { 0x08, 0x03, 0x0A, 0x0A };
-//const unsigned char board_object_homeY[] = { 0x0A, 0x0A, 0x03, 0x0A };
-
 
 // FIXED bank
 // Board Manager.
@@ -31,6 +28,3 @@ const unsigned char board_object_midd[] = { 8, 10 };
 // Main
 const unsigned char board_object_exitX[] = { 8, 20, 8, 20, 0, 0, 28, 28};
 const unsigned char board_object_exitY[] = { 0, 0, 22, 22, 6, 16, 6, 16 };
-// Game
-//const unsigned char board_object_exitX[] = { 6, 16, 6, 16, 0, 0, 22, 22 };
-//const unsigned char board_object_exitY[] = { 0, 0, 22, 22, 6, 16, 6, 16 };

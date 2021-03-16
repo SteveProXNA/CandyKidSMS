@@ -23,12 +23,12 @@ S:Lmove_manager.engine_move_manager_what_direction$test_direction$1$52({1}SC:U),
 S:Lmove_manager.engine_move_manager_what_direction$collision$1$52({1}SC:U),R,0,0,[]
 S:Lmove_manager.engine_move_manager_what_direction$available$1$52({1}SC:U),B,1,-12
 S:Lmove_manager.engine_move_manager_what_direction$index$1$52({1}SC:U),R,0,0,[e]
-S:Lmove_manager.engine_move_manager_what_direction$list$1$52({1}SC:U),B,1,-11
-S:Lmove_manager.engine_move_manager_what_direction$half$1$52({1}SC:U),B,1,-15
+S:Lmove_manager.engine_move_manager_what_direction$list$1$52({1}SC:U),B,1,-15
+S:Lmove_manager.engine_move_manager_what_direction$half$1$52({1}SC:U),B,1,-11
 S:Lmove_manager.engine_move_manager_what_direction$flip$1$52({1}SC:U),R,0,0,[]
-S:Lmove_manager.engine_move_manager_what_direction$sloc0$1$0({2}DD,SC:U),B,1,-2
+S:Lmove_manager.engine_move_manager_what_direction$sloc0$1$0({2}DD,SC:U),B,1,-6
 S:Lmove_manager.engine_move_manager_what_direction$sloc1$1$0({2}DD,SC:U),B,1,-4
-S:Lmove_manager.engine_move_manager_what_direction$sloc2$1$0({2}DD,SC:U),B,1,-6
+S:Lmove_manager.engine_move_manager_what_direction$sloc2$1$0({2}DD,SC:U),B,1,-2
 F:G$engine_move_manager_gothru_exit$0$0({2}DF,SC:U),Z,0,0,0,0,0
 S:Lmove_manager.engine_move_manager_gothru_exit$tileX$1$58({1}SC:U),B,1,4
 S:Lmove_manager.engine_move_manager_gothru_exit$tileY$1$58({1}SC:U),B,1,5

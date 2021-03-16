@@ -52,8 +52,6 @@ void screen_title_screen_load()
 
 	st->state_object_next_screen = screen_type_start;
 
-	//st->state_object_curr_screen = screen_type_init;
-	//st->state_object_curr_screen = screen_type_start;
 	st->state_object_curr_screen = screen_type_title;
 }
 
@@ -87,7 +85,6 @@ void screen_title_screen_update( unsigned char *screen_type )
 	}
 
 
-	//delay = engine_delay_manager_update();
 	if( delay )
 	{
 		if( !ho->hack_object_delay_test )
@@ -98,7 +95,6 @@ void screen_title_screen_update( unsigned char *screen_type )
 		if( flash_count )
 		{
 			engine_option_manager_clear(); 
-			//engine_font_manager_draw_text( locale_object_blank14, SCREEN_TILE_LEFT + 2, TEXT4_Y + 1 );
 		}
 		else
 		{

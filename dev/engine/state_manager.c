@@ -31,21 +31,3 @@ void engine_state_manager_fight( unsigned char fight )
 	struct_state_object *st = &global_state_object;
 	st->state_object_fight_type = fight;
 }
-
-//void engine_state_manager_level()
-//{
-//	// Clocked game!
-//	struct_state_object *st = &global_state_object;
-//	if( MAX_WORLDS - 1 == st->state_object_world_data  && MAX_ROUNDS - 1 == st->state_object_round_data )
-//	{
-//		st->state_object_next_screen = screen_type_beat;
-//		return;
-//	}
-//
-//	st->state_object_round_data++;
-//	if( st->state_object_round_data >= MAX_ROUNDS )
-//	{
-//		st->state_object_round_data = 0;
-//		st->state_object_world_data++;
-//	}
-//}

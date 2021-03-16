@@ -3,7 +3,6 @@
 
 void engine_tile_manager_load_tile( unsigned char *tile_type, unsigned char tile_data );
 void engine_tile_manager_load_coll( unsigned char *coll_type, unsigned char tile_data );
-
 void engine_tile_manager_draw_tile( unsigned char tile, unsigned char x, unsigned char y, unsigned char mult );
 
 void engine_tile_manager_draw_blank( unsigned char x, unsigned char y );

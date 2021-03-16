@@ -5,7 +5,6 @@
 
 typedef struct tag_struct_enemy_object
 {
-	//unsigned char actor;
 	unsigned char posnX;		// PositionX during movement.
 	unsigned char posnY;		// PositionY during movement.
 	unsigned char tileX;		// Posn tileX on enemy stops. 
@@ -22,14 +21,12 @@ typedef struct tag_struct_enemy_object
 	unsigned char speed;
 	unsigned char delay;
 	unsigned char timer;
-	//unsigned char delta;
 	unsigned char total;
 	unsigned char mover;		// Flag when enemy can moves.
 	unsigned char hands;		// Delay when swap hand over.
 	unsigned char swaps;
 	unsigned char loops;
 	unsigned char lifecycle;
-	//unsigned char prev_moves[ 4 ];	// Previous direction moved.
 	unsigned char prev_move;	// Previous direction moved.
 	unsigned char direction;	// Current  direction moved.
 	unsigned char dir_count;
@@ -41,18 +38,5 @@ typedef struct tag_struct_enemy_object
 	unsigned char images[ NUM_ENTITY_IMAGE ][ NUM_ENTITY_FRAME ];
 
 } struct_enemy_object;
-
-
-// FIXED bank.
-// Enemy Manager.
-//extern const unsigned char enemy_object_directions[];
-
-//extern const unsigned char enemy_object_image[];
-//extern const unsigned char enemy_object_speed[];
-//extern const unsigned char enemy_object_delay[];
-//extern const unsigned char enemy_object_hands[];
-//extern const unsigned char enemy_object_waits[];
-//extern const unsigned char enemy_object_tours[];
-//extern const unsigned char enemy_object_kills[];
 
 #endif//_ENEMY_OBJECT_H_

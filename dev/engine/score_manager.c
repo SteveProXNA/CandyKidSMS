@@ -51,8 +51,6 @@ void engine_score_manager_init()
 	so->score = 0;
 
 	so->values[ score_type_lives ] = NUMBER_LIVES - st->state_object_difficulty;
-	//so->values[ score_type_lives ] = 1; // stevepro
-
 	draw_zero( DATA_X + 1, TEXT0_Y + 1 );
 	draw_zero( DATA_X + 1, TEXT1_Y + 1 );
 	draw_highs();
@@ -64,7 +62,6 @@ void engine_score_manager_load()
 {
 	struct_score_object *so = &global_score_object;
 	struct_state_object *st = &global_state_object;
-	//so->score = 0;
 	so->values[ score_type_level ] = st->state_object_world_data * MAX_ROUNDS + st->state_object_round_data + 1;
 	so->bonus = 0;
 	so->candy = 0;
@@ -119,7 +116,6 @@ void engine_score_manager_update_candy()
 {
 	struct_score_object *so = &global_score_object;
 	so->candy++;
-	//so->total++;
 	update_score( 1 );
 }
 
@@ -151,14 +147,6 @@ void engine_score_manager_update_boost()
 	}
 
 	so->values[ score_type_boost ] -= 1 + st->state_object_difficulty;
-
-	// TODO set enum or #define for this magic no.
-	// TODO Easy = 200  Hard = 100 boost value!
-	//if( 0 == so->values[ score_type_boost ] % 10 )
-	//{
-	//	draw_value( score_type_boost );
-	//}
-
 	draw_value( score_type_boost );
 }
 
@@ -176,22 +164,17 @@ void engine_score_manager_draw_load()
 {
 		draw_value( score_type_level );
 		draw_value( score_type_boost );
-		//draw_value( score_type_world );
-		//draw_value( score_type_round );
 }
 
-// Call this function on ro load level.
+// Call this function on load level.
 void engine_score_manager_update_level()
 {
 	struct_score_object *so = &global_score_object;
 	struct_state_object *st = &global_state_object;
 	so->values[ score_type_level ] = st->state_object_world_data * MAX_ROUNDS + st->state_object_round_data + 1;
 	draw_value( score_type_level );
-
-	// TODO delete this - used for debugging!
 	draw_value( score_type_world );
 	draw_value( score_type_round );
-	// TODO delete this - used for debugging!
 }
 
 void engine_score_manager_reset_lives()
@@ -200,7 +183,6 @@ void engine_score_manager_reset_lives()
 	struct_state_object *st = &global_state_object;
 
 	so->values[ score_type_lives ] = NUMBER_LIVES - st->state_object_difficulty;
-	//so->values[ score_type_lives ] = 1; // stevepro
 	draw_value( score_type_lives );
 }
 void engine_score_manager_reset_boost()
@@ -217,7 +199,6 @@ static void update_score( unsigned char points )
 {
 	struct_score_object *so = &global_score_object;
 	struct_state_object *st = &global_state_object;
-	//unsigned int hiscore = state_object_high_score;		// IMPORTANT Not sure why this didn't work directly??
 	so->score += points;
 
 	if( so->score > MAX_HI_SCORE )
@@ -256,7 +237,6 @@ static void draw_highs()
 static void draw_score()
 {
 	struct_score_object *so = &global_score_object;
-	//engine_font_manager_draw_long( so->score, DATA_X + 0, TEXT1_Y + 1 );
 	engine_font_manager_draw_data( so->score, DATA_X + 0, TEXT1_Y + 1 );
 }
 

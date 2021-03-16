@@ -4,9 +4,6 @@
 #include "global_manager.h"
 #include "..\object\boss_object.h"
 
-// Global variable.
-//extern struct_boss_object global_boss_object;
-
 // Global variables.
 extern struct_boss_object global_boss_objects[ MAX_BOSSES ];
 
@@ -24,6 +21,5 @@ unsigned char engine_boss_manager_scatter_direction( unsigned char bossX );
 unsigned char engine_boss_manager_gohome_direction( unsigned char bossX );
 void engine_boss_manager_content();
 unsigned char engine_boss_manager_index();
-//void engine_boss_manager_content( unsigned char index );
 
 #endif//_BOSS_MANAGER_H_

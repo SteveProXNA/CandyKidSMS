@@ -9,8 +9,6 @@
 #include "tile_manager.h"
 #include "..\object\locale_object.h"
 
-//#define OPTION_X		SCREEN_TILE_LEFT + 4
-//#define OPTION_Y		TEXT1_Y + TEXT1_Y
 #define SWAP_DELAY1		60
 #define SWAP_DELAY2		3 * SWAP_DELAY1 / 2
 #define SWAP_DELAY3		2 * SWAP_DELAY1
@@ -26,13 +24,10 @@ static unsigned char enemy_type;
 static unsigned char location;
 static unsigned char leftside;
 static unsigned char distance;
-//static unsigned char index;
 
 void engine_option_manager_init( unsigned char sides )
 {
 	distance = sides;
-	//index = sides;
-
 	delay_data1 = 0;
 	delay_data2 = 0;
 	delay_data3 = 0;
@@ -61,7 +56,6 @@ void engine_option_manager_update( unsigned char screen )
 
 	if( delay_data2 >= SWAP_DELAY2 )
 	{
-		//engine_gamer_manager_frame();
 		if( screen_type_title == screen || screen_type_start == screen )
 		{
 			bonus_tile++;
@@ -70,10 +64,7 @@ void engine_option_manager_update( unsigned char screen )
 				bonus_tile = tile_type_bonusA;
 			}
 
-			// TODO store this or inject!
 			engine_option_manager_draw_bonus( distance );
-			// TODO store this or inject!
-
 			engine_option_manager_draw_candy( distance );
 		}
 
@@ -89,13 +80,6 @@ void engine_option_manager_update( unsigned char screen )
 
 void engine_option_manager_clear()
 {
-	//unsigned char x[ NUM_DIRECTIONS ] = { 2, 14, 2, 14 };
-	//unsigned char y[ NUM_DIRECTIONS ] = { 0, 0, 1, 1 };
-	//unsigned char idx;
-	//for( idx = 0; idx < NUM_DIRECTIONS; idx++ )
-	//{
-	//	engine_font_manager_draw_text( locale_object_blank14, SCREEN_TILE_LEFT + x[ idx ], TEXT4_Y + y[ idx ] );
-	//}
 	engine_font_manager_draw_text( locale_object_blank14, SCREEN_TILE_LEFT + 2, TEXT4_Y + 0 );
 	engine_font_manager_draw_text( locale_object_blank14, SCREEN_TILE_LEFT + 14, TEXT4_Y + 0 );
 	engine_font_manager_draw_text( locale_object_blank14, SCREEN_TILE_LEFT + 2, TEXT4_Y + 1 );

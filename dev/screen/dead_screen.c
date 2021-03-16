@@ -19,10 +19,6 @@
 
 #define DEATH_SCREEN_DELAY		100
 #define FLASH_SCREEN_DELAY		20
-//#define RESET_SCREEN_DELAY		75
-
-//#define DEATH_SCREEN_DELAY		15
-//#define FLASH_SCREEN_DELAY		5
 
 static unsigned char death_frame;
 static unsigned char event_stage;
@@ -30,7 +26,6 @@ static unsigned char flash_count;
 static unsigned char first_times;
 
 static void reset_death();
-//static unsigned char screen;
 
 void screen_dead_screen_load()
 {
@@ -42,13 +37,7 @@ void screen_dead_screen_load()
 //	engine_command_manager_load();
 	engine_frame_manager_load();
 
-	//engine_frame_manager_draw();
-	//engine_delay_manager_draw();
-
-	// TODO play death sound FX
 	engine_delay_manager_load( DEATH_SCREEN_DELAY );
-	//engine_reset_manager_load( RESET_SCREEN_DELAY );
-
 	event_stage = event_stage_start;
 	death_frame = 0;
 	flash_count = 0;
@@ -58,37 +47,17 @@ void screen_dead_screen_load()
 	lives = engine_score_manager_get_value( score_type_lives );
 
 	st->state_object_next_screen = screen_type_cont;
-	//screen = screen_type_cont;
 	if( fight_type_enemy == st->state_object_fight_type )
 	{
 		st->state_object_next_screen = ( 0 == lives ) ? screen_type_cont : screen_type_ready;
-		//screen = ( 0 == lives ) ? screen_type_cont : screen_type_ready;
 	}
 	else
 	{
-		//st->state_object_next_screen = ( 0 == lives ) ? screen_type_cont : screen_type_load;
 		st->state_object_next_screen = ( 0 == lives ) ? screen_type_cont : screen_type_fight;
-		//screen = ( 0 == lives ) ? screen_type_cont : screen_type_load;
 	}
-	
-	//screen = screen_type_cont;
-	//screen = screen_type_ready;
 
-
-	// TODO if do here then only re-calc death tile rather than the entire maze!!
-	// If Kid dies from death tree then update directions
-	// because Mamas can now move through this empty tile.
-	//if( actor_type_tree == st->state_object_actor_kill && tree_type_death == st->state_object_trees_type )
-	//{
-		//engine_level_manager_directions();
-	//}
-
-	//if( !st->state_object_mydebugger )
-	//{
-		//engine_audio_manager_sfx_play( sfx_type_accept );
 	index = rand() % MAX_MUSIC;
 	engine_audio_manager_sfx_play( index + 3 );
-	//}
 }
 
 void screen_dead_screen_update( unsigned char *screen_type )
@@ -123,37 +92,18 @@ void screen_dead_screen_update( unsigned char *screen_type )
 
 
 	// Check if Kid want to advance.
-	//if( st->state_object_mydebugger )
-	//{
-		input = engine_input_manager_hold( input_type_fire2 );
-		if( input )
+	input = engine_input_manager_hold( input_type_fire2 );
+	if( input )
+	{
+		if( screen_type_cont != st->state_object_next_screen )
 		{
-			if( screen_type_cont != st->state_object_next_screen )
-			{
-				reset_death();
-				engine_audio_manager_music_resume();
-			}
-			//if( screen_type_load == st->state_object_next_screen )
-			//if( screen_type_fight == st->state_object_next_screen )
-			//{
-			//	// TODO stevepro adriana goto fight
-			//	//engine_state_manager_level();
-			//}
-
-			// TODO stevepro include ready + fight once fight screen has music
-			//if( screen_type_cont != st->state_object_next_screen )
-			//if( screen_type_ready == st->state_object_next_screen )
-			//{
-			//	engine_audio_manager_music_resume();
-			//}
-
-			*screen_type = st->state_object_next_screen;
-			return;
+			reset_death();
+			engine_audio_manager_music_resume();
 		}
-	//}
 
-	//engine_frame_manager_draw();
-	//engine_delay_manager_draw();
+		*screen_type = st->state_object_next_screen;
+		return;
+	}
 
 	engine_frame_manager_update();
 	if( event_stage_pause == event_stage )
@@ -174,19 +124,6 @@ void screen_dead_screen_update( unsigned char *screen_type )
 					reset_death();
 					engine_audio_manager_music_resume();
 				}
-				//if( screen_type_load == st->state_object_next_screen )
-				//if( screen_type_fight == st->state_object_next_screen )
-				//{
-				//	// TODO stevepro adriana goto fight
-				//	//engine_state_manager_level();
-				//}
-
-				// TODO stevepro include ready + fight once fight screen has music
-				//if( screen_type_cont != st->state_object_next_screen )
-				//if( screen_type_ready == st->state_object_next_screen )
-				//{
-				//	engine_audio_manager_music_resume();
-				//}
 
 				*screen_type = st->state_object_next_screen;
 				return;
@@ -235,14 +172,12 @@ void screen_dead_screen_update( unsigned char *screen_type )
 				}
 				else
 				{
-					//bossX_direction = engine_boss_manager_gohome_direction( bossX );
 					enemy_direction = engine_enemy_manager_gohome_direction( enemy );
 				}
 
-				//enemy_direction = engine_enemy_manager_gohome_direction( enemy );
 				if( direction_type_none != enemy_direction )
 				{
-					//				engine_command_manager_add( frame, command_type_enemy_mover, ( enemy | ( enemy_direction << 4 ) ) );
+					// engine_command_manager_add( frame, command_type_enemy_mover, ( enemy | ( enemy_direction << 4 ) ) );
 					engine_enemy_manager_move( enemy, enemy_direction );
 				}
 			}
@@ -286,7 +221,7 @@ void screen_dead_screen_update( unsigned char *screen_type )
 				
 				if( direction_type_none != bossX_direction )
 				{
-					//				engine_command_manager_add( frame, command_type_enemy_mover, ( enemy | ( enemy_direction << 4 ) ) );
+					// engine_command_manager_add( frame, command_type_enemy_mover, ( enemy | ( enemy_direction << 4 ) ) );
 					engine_boss_manager_move( bossX, bossX_direction );
 				}
 			}
@@ -330,11 +265,6 @@ static void reset_death()
 	}
 	else
 	{
-		//if( actor_type_boss1 == st->state_object_actor_kill || actor_type_boss2 == st->state_object_actor_kill )
-		//{
-			// TODO stevepro Adriana add this method to reset boss(es) to tour mode irrespective!
-			//engine_boss_manager_reset_mode( st->state_object_actor_kill, enemymove_type_tour );
-		//}
 	}
 
 	// If Kid dies from death tree then update directions

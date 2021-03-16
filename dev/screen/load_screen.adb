@@ -64,7 +64,6 @@ S:G$engine_enemy_manager_reset_mode$0$0({2}DF,SV:S),C,0,0
 S:G$engine_enemy_manager_frame$0$0({2}DF,SV:S),C,0,0
 S:G$engine_enemy_manager_image$0$0({2}DF,SV:S),C,0,0
 S:G$engine_enemy_manager_images$0$0({2}DF,SV:S),C,0,0
-S:G$engine_enemy_manager_debug$0$0({2}DF,SV:S),C,0,0
 S:G$engine_enemy_manager_scatter_direction$0$0({2}DF,SC:U),C,0,0
 S:G$engine_enemy_manager_gohome_direction$0$0({2}DF,SC:U),C,0,0
 S:G$engine_enemy_manager_attack_direction$0$0({2}DF,SC:U),C,0,0

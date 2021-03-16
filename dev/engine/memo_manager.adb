@@ -18,8 +18,8 @@ S:Lmemo_manager.engine_memo_manager_option$st$1$35({2}DG,STtag_struct_state_obje
 S:Lmemo_manager.engine_memo_manager_option$text$1$35({2}DG,SC:U),B,1,-6
 S:Lmemo_manager.engine_memo_manager_option$x$1$35({1}SC:U),R,0,0,[]
 S:Lmemo_manager.engine_memo_manager_option$sloc0$1$0({1}SC:U),B,1,-4
-S:Lmemo_manager.engine_memo_manager_option$sloc1$1$0({1}SC:U),B,1,-3
-S:Lmemo_manager.engine_memo_manager_option$sloc2$1$0({2}SI:S),B,1,-2
+S:Lmemo_manager.engine_memo_manager_option$sloc1$1$0({1}SC:U),B,1,-1
+S:Lmemo_manager.engine_memo_manager_option$sloc2$1$0({2}SI:S),B,1,-3
 F:G$engine_memo_manager_debugging$0$0({2}DF,SV:S),Z,0,4,0,0,0
 S:Lmemo_manager.engine_memo_manager_debugging$enemy$1$40({1}SC:U),B,1,4
 S:Lmemo_manager.engine_memo_manager_debugging$action$1$40({1}SC:U),B,1,5

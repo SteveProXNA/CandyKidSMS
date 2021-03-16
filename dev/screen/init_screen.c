@@ -11,9 +11,7 @@
 
 void screen_init_screen_load()
 {
-	// TODO delete used for debugging!!
 	engine_main_manager_load();
-
 
 	devkit_SMS_displayOff();
 
@@ -36,7 +34,5 @@ void screen_init_screen_load()
 
 void screen_init_screen_update( unsigned char *screen_type )
 {
-	//*screen_type = screen_type_init;
-	//*screen_type = screen_type_prep;
 	*screen_type = screen_type_load;
 }

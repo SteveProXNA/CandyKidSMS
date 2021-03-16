@@ -21,7 +21,6 @@ void screen_over_screen_load()
 
 	engine_audio_manager_music_stop();
 	engine_delay_manager_load( OVER_SCREEN_DELAY );
-	//engine_memo_manager_draw( 24, 25 );
 
 	engine_locale_manager_draw_text( 19, x, y + 1 );
 	engine_locale_manager_draw_text( 20, x, y + 2 );

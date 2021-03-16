@@ -5,9 +5,9 @@ S:Lcont_screen.screen_cont_screen_update$screen_type$1$79({2}DG,SC:U),B,1,4
 S:Lcont_screen.screen_cont_screen_update$st$1$80({2}DG,STtag_struct_state_object:S),R,0,0,[]
 S:Lcont_screen.screen_cont_screen_update$input$1$80({3}DA3d,SC:U),B,1,-12
 S:Lcont_screen.screen_cont_screen_update$delay$1$80({1}SC:U),R,0,0,[l]
-S:Lcont_screen.screen_cont_screen_update$sloc0$1$0({2}DD,SC:U),B,1,-4
-S:Lcont_screen.screen_cont_screen_update$sloc1$1$0({2}DD,SC:U),B,1,-6
-S:Lcont_screen.screen_cont_screen_update$sloc2$1$0({2}DD,SC:U),B,1,-8
+S:Lcont_screen.screen_cont_screen_update$sloc0$1$0({2}DD,SC:U),B,1,-8
+S:Lcont_screen.screen_cont_screen_update$sloc1$1$0({2}DD,SC:U),B,1,-4
+S:Lcont_screen.screen_cont_screen_update$sloc2$1$0({2}DD,SC:U),B,1,-6
 S:Lcont_screen.screen_cont_screen_update$sloc3$1$0({2}DG,SC:U),B,1,-2
 S:Lcont_screen.screen_cont_screen_update$sloc4$1$0({1}SC:U),B,1,-9
 F:Fcont_screen$display_cursor$0$0({2}DF,SV:S),Z,0,0,0,0,0
@@ -74,7 +74,6 @@ S:G$engine_enemy_manager_reset_mode$0$0({2}DF,SV:S),C,0,0
 S:G$engine_enemy_manager_frame$0$0({2}DF,SV:S),C,0,0
 S:G$engine_enemy_manager_image$0$0({2}DF,SV:S),C,0,0
 S:G$engine_enemy_manager_images$0$0({2}DF,SV:S),C,0,0
-S:G$engine_enemy_manager_debug$0$0({2}DF,SV:S),C,0,0
 S:G$engine_enemy_manager_scatter_direction$0$0({2}DF,SC:U),C,0,0
 S:G$engine_enemy_manager_gohome_direction$0$0({2}DF,SC:U),C,0,0
 S:G$engine_enemy_manager_attack_direction$0$0({2}DF,SC:U),C,0,0

@@ -73,21 +73,14 @@ void engine_move_manager_get_directions( unsigned char srceX, unsigned char srce
 
 unsigned char engine_move_manager_what_direction( unsigned char sourceX, unsigned char sourceY, unsigned char prev_move, unsigned char targetX, unsigned char targetY )
 {
-	//struct_enemy_object *eo = &global_enemy_objects[ enemy ];
-
 	unsigned char directions[ NUM_DIRECTIONS ] = { direction_type_none, direction_type_none, direction_type_none, direction_type_none };
 	unsigned char move_direction = direction_type_none;
 	unsigned char oppX_direction = direction_type_none;
-	//unsigned char prev_direction = direction_type_none;
 	unsigned char test_direction = direction_type_none;
 	unsigned char collision = direction_type_none;
 	unsigned char available = direction_type_none;
 
-	//unsigned char sourceX = eo->tileX;
-	//unsigned char sourceY = eo->tileY;
-
 	unsigned char index = 0;
-	//unsigned char byte = 0;
 	unsigned char list = 0;
 	unsigned char half = 0;
 	unsigned char flip = 0;
@@ -97,18 +90,12 @@ unsigned char engine_move_manager_what_direction( unsigned char sourceX, unsigne
 
 	index = list * 2 * NUM_DIRECTIONS + half * NUM_DIRECTIONS;
 
-	// TODO fixed bank - change to data bank!!
 	directions[ 0 ] = move_object_directions[ index + 0 ];
 	directions[ 1 ] = move_object_directions[ index + 1 ];
 	directions[ 2 ] = move_object_directions[ index + 2 ];
 	directions[ 3 ] = move_object_directions[ index + 3 ];
 
-	//prev_direction = eo->prev_move[ 3 ];
-	//oppX_direction = engine_move_manager_opposite_direction( eo->prev_move[ 0 ] );
-
-	//oppX_direction = engine_move_manager_opposite_direction( eo->prev_move );
 	oppX_direction = engine_move_manager_opposite_direction( prev_move );
-
 	available = engine_level_manager_get_direction( sourceX, sourceY, direction_type_none, offset_type_none );
 
 	for( index = 0; index < NUM_DIRECTIONS; index++ )
@@ -126,7 +113,7 @@ unsigned char engine_move_manager_what_direction( unsigned char sourceX, unsigne
 		}
 	}
 
-	// Enemy in cul de sac so must be able to go in opposite direction!
+	// Enemy in cul-de-sac so must be able to go in opposite direction!
 	if( direction_type_none == move_direction )
 	{
 		move_direction = oppX_direction;

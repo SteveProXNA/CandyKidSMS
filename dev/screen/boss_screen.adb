@@ -21,10 +21,10 @@ S:Lboss_screen.screen_boss_screen_update$bossX$1$64({1}SC:U),R,0,0,[c]
 S:Lboss_screen.screen_boss_screen_update$check$1$64({1}SC:U),R,0,0,[l]
 S:Lboss_screen.screen_boss_screen_update$frame$1$64({2}SI:U),R,0,0,[]
 S:Lboss_screen.screen_boss_screen_update$sloc0$1$0({1}SC:U),B,1,-1
-S:Lboss_screen.screen_boss_screen_update$sloc1$1$0({2}DG,SC:U),B,1,-6
-S:Lboss_screen.screen_boss_screen_update$sloc2$1$0({1}SC:U),B,1,-7
-S:Lboss_screen.screen_boss_screen_update$sloc3$1$0({1}SC:U),B,1,-4
-S:Lboss_screen.screen_boss_screen_update$sloc4$1$0({2}DG,SC:U),B,1,-3
+S:Lboss_screen.screen_boss_screen_update$sloc1$1$0({2}DG,SC:U),B,1,-3
+S:Lboss_screen.screen_boss_screen_update$sloc2$1$0({1}SC:U),B,1,-4
+S:Lboss_screen.screen_boss_screen_update$sloc3$1$0({1}SC:U),B,1,-5
+S:Lboss_screen.screen_boss_screen_update$sloc4$1$0({2}DG,SC:U),B,1,-7
 S:Lboss_screen.screen_boss_screen_update$sloc5$1$0({2}DG,SC:U),B,1,-9
 T:Fboss_screen$tag_struct_boss_object[({0}S:S$actor$0$0({1}SC:U),Z,0,0)({1}S:S$posnX$0$0({1}SC:U),Z,0,0)({2}S:S$posnY$0$0({1}SC:U),Z,0,0)({3}S:S$homeX$0$0({1}SC:U),Z,0,0)({4}S:S$homeY$0$0({1}SC:U),Z,0,0)({5}S:S$tileX$0$0({1}SC:U),Z,0,0)({6}S:S$tileY$0$0({1}SC:U),Z,0,0)({7}S:S$tileZ$0$0({1}SC:U),Z,0,0)({8}S:S$waiter$0$0({1}SC:U),Z,0,0)({9}S:S$action$0$0({1}SC:U),Z,0,0)({10}S:S$scatter$0$0({8}DA8d,SC:U),Z,0,0)({18}S:S$paths$0$0({1}SC:U),Z,0,0)({19}S:S$speed$0$0({1}SC:U),Z,0,0)({20}S:S$delay$0$0({1}SC:U),Z,0,0)({21}S:S$timer$0$0({1}SC:U),Z,0,0)({22}S:S$total$0$0({1}SC:U),Z,0,0)({23}S:S$sizer$0$0({1}SC:U),Z,0,0)({24}S:S$mover$0$0({1}SC:U),Z,0,0)({25}S:S$drawr$0$0({1}SC:U),Z,0,0)({26}S:S$wide$0$0({1}SC:U),Z,0,0)({27}S:S$high$0$0({1}SC:U),Z,0,0)({28}S:S$lifecycle$0$0({1}SC:U),Z,0,0)({29}S:S$prev_move$0$0({1}SC:U),Z,0,0)({30}S:S$direction$0$0({1}SC:U),Z,0,0)({31}S:S$image$0$0({1}SC:U),Z,0,0)]
 T:Fboss_screen$tag_struct_frame_object[({0}S:S$frame_count$0$0({2}SI:U),Z,0,0)]

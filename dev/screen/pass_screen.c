@@ -30,8 +30,6 @@ void screen_pass_screen_load()
 
 	// Draw sprites first.
 	draw_actor();
-	//engine_enemy_manager_draw();
-	//engine_gamer_manager_draw();
 
 	st->state_object_curr_screen = screen_type_pass;
 	st->state_object_next_screen = screen_type_load;
@@ -48,7 +46,6 @@ void screen_pass_screen_load()
 	event_stage = event_stage_start;
 }
 
-// TODO combine pass + bonus screen
 void screen_pass_screen_update( unsigned char *screen_type )
 {
 	struct_state_object *st = &global_state_object;
@@ -58,15 +55,10 @@ void screen_pass_screen_update( unsigned char *screen_type )
 	if( event_stage_pause == event_stage )
 	{
 		delay = engine_delay_manager_update();
-		input = 0;
-		//if( st->state_object_mydebugger )
-		//{
-			input = engine_input_manager_hold( input_type_fire2 );
-		//}
+		input = engine_input_manager_hold( input_type_fire2 );
 		if( delay || input )
 		{
 			next_level();
-			//engine_state_manager_level();
 			engine_audio_manager_music_stop();
 			*screen_type = st->state_object_next_screen;
 			return;
@@ -78,8 +70,6 @@ void screen_pass_screen_update( unsigned char *screen_type )
 
 		// Draw sprites first.
 		hide_actor();
-		//engine_enemy_manager_hide();
-		//engine_gamer_manager_hide();
 		return;
 	}
 
@@ -98,11 +88,7 @@ void screen_pass_screen_update( unsigned char *screen_type )
 			}
 		}
 
-		//if( !st->state_object_mydebugger )
-		//{
-			engine_audio_manager_music_play_norepeat( mus_type_level );
-		//}
-
+		engine_audio_manager_music_play_norepeat( mus_type_level );
 		event_stage = event_stage_pause;
 	}
 
@@ -110,14 +96,10 @@ void screen_pass_screen_update( unsigned char *screen_type )
 	if( event_stage_start == event_stage )
 	{
 		draw_actor();
-		//engine_enemy_manager_draw();
-		//engine_gamer_manager_draw();
 	}
 	else
 	{
 		hide_actor();
-		//engine_enemy_manager_hide();
-		//engine_gamer_manager_hide();
 	}
 
 	*screen_type = st->state_object_curr_screen;
@@ -164,7 +146,6 @@ static void next_level()
 		boss2 = ( 0 == ( st->state_object_round_data + 1 ) % 2 );
 		if( boss1 || boss2 )
 		{
-			// TODO uncomment this line to integrate boss fights.
 			st->state_object_next_screen = screen_type_prep;
 			return;
 		}
@@ -177,7 +158,6 @@ static void next_level()
 		return;
 	}
 
-	// TODO  here is where we check to go to boss level if there are any!!
 	st->state_object_round_data++;
 	if( st->state_object_round_data >= MAX_ROUNDS )
 	{

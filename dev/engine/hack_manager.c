@@ -73,11 +73,10 @@ void engine_hack_manager_load()
 
 void engine_hack_manager_invert()
 {
-	// TODO delete this hard coded
 	struct_hack_object *ho = &global_hack_object;
 	struct_state_object *st = &global_state_object;
 
-	// Ensure all commented out : us	ed for testing!
+	// Ensure all commented out : used for testing!
 	//ho->hack_object_delay_test = 0;
 	//ho->hack_object_mydebugger = 0;
 	//ho->hack_object_invincibie = 1;
@@ -155,15 +154,4 @@ void engine_hack_manager_invert()
 	// Invert default values.
 	ho->hack_object_music_data = !ho->hack_object_music_data;
 	ho->hack_object_sound_data = !ho->hack_object_sound_data;
-
-	//ho->hack_object_music_data = 0;
-	//ho->hack_object_sound_data = 0;
-
-
-	// TODO delete this hard coded!!
-	//st->state_object_world_data = 0;
-	//st->state_object_round_data = 1;
-
-	//st->state_object_localcheat = 1;
-	// TODO delete this hard coded!!
 }

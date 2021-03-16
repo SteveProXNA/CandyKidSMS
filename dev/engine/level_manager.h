@@ -12,8 +12,6 @@ void engine_level_manager_temp_level( unsigned char tileX, unsigned char tileY, 
 void engine_level_manager_load_extra( unsigned char quantity, unsigned char tile_type );
 void engine_level_manager_directions();
 
-// TODO delete
-//void engine_level_manager_update_level( const unsigned char round, unsigned char *actor_mover, unsigned char *actor_tileZ );
 void engine_level_manager_beat_level( const unsigned char *data, const unsigned char size, const unsigned char bank );
 void engine_level_manager_blank_tile( unsigned char index );
 void engine_level_manager_draw_level();

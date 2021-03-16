@@ -19,9 +19,6 @@
 	#pragma disable_warning 126
 #endif
 
-// Global variable.
-//struct_boss_object global_boss_object;
-
 // Global variables.
 struct_boss_object global_boss_objects[ MAX_BOSSES ];
 
@@ -68,7 +65,7 @@ void engine_boss_manager_init()
 void engine_boss_manager_setup( unsigned char round )
 {
 	// Rule:
-	// boss1	every  5th round
+	// boss1	every  2nd round
 	// boss2	every 10th round
 	struct_enemy_object *eo;
 	unsigned char enemy;
@@ -76,8 +73,6 @@ void engine_boss_manager_setup( unsigned char round )
 
 	// Randomize the first boss.
 	enemy = rand() % MAX_ENEMIES;
-	//enemy = 1;	// todo delete
-
 	boss_index[ 0 ] = enemy;
 	boss_one = enemy;
 	if( 0 == ( round + 1 ) % MAX_ROUNDS )
@@ -99,8 +94,6 @@ void engine_boss_manager_setup( unsigned char round )
 		while( 1 )
 		{
 			enemy = rand() % MAX_ENEMIES;
-			//enemy = 1;		// todo delete
-
 			if( boss_one != enemy )
 			{
 				boss_index[ 1 ] = enemy;
@@ -144,11 +137,9 @@ void engine_boss_manager_load()
 	eo = &global_enemy_objects[ actor_type_pro ];
 	minX = go->tileX + 1 - st->state_object_fight_type;
 	minY = go->tileY + 1 - st->state_object_fight_type;
-	//maxX = eo->tileX + 1 - st->state_object_fight_type;
-	//maxY = eo->tileY + 0 - st->state_object_fight_type;
 
-	distX = 10;	// maxX - minX + 1;
-	distY = 7;	// maxY - minY + 1;
+	distX = 10;
+	distY = 7;
 	if( fight_type_boss1 == st->state_object_fight_type )
 	{
 		distX = 7;
@@ -197,22 +188,6 @@ void engine_boss_manager_load()
 				bo->mover = 0;
 				bo->drawr = 0;
 			}
-			//if( diff_type_easy == st->state_object_difficulty && 1 == bossX )
-			//{
-			//	bo->mover = 0;
-			//	bo->drawr = 1;
-			//}
-
-
-			// TODO delete
-			//if( 1 == bossX )
-			//{
-			//	bo->drawr = 0;
-			//	bo->mover = 0;
-			//	bo->drawr = 0;
-			//}
-			// TODO delete
-
 
 			eo = &global_enemy_objects[ bo->actor ];
 			bo->wide = eo->image;
@@ -233,32 +208,11 @@ void engine_boss_manager_load()
 
 		enemy = bo->actor;
 		index = ( 8 * enemy ) + ( 4 * ( st->state_object_fight_type - 1 ) ) + ( st->state_object_difficulty * 2 ) + st->state_object_pace_speed;
-		//bo->speed = 1;
-		//bo->delay = 4;
 
 		bo->speed = boss_object_speed[ index ];
 		bo->delay = boss_object_delay[ index ];
 
-		//if( 0 == bossX )
-		//{
-		//	engine_font_manager_draw_data( index, 10, 0 );
-		//	engine_font_manager_draw_data( bo->speed, 20, 0 );
-		//	engine_font_manager_draw_data( bo->delay, 20, 1 );
-		//}
-
-
-		//eo = &global_enemy_objects[ 1 ];
-		//
-		//
-		//
-		//engine_function_manager_convertXYtoZ( MAZE_ROWS, tileX, tileY, &tileZ1 );
-
-		//eo = &global_enemy_objects[ 2 ];
-		//tileX = eo->tileX;
-		//tileY = eo->tileY;
-		//engine_function_manager_convertXYtoZ( MAZE_ROWS, tileX, tileY, &tileZ2 );
-		////engine_function_manager_convertXYtoZ( MAZE_ROWS, go->tileX-0, go->tileY-0, &tileZ2 );
-		//// Scatter.
+		// Scatter.
 		for( index = 0; index < NUM_DIRECTIONS * 2; index ++ )
 		{
 			tileX = rand() % distX;
@@ -269,25 +223,12 @@ void engine_boss_manager_load()
 			{
 				tileX = 1;
 			}
-			//tileX = 7;
-			//tileY = 5;
 
 			tileX += minX;
 			tileY += minY;
 			engine_function_manager_convertXYtoZ( MAZE_ROWS, tileX, tileY, &tileZ );
 			bo->scatter[ index ] = tileZ;
 		}
-
-		//bo->scatter[ 1 ] = 93;
-		//bo->scatter[ 2 ] = 92;
-		//bo->scatter[ 3 ] = 91;
-
-		//bo->scatter[ 4 ] = 108;
-		//bo->scatter[ 5 ] = 92;
-		//bo->scatter[ 6 ] = 104;
-		//bo->scatter[ 7 ] = 136;
-
-		// TODO stevepro Adriana correct
 	}
 }
 
@@ -306,7 +247,6 @@ void engine_boss_manager_update( unsigned char bossX )
 	}
 
 	bo->timer = 0;
-	//bo->delta += bo->speed;
 	bo->total += bo->speed;
 
 	// Update position.
@@ -351,10 +291,6 @@ void engine_boss_manager_update( unsigned char bossX )
 
 		bo->lifecycle = lifecycle_type_idle;
 		bo->total = 0;
-
-
-		//engine_font_manager_draw_data( bo->tileX, 10, 10 );
-		//engine_font_manager_draw_data( bo->tileY, 10, 11 );
 	}
 }
 
@@ -483,8 +419,6 @@ unsigned char engine_boss_manager_scatter_direction( unsigned char bossX )
 
 		tileZ = bo->scatter[ bo->paths ];
 		engine_function_manager_convertZtoXY( MAZE_ROWS, tileZ, &targetX, &targetY );
-
-		//engine_font_manager_draw_data( tileZ, 30, 0 );
 	}
 
 	bossX_direction = engine_move_manager_what_direction( bo->tileX, bo->tileY, bo->prev_move, targetX, targetY );
@@ -510,7 +444,6 @@ unsigned char engine_boss_manager_gohome_direction( unsigned char bossX )
 	return bossX_direction;
 }
 
-//void engine_boss_manager_content( unsigned char index )
 void engine_boss_manager_content()
 {
 	unsigned char *tiles;

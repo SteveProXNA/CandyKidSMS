@@ -11,8 +11,8 @@ S:Ltile_manager.engine_tile_manager_draw_tile$x$1$72({1}SC:U),B,1,5
 S:Ltile_manager.engine_tile_manager_draw_tile$y$1$72({1}SC:U),B,1,6
 S:Ltile_manager.engine_tile_manager_draw_tile$mult$1$72({1}SC:U),B,1,7
 S:Ltile_manager.engine_tile_manager_draw_tile$st$1$73({2}DG,STtag_struct_state_object:S),R,0,0,[c,b]
-S:Ltile_manager.engine_tile_manager_draw_tile$upper_nibble$1$73({1}SC:U),B,1,-1
-S:Ltile_manager.engine_tile_manager_draw_tile$lower_nibble$1$73({1}SC:U),B,1,-2
+S:Ltile_manager.engine_tile_manager_draw_tile$upper_nibble$1$73({1}SC:U),B,1,-2
+S:Ltile_manager.engine_tile_manager_draw_tile$lower_nibble$1$73({1}SC:U),B,1,-1
 S:Ltile_manager.engine_tile_manager_draw_tile$tile_type$1$73({1}SC:U),R,0,0,[d]
 F:G$engine_tile_manager_draw_blank$0$0({2}DF,SV:S),Z,0,0,0,0,0
 S:Ltile_manager.engine_tile_manager_draw_blank$x$1$79({1}SC:U),B,1,4

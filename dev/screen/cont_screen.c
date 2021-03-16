@@ -76,11 +76,6 @@ void screen_cont_screen_update( unsigned char *screen_type )
 				}
 				else
 				{
-					//if( actor_type_boss1 == st->state_object_actor_kill || actor_type_boss2 == st->state_object_actor_kill )
-					//{
-					// TODO stevepro Adriana add this method to reset boss(es) to tour mode irrespective!
-					//engine_boss_manager_reset_mode( st->state_object_actor_kill, enemymove_type_tour );
-					//}
 				}
 
 				// If Kid dies from death tree then update directions
@@ -134,8 +129,6 @@ void screen_cont_screen_update( unsigned char *screen_type )
 	input[ 2 ] = engine_input_manager_hold( input_type_fire1 );
 	if( input[ 2 ] )
 	{
-		// TODO play sound FX
-		//engine_audio_manager_sound_accept();		// adriana
 		event_stage = event_stage_pause;
 		return;
 	}

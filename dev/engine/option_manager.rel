@@ -42,7 +42,10 @@ S A$option_manager$497 Def0173
 S A$option_manager$479 Def015C
 S A$option_manager$398 Def0118
 S A$option_manager$389 Def010A
+S C$option_manager.c$95$1$73 Def00F7
 S G$engine_option_manager_draw_actor$0$0 Def00E9
+S C$option_manager.c$62$3$68 Def0082
+S C$option_manager.c$48$2$65 Def0049
 S A$option_manager$993 Def035E
 S A$option_manager$966 Def0351
 S A$option_manager$957 Def0343
@@ -63,8 +66,8 @@ S A$option_manager$579 Def01B3
 S A$option_manager$498 Def0174
 S A$option_manager$489 Def0167
 S A$option_manager$399 Def0119
-S C$option_manager.c$70$4$69 Def0089
-S C$option_manager.c$65$2$67 Def0067
+S C$option_manager.c$89$1$71 Def00E9
+S C$option_manager.c$28$0$0 Def0000
 S A$option_manager$994 Def0361
 S A$option_manager$985 Def0355
 S A$option_manager$967 Def0352
@@ -79,8 +82,7 @@ S A$option_manager$697 Def0224
 S A$option_manager$598 Def01C8
 S A$option_manager$499 Def0175
 S G$engine_option_manager_option_tree$0$0 Def038D
-S C$option_manager.c$99$1$71 Def00B7
-S C$option_manager.c$88$1$64 Def00B6
+S C$option_manager.c$79$1$64 Def00B6
 S _engine_option_manager_draw_candy Def02D5
 S _engine_option_manager_text_kid Def014B
 S A$option_manager$995 Def0362
@@ -94,8 +96,7 @@ S A$option_manager$779 Def027F
 S A$option_manager$698 Def0225
 S A$option_manager$599 Def01C9
 S XG$engine_option_manager_option_diff$0$0 Def0476
-S C$option_manager.c$74$3$68 Def008D
-S C$option_manager.c$58$3$66 Def005C
+S C$option_manager.c$98$1$73 Def0100
 S A$option_manager$996 Def0365
 S A$option_manager$987 Def0359
 S A$option_manager$897 Def0304
@@ -104,48 +105,49 @@ S A$option_manager$798 Def029A
 S A$option_manager$789 Def028A
 S A$option_manager$699 Def0226
 S XG$engine_option_manager_text_start$0$0 Def0257
+S C$option_manager.c$64$4$69 Def0089
+S C$option_manager.c$59$2$67 Def0067
 S _engine_option_manager_text_exit Def0355
 S A$option_manager$997 Def0367
 S A$option_manager$988 Def035C
 S A$option_manager$898 Def0305
 S A$option_manager$889 Def02FD
 S A$option_manager$799 Def029B
-S C$option_manager.c$67$3$68 Def007B
+S C$option_manager.c$67$3$68 Def008D
 S A$option_manager$998 Def0368
 S A$option_manager$989 Def035D
 S A$option_manager$899 Def0308
 S XG$engine_option_manager_text_tree$0$0 Def0354
-S C$option_manager.c$77$3$68 Def0098
-S C$option_manager.c$68$3$68 Def0082
+S C$option_manager.c$68$3$68 Def0098
 S _engine_option_manager_option_round Def0436
 S _engine_option_manager_option_world Def0411
 S A$option_manager$999 Def0369
 S XG$engine_option_manager_text_kid_no$0$0 Def019E
 S Foption_manager$__str_0$0$0 Def02D2
+S C$option_manager.c$210$1$100 Def0414
 S G$engine_option_manager_option_exit$0$0 Def03A3
 S Foption_manager$__str_1$0$0 Def0316
 S _engine_option_manager_draw_actor Def00E9
+S C$option_manager.c$211$1$100 Def0435
 S Foption_manager$__str_2$0$0 Def03C9
+S C$option_manager.c$212$1$100 Def0436
 S Foption_manager$__str_3$0$0 Def03CC
 S XG$engine_option_manager_draw_candy$0$0 Def0315
 S G$engine_option_manager_draw_bonus$0$0 Def0258
 S XG$engine_option_manager_text_kid$0$0 Def017A
 S G$engine_option_manager_init$0$0 Def0000
 S _engine_option_manager_option_tree Def038D
-S C$option_manager.c$230$1$102 Def0439
 S XG$engine_option_manager_text_exit$0$0 Def038C
-S C$option_manager.c$231$1$102 Def045B
-S C$option_manager.c$232$1$102 Def045C
 S XG$engine_option_manager_option_round$0$0 Def045B
+S C$option_manager.c$214$1$102 Def0439
 S XG$engine_option_manager_option_world$0$0 Def0435
-S C$option_manager.c$226$1$100 Def0414
-S C$option_manager.c$227$1$100 Def0435
-S C$option_manager.c$228$1$100 Def0436
-S C$option_manager.c$234$1$104 Def045C
-S C$option_manager.c$235$1$104 Def0476
+S C$option_manager.c$215$1$102 Def045B
+S C$option_manager.c$216$1$102 Def045C
+S C$option_manager.c$218$1$104 Def045C
 S G$engine_option_manager_text_enemy_no$0$0 Def01EA
 S XG$engine_option_manager_draw_actor$0$0 Def014A
 S _engine_option_manager_option_exit Def03A3
+S C$option_manager.c$219$1$104 Def0476
 S XG$engine_option_manager_option_tree$0$0 Def03A2
 S _engine_option_manager_draw_bonus Def0258
 S _engine_option_manager_init Def0000
@@ -170,7 +172,6 @@ S A$option_manager$1130 Def03DB
 S A$option_manager$1022 Def0386
 S A$option_manager$1013 Def037A
 S A$option_manager$1004 Def0370
-S C$option_manager.c$100$1$71 Def00C3
 S G$engine_option_manager_clear$0$0 Def00B7
 S A$option_manager$1230 Def043E
 S A$option_manager$1203 Def042C
@@ -181,7 +182,6 @@ S A$option_manager$1050 Def039A
 S A$option_manager$1023 Def0387
 S A$option_manager$1014 Def037B
 S A$option_manager$1005 Def0371
-S C$option_manager.c$101$1$71 Def00CF
 S A$option_manager$1240 Def044F
 S A$option_manager$1231 Def0441
 S A$option_manager$1213 Def0435
@@ -194,7 +194,7 @@ S A$option_manager$1060 Def03A2
 S A$option_manager$1051 Def039B
 S A$option_manager$1024 Def038A
 S A$option_manager$1015 Def037C
-S C$option_manager.c$102$1$71 Def00DB
+S C$option_manager.c$100$1$73 Def0107
 S A$option_manager$1241 Def0450
 S A$option_manager$1232 Def0442
 S A$option_manager$1223 Def0436
@@ -209,8 +209,6 @@ S A$option_manager$1043 Def038D
 S A$option_manager$1025 Def038B
 S A$option_manager$1016 Def037E
 S XG$engine_option_manager_option_exit$0$0 Def03C8
-S C$option_manager.c$110$1$73 Def00ED
-S C$option_manager.c$103$1$71 Def00E8
 S _engine_option_manager_text_enemy_no Def01EA
 S A$option_manager$1242 Def0451
 S A$option_manager$1233 Def0443
@@ -224,7 +222,6 @@ S A$option_manager$1080 Def03B0
 S A$option_manager$1053 Def039D
 S A$option_manager$1044 Def0390
 S A$option_manager$1017 Def037F
-S C$option_manager.c$111$1$73 Def00F7
 S A$option_manager$1270 Def0464
 S A$option_manager$1243 Def0452
 S A$option_manager$1234 Def0444
@@ -241,7 +238,8 @@ S A$option_manager$1045 Def0391
 S A$option_manager$1018 Def0382
 S A$option_manager$1009 Def0372
 S XG$engine_option_manager_draw_bonus$0$0 Def02D1
-S C$option_manager.c$105$1$71 Def00E9
+S C$option_manager.c$141$1$80 Def01EA
+S C$option_manager.c$101$2$74 Def013E
 S XG$engine_option_manager_init$0$0 Def002C
 S A$option_manager$1280 Def0471
 S A$option_manager$1271 Def0465
@@ -259,7 +257,7 @@ S A$option_manager$1073 Def03A3
 S A$option_manager$1055 Def03A1
 S A$option_manager$1046 Def0394
 S A$option_manager$1019 Def0383
-S C$option_manager.c$200$1$94 Def0355
+S C$option_manager.c$131$2$81 Def01D7
 S A$option_manager$1281 Def0474
 S A$option_manager$1272 Def0466
 S A$option_manager$1245 Def0454
@@ -272,8 +270,7 @@ S A$option_manager$1128 Def03D9
 S A$option_manager$1092 Def03BF
 S A$option_manager$1074 Def03A6
 S A$option_manager$1047 Def0395
-S C$option_manager.c$201$1$94 Def035E
-S C$option_manager.c$114$1$73 Def0100
+S C$option_manager.c$110$1$77 Def014B
 S _engine_option_manager_text_enemy Def019F
 S A$option_manager$1282 Def0475
 S A$option_manager$1273 Def0469
@@ -288,9 +285,7 @@ S A$option_manager$1129 Def03DA
 S A$option_manager$1093 Def03C2
 S A$option_manager$1075 Def03A7
 S A$option_manager$1048 Def0396
-S C$option_manager.c$202$1$94 Def0372
-S C$option_manager.c$122$2$74 Def014A
-S C$option_manager.c$120$3$75 Def012C
+S C$option_manager.c$131$3$82 Def019F
 S _engine_option_manager_update Def002D
 S A$option_manager$1274 Def046A
 S A$option_manager$1247 Def0458
@@ -305,12 +300,9 @@ S A$option_manager$1139 Def03E4
 S A$option_manager$1094 Def03C3
 S A$option_manager$1076 Def03AA
 S A$option_manager$1049 Def0399
-S C$option_manager.c$210$1$96 Def03A3
-S C$option_manager.c$203$1$94 Def038C
-S C$option_manager.c$154$1$80 Def01DD
-S C$option_manager.c$150$3$82 Def01C0
-S C$option_manager.c$130$1$77 Def0167
-S C$option_manager.c$116$1$73 Def0107
+S C$option_manager.c$200$1$97 Def03CF
+S C$option_manager.c$171$1$90 Def02EF
+S C$option_manager.c$103$3$75 Def0122
 S A$option_manager$1275 Def046B
 S A$option_manager$1266 Def045C
 S A$option_manager$1248 Def0459
@@ -323,10 +315,11 @@ S A$option_manager$1095 Def03C6
 S A$option_manager$1086 Def03B5
 S A$option_manager$1077 Def03AB
 S G$engine_option_manager_option_diff$0$0 Def045C
-S C$option_manager.c$160$1$84 Def0220
-S C$option_manager.c$155$1$80 Def01E9
-S C$option_manager.c$131$1$77 Def017A
-S C$option_manager.c$124$2$74 Def014B
+S C$option_manager.c$172$1$90 Def0300
+S C$option_manager.c$133$3$82 Def01A1
+S C$option_manager.c$113$1$77 Def0155
+S C$option_manager.c$106$2$74 Def014A
+S C$option_manager.c$104$3$75 Def012C
 S A$option_manager$1276 Def046D
 S A$option_manager$1267 Def045F
 S A$option_manager$1195 Def041F
@@ -335,7 +328,14 @@ S A$option_manager$1159 Def03FE
 S A$option_manager$1096 Def03C7
 S A$option_manager$1087 Def03B8
 S A$option_manager$1078 Def03AC
+S C$option_manager.c$180$1$92 Def033F
+S C$option_manager.c$173$1$90 Def0315
+S C$option_manager.c$150$1$86 Def0257
 S G$engine_option_manager_text_start$0$0 Def0221
+S C$option_manager.c$143$1$84 Def01EA
+S C$option_manager.c$138$1$80 Def01DD
+S C$option_manager.c$134$3$82 Def01C0
+S C$option_manager.c$114$1$77 Def0167
 S _engine_option_manager_text_other Def03CF
 S A$option_manager$1277 Def046E
 S A$option_manager$1268 Def0460
@@ -343,14 +343,13 @@ S A$option_manager$1196 Def0422
 S A$option_manager$1169 Def040F
 S A$option_manager$1088 Def03B9
 S A$option_manager$1079 Def03AF
-S C$option_manager.c$212$1$97 Def03A3
-S C$option_manager.c$206$1$94 Def038D
-S C$option_manager.c$192$1$90 Def031C
-S C$option_manager.c$183$1$90 Def02D8
-S C$option_manager.c$162$1$84 Def0221
-S C$option_manager.c$157$1$80 Def01EA
-S C$option_manager.c$133$1$77 Def017B
-S C$option_manager.c$117$2$74 Def013E
+S C$option_manager.c$202$1$98 Def03CF
+S C$option_manager.c$181$1$92 Def0354
+S C$option_manager.c$144$1$84 Def0220
+S C$option_manager.c$139$1$80 Def01E9
+S C$option_manager.c$122$1$79 Def0185
+S C$option_manager.c$115$1$77 Def017A
+S C$option_manager.c$108$2$74 Def014B
 S _engine_option_manager_clear Def00B7
 S A$option_manager$1287 Def0476
 S A$option_manager$1278 Def046F
@@ -359,28 +358,31 @@ S A$option_manager$1197 Def0425
 S A$option_manager$1188 Def0414
 S A$option_manager$1089 Def03BA
 S A$option_manager$200 Def004C
-S C$option_manager.c$221$1$98 Def03FA
-S C$option_manager.c$213$1$97 Def03B5
+S C$option_manager.c$203$1$98 Def03E4
+S C$option_manager.c$182$1$92 Def0355
 S G$engine_option_manager_text_tree$0$0 Def031C
-S C$option_manager.c$184$1$90 Def02E0
-S C$option_manager.c$147$2$81 Def01D7
-S C$option_manager.c$141$1$79 Def019F
+S C$option_manager.c$152$1$86 Def0258
+S C$option_manager.c$123$1$79 Def019E
 S A$option_manager$1279 Def0470
 S A$option_manager$1198 Def0427
 S A$option_manager$1189 Def0417
 S A$option_manager$210 Def0058
-S C$option_manager.c$222$1$98 Def0410
-S C$option_manager.c$214$1$97 Def03C8
-S C$option_manager.c$126$1$77 Def014B
+S C$option_manager.c$190$1$94 Def038D
+S C$option_manager.c$176$1$90 Def031C
+S C$option_manager.c$167$1$90 Def02D8
+S C$option_manager.c$146$1$84 Def0221
+S C$option_manager.c$117$1$77 Def017B
 S A$option_manager$1199 Def0428
 S A$option_manager$400 Def011A
 S A$option_manager$310 Def00BB
 S A$option_manager$220 Def0060
 S A$option_manager$211 Def005A
 S A$option_manager$121 Def0008
-S C$option_manager.c$170$1$88 Def025C
+S C$option_manager.c$205$1$98 Def03FA
+S C$option_manager.c$168$1$90 Def02E0
+S C$option_manager.c$161$1$88 Def02A0
 S XG$engine_option_manager_text_enemy_no$0$0 Def0220
-S C$option_manager.c$147$3$82 Def019F
+S C$option_manager.c$125$1$79 Def019F
 S A$option_manager$500 Def0178
 S A$option_manager$401 Def011B
 S A$option_manager$320 Def00CA
@@ -389,15 +391,8 @@ S A$option_manager$230 Def0072
 S A$option_manager$221 Def0063
 S A$option_manager$131 Def0012
 S A$option_manager$122 Def000B
-S C$option_manager.c$224$1$98 Def0411
-S C$option_manager.c$216$1$97 Def03CF
-S C$option_manager.c$208$1$96 Def038D
-S C$option_manager.c$194$1$92 Def031F
-S C$option_manager.c$187$1$90 Def02EF
-S C$option_manager.c$171$1$88 Def0268
-S C$option_manager.c$164$1$86 Def0221
-S C$option_manager.c$135$1$79 Def017B
-S C$option_manager.c$119$3$75 Def0122
+S C$option_manager.c$206$1$98 Def0410
+S C$option_manager.c$162$1$88 Def02B5
 S A$option_manager$600 Def01CB
 S A$option_manager$501 Def0179
 S A$option_manager$402 Def011C
@@ -410,14 +405,10 @@ S A$option_manager$204 Def004E
 S A$option_manager$141 Def001C
 S A$option_manager$132 Def0015
 S A$option_manager$114 Def0000
-S C$option_manager.c$209$1$96 Def03A2
-S C$option_manager.c$195$1$92 Def0326
-S C$option_manager.c$188$1$90 Def0300
-S C$option_manager.c$181$1$88 Def02D5
-S C$option_manager.c$165$1$86 Def0240
-S C$option_manager.c$149$3$82 Def01A1
+S C$option_manager.c$184$1$94 Def0355
+S C$option_manager.c$163$1$88 Def02D1
+S C$option_manager.c$154$1$88 Def025C
 S G$engine_option_manager_text_kid_no$0$0 Def017B
-S C$option_manager.c$129$1$77 Def0155
 S A$option_manager$700 Def0227
 S A$option_manager$601 Def01CC
 S A$option_manager$520 Def017E
@@ -432,11 +423,14 @@ S A$option_manager$205 Def0052
 S A$option_manager$151 Def0026
 S A$option_manager$142 Def001F
 S A$option_manager$115 Def0003
-S C$option_manager.c$196$1$92 Def033F
-S C$option_manager.c$189$1$90 Def0315
-S C$option_manager.c$173$1$88 Def0272
-S C$option_manager.c$166$1$86 Def0257
-S C$option_manager.c$159$1$84 Def01EA
+S C$option_manager.c$208$1$98 Def0411
+S C$option_manager.c$192$1$96 Def038D
+S C$option_manager.c$185$1$94 Def035E
+S C$option_manager.c$178$1$92 Def031F
+S C$option_manager.c$155$1$88 Def0268
+S C$option_manager.c$148$1$86 Def0221
+S C$option_manager.c$119$1$79 Def017B
+S C$option_manager.c$30$1$62 Def0000
 S A$option_manager$800 Def029E
 S A$option_manager$710 Def0235
 S A$option_manager$701 Def022A
@@ -454,12 +448,14 @@ S A$option_manager$215 Def005C
 S A$option_manager$170 Def002D
 S A$option_manager$152 Def0029
 S A$option_manager$116 Def0004
-S C$option_manager.c$218$1$98 Def03CF
-S C$option_manager.c$197$1$92 Def0354
-S C$option_manager.c$174$1$88 Def028A
+S C$option_manager.c$193$1$96 Def03A2
+S C$option_manager.c$186$1$94 Def0372
+S C$option_manager.c$179$1$92 Def0326
+S C$option_manager.c$165$1$88 Def02D5
+S C$option_manager.c$149$1$86 Def0240
 S XG$engine_option_manager_text_enemy$0$0 Def01E9
-S C$option_manager.c$138$1$79 Def0185
-S C$option_manager.c$40$1$62 Def001C
+S C$option_manager.c$40$1$62 Def002D
+S C$option_manager.c$31$1$62 Def0008
 S A$option_manager$900 Def030A
 S A$option_manager$810 Def02A9
 S A$option_manager$801 Def029F
@@ -479,12 +475,11 @@ S A$option_manager$180 Def0035
 S A$option_manager$171 Def0030
 S A$option_manager$126 Def000D
 S A$option_manager$117 Def0005
-S C$option_manager.c$219$1$98 Def03E4
-S C$option_manager.c$198$1$92 Def0355
-S C$option_manager.c$168$1$86 Def0258
-S C$option_manager.c$139$1$79 Def019E
+S C$option_manager.c$194$1$96 Def03A3
+S C$option_manager.c$187$1$94 Def038C
+S C$option_manager.c$157$1$88 Def0272
 S XG$engine_option_manager_update$0$0 Def00B6
-S C$option_manager.c$41$1$62 Def0021
+S C$option_manager.c$32$1$62 Def000D
 S A$option_manager$901 Def030B
 S A$option_manager$811 Def02AA
 S A$option_manager$730 Def024F
@@ -509,9 +504,9 @@ S A$option_manager$181 Def0038
 S A$option_manager$136 Def0017
 S A$option_manager$127 Def0010
 S G$engine_option_manager_draw_candy$0$0 Def02D5
+S C$option_manager.c$158$1$88 Def028A
 S G$engine_option_manager_text_kid$0$0 Def014B
-S C$option_manager.c$42$1$62 Def0026
-S C$option_manager.c$33$1$62 Def0000
+S C$option_manager.c$33$1$62 Def0012
 S A$option_manager$902 Def030C
 S A$option_manager$830 Def02C2
 S A$option_manager$821 Def02B5
@@ -553,9 +548,7 @@ S A$option_manager$209 Def0055
 S A$option_manager$191 Def0040
 S A$option_manager$146 Def0021
 S A$option_manager$137 Def001A
-S C$option_manager.c$177$1$88 Def02A0
-S C$option_manager.c$50$1$64 Def0039
-S C$option_manager.c$43$1$62 Def002C
+S C$option_manager.c$34$1$62 Def0017
 S _engine_option_manager_option_diff Def045C
 S A$option_manager$930 Def031F
 S A$option_manager$912 Def0315
@@ -598,8 +591,10 @@ S A$option_manager$228 Def006D
 S A$option_manager$192 Def0043
 S A$option_manager$147 Def0024
 S XG$engine_option_manager_text_other$0$0 Def0410
+S C$option_manager.c$196$1$97 Def03A3
 S G$engine_option_manager_text_exit$0$0 Def0355
-S C$option_manager.c$178$1$88 Def02B5
+S C$option_manager.c$42$1$64 Def002D
+S C$option_manager.c$35$1$62 Def001C
 S _engine_option_manager_text_start Def0221
 S A$option_manager$940 Def032F
 S A$option_manager$931 Def0322
@@ -645,10 +640,11 @@ S A$option_manager$229 Def0070
 S A$option_manager$193 Def0044
 S A$option_manager$175 Def0031
 S A$option_manager$157 Def002C
-S C$option_manager.c$179$1$88 Def02D1
+S C$option_manager.c$197$1$97 Def03B5
 S XG$engine_option_manager_clear$0$0 Def00E8
-S C$option_manager.c$45$1$62 Def002D
-S C$option_manager.c$36$1$62 Def0008
+S C$option_manager.c$50$2$65 Def004E
+S C$option_manager.c$43$1$64 Def0031
+S C$option_manager.c$36$1$62 Def0021
 S A$option_manager$950 Def033D
 S A$option_manager$941 Def0330
 S A$option_manager$932 Def0325
@@ -689,8 +685,10 @@ S A$option_manager$185 Def0039
 S A$option_manager$176 Def0034
 S G$engine_option_manager_option_round$0$0 Def0436
 S G$engine_option_manager_option_world$0$0 Def0411
-S C$option_manager.c$62$1$64 Def0060
-S C$option_manager.c$37$1$62 Def000D
+S C$option_manager.c$198$1$97 Def03C8
+S C$option_manager.c$51$2$65 Def0055
+S C$option_manager.c$44$1$64 Def0035
+S C$option_manager.c$37$1$62 Def0026
 S _engine_option_manager_text_tree Def031C
 S A$option_manager$960 Def0349
 S A$option_manager$951 Def033E
@@ -736,10 +734,10 @@ S A$option_manager$258 Def0094
 S A$option_manager$249 Def0089
 S A$option_manager$195 Def0048
 S A$option_manager$186 Def003C
-S C$option_manager.c$90$1$64 Def00B7
-S C$option_manager.c$52$2$65 Def0040
-S C$option_manager.c$38$1$62 Def0012
-S C$option_manager.c$31$0$0 Def0000
+S C$option_manager.c$83$1$71 Def00B7
+S C$option_manager.c$81$1$64 Def00B7
+S C$option_manager.c$45$1$64 Def0039
+S C$option_manager.c$38$1$62 Def002C
 S A$option_manager$961 Def034A
 S A$option_manager$943 Def0334
 S A$option_manager$907 Def0313
@@ -775,8 +773,7 @@ S A$option_manager$295 Def00B6
 S A$option_manager$268 Def00A2
 S A$option_manager$259 Def0097
 S A$option_manager$187 Def003E
-S C$option_manager.c$53$2$65 Def0049
-S C$option_manager.c$39$1$62 Def0017
+S C$option_manager.c$84$1$71 Def00C3
 S A$option_manager$962 Def034B
 S A$option_manager$944 Def0335
 S A$option_manager$926 Def031C
@@ -809,9 +806,9 @@ S A$option_manager$485 Def0166
 S A$option_manager$476 Def0159
 S A$option_manager$467 Def014F
 S A$option_manager$395 Def0111
-S C$option_manager.c$85$2$70 Def00AE
-S C$option_manager.c$83$1$64 Def00A8
-S C$option_manager.c$47$1$64 Def002D
+S C$option_manager.c$85$1$71 Def00CF
+S C$option_manager.c$76$2$70 Def00AE
+S C$option_manager.c$74$1$64 Def00A8
 S A$option_manager$972 Def0354
 S A$option_manager$963 Def034C
 S A$option_manager$945 Def0336
@@ -841,10 +838,11 @@ S A$option_manager$477 Def015A
 S A$option_manager$468 Def0150
 S A$option_manager$396 Def0112
 S A$option_manager$279 Def00A8
-S C$option_manager.c$86$2$70 Def00B1
-S C$option_manager.c$80$2$67 Def00A3
-S C$option_manager.c$55$2$65 Def004E
-S C$option_manager.c$48$1$64 Def0031
+S C$option_manager.c$86$1$71 Def00DB
+S C$option_manager.c$77$2$70 Def00B1
+S C$option_manager.c$71$2$67 Def00A3
+S C$option_manager.c$57$1$64 Def0060
+S C$option_manager.c$53$3$66 Def005C
 S _engine_option_manager_text_kid_no Def017B
 S A$option_manager$964 Def034D
 S A$option_manager$955 Def033F
@@ -875,8 +873,10 @@ S A$option_manager$397 Def0115
 S A$option_manager$388 Def0107
 S A$option_manager$289 Def00B1
 S A$option_manager$199 Def0049
-S C$option_manager.c$56$2$65 Def0055
-S C$option_manager.c$49$1$64 Def0035
+S C$option_manager.c$94$1$73 Def00ED
+S C$option_manager.c$87$1$71 Def00E8
+S C$option_manager.c$61$3$68 Def007B
+S C$option_manager.c$47$2$65 Def0040
 A _DATA size 8 flags 0 addr 0
 S Foption_manager$bonus_tile$0$0 Def0003
 S Foption_manager$delay_data1$0$0 Def0000
@@ -1077,19 +1077,19 @@ T 58 02
 R 00 00 00 00
 T 58 02 CD 00 00 F5 3A 03 00 F5 33 CD 00 00 33 DD
 R 00 00 00 00 02 03 0D 00 00 07 01 00 02 0C 09 00
-T 66 02 75 FE DD 4E 04 3A 06 00 91 DD 77 FF 21
+T 66 02 75 FF DD 4E 04 3A 06 00 91 DD 77 FE 21
 R 00 00 00 00 00 08 01 00
 T 73 02 05 00 56 21 00 00 46 3E 01 F5 33 58 D5 3A
 R 00 00 00 00 00 02 02 00 00 06 02 00
 T 81 02 03 00 F5 33 CD 00 00 F1 F1 21 05 00 5E 21
 R 00 00 00 00 00 02 01 00 02 07 0A 00 00 0C 02 00
-T 8F 02 01 00 4E 0C DD 6E FE 26 00 43 C5 E5 CD
+T 8F 02 01 00 4E 0C DD 6E FF 26 00 43 C5 E5 CD
 R 00 00 00 00 00 02 02 00
-T 9C 02 00 00 F1 F1 21 05 00 56 DD 46 FF 04 04 04
+T 9C 02 00 00 F1 F1 21 05 00 56 DD 46 FE 04 04 04
 R 00 00 00 00 02 02 07 00 00 07 02 00
 T AA 02 58 D5 21 D2 02 E5 CD 00 00 F1 F1 21 05 00
 R 00 00 00 00 00 05 00 00 02 09 04 00 00 0E 02 00
-T B8 02 56 14 21 05 00 46 04 04 D5 33 DD 7E FF F5
+T B8 02 56 14 21 05 00 46 04 04 D5 33 DD 7E FE F5
 R 00 00 00 00 00 05 01 00
 T C6 02 33 C5 33 CD 00 00 F1 33 F1 DD E1 C9
 R 00 00 00 00 02 06 03 00

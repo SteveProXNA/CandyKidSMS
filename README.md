@@ -1,4 +1,4 @@
-# Candy Kid
+# Candy Kid SMS
 Candy Kid game for the SMS Power! 2021 Competition.
 
 ###### RELEASE

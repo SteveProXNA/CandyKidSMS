@@ -67,6 +67,8 @@ Press button 2 five times on Title screen and you'll be invincible each game thi
 <br />
 Press and hold button 2 during game play to action Game Over and force quit out of game.
 <br />
+Press and hold button 2 during boss fight to quit out and defeat boss then play next level.
+<br />
 Press and hold button 2 on Splash screen to reset High score and all options previously saved.
 
 ###### CREDITS
